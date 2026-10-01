@@ -1,0 +1,22 @@
+﻿번호,이름,그룹,Blender 오브젝트,UV 이미지,3D 면 수,이전 번호/역할,접촉면 경계,열린 재봉 경계
+J01,T01·T02 공통 하부 · 닫힌 곡면 촉수,long,Root_LegPair_COMMON_CAVITY_CONCEPT,Tentacles-long-joined-UV-guide-4096.png,2450,T01·T02·T23·T24를 통합한 공통 하부와 두 촉수,J01-D01; J01-D02,S02; S03; S04; S05; S06; S07; S13; S14; S15
+T03,앞 장식 촉수 · 왼쪽,long,Root_FrontDecor_L_REFERENCE,Tentacles-long-UV-guide-4096.png,722,,T03-D01,S02; S16
+T04,앞 장식 촉수 · 오른쪽,long,Root_FrontDecor_R_REFERENCE,Tentacles-long-UV-guide-4096.png,848,,T04-D01,S03; S17
+T05,뒤 장식 촉수 · 왼쪽,long,Root_RearDecor_L_REFERENCE,Tentacles-long-UV-guide-4096.png,548,,T05-D01; T05-D02,S04; S08; S09; S18
+T06,뒤 장식 촉수 · 오른쪽,long,Root_RearDecor_R_REFERENCE,Tentacles-long-UV-guide-4096.png,609,,T06-D01; T06-D02,S05; S10; S11; S19
+T07,중간 촉수 / 턱 안쪽 · 왼쪽,medium,ChinM_01_front_inner_L,Tentacles-medium-UV-guide-4096.png,418,,T07-D01,
+T08,중간 촉수 / 턱 안쪽 · 오른쪽,medium,ChinM_02_front_inner_R,Tentacles-medium-UV-guide-4096.png,409,,T08-D01,
+T09,중간 촉수 / 턱 바깥쪽 · 왼쪽,medium,ChinM_03_front_outer_L,Tentacles-medium-UV-guide-4096.png,404,,T09-D01,
+T10,중간 촉수 / 턱 바깥쪽 · 오른쪽,medium,ChinM_04_front_outer_R,Tentacles-medium-UV-guide-4096.png,417,,T10-D01,
+T11,중간 촉수 / 턱 옆쪽 · 왼쪽,medium,ChinM_05_side_L,Tentacles-medium-UV-guide-4096.png,405,,T11-D01,
+T12,중간 촉수 / 턱 옆쪽 · 오른쪽,medium,ChinM_06_side_R,Tentacles-medium-UV-guide-4096.png,403,,T12-D01,
+T13,짧은 턱 촉수 · 왼쪽 1 (안쪽부터),small,ChinShoot_-1_0,Tentacles-small-UV-guide-4096.png,125,,T13-D01,
+T14,짧은 턱 촉수 · 왼쪽 2 (안쪽부터),small,ChinShoot_-1_1,Tentacles-small-UV-guide-4096.png,125,,T14-D01,
+T15,짧은 턱 촉수 · 왼쪽 3 (안쪽부터),small,ChinShoot_-1_2,Tentacles-small-UV-guide-4096.png,125,,T15-D01,
+T16,짧은 턱 촉수 · 왼쪽 4 (안쪽부터),small,ChinShoot_-1_3,Tentacles-small-UV-guide-4096.png,125,,T16-D01,
+T17,짧은 턱 촉수 · 오른쪽 1 (안쪽부터),small,ChinShoot_1_0,Tentacles-small-UV-guide-4096.png,115,,T17-D01,
+T18,짧은 턱 촉수 · 오른쪽 2 (안쪽부터),small,ChinShoot_1_1,Tentacles-small-UV-guide-4096.png,120,,T18-D01,
+T19,짧은 턱 촉수 · 오른쪽 3 (안쪽부터),small,ChinShoot_1_2,Tentacles-small-UV-guide-4096.png,136,,T19-D01,
+T20,짧은 턱 촉수 · 오른쪽 4 (안쪽부터),small,ChinShoot_1_3,Tentacles-small-UV-guide-4096.png,135,,T20-D01,
+T21,뒤 중앙 촉수 · 왼쪽,long,Root_RearCentral_L_REFERENCE,Tentacles-long-UV-guide-4096.png,568,,T21-D01; T21-D02,S06; S08; S09; S12; S20
+T22,뒤 중앙 촉수 · 오른쪽,long,Root_RearCentral_R_REFERENCE,Tentacles-long-UV-guide-4096.png,574,,T22-D01; T22-D02,S07; S10; S11; S12; S21

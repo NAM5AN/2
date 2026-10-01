@@ -1,0 +1,1842 @@
+{
+  "source_native": "morbol-v17-bottom-connection-uv.blend",
+  "native_sha256_unchanged": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+  "guide_collection": "90_GUIDES_164cm_not_measured_fit",
+  "guide_objects": 9,
+  "guide_geometry_transforms_unchanged": true,
+  "width": 1900,
+  "height": 1700,
+  "fill_alpha": 0.29,
+  "maximum_outline_alpha": 0.91,
+  "outline_width_px": 3,
+  "display": "Blue x-ray overlay; drawn above model independently of model color, wire and label toggles. Exact saved scope camera; intentionally not recentered for small scopes.",
+  "files": [
+    "person-body-rear.webp",
+    "person-body-front.webp",
+    "person-body-bottom.webp",
+    "person-full-rear.webp",
+    "person-full-front.webp",
+    "person-full-bottom.webp",
+    "person-tentacles-rear.webp",
+    "person-tentacles-front.webp",
+    "person-long-rear.webp",
+    "person-long-front.webp",
+    "person-long-bottom.webp",
+    "person-medium-rear.webp",
+    "person-medium-front.webp",
+    "person-small-rear.webp",
+    "person-small-front.webp",
+    "person-head-rear.webp",
+    "person-head-front.webp",
+    "person-head-01-rear.webp",
+    "person-head-01-front.webp",
+    "person-head-02-rear.webp",
+    "person-head-02-front.webp",
+    "person-head-03-rear.webp",
+    "person-head-03-front.webp",
+    "person-head-04-rear.webp",
+    "person-head-04-front.webp",
+    "person-head-05-rear.webp",
+    "person-head-05-front.webp"
+  ],
+  "views": {
+    "person-body-rear": {
+      "scope": "body",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -1.0,
+          8.594165024078393e-08,
+          8.886728863899407e-08,
+          -0.017293155193328857
+        ],
+        [
+          8.742277657347586e-08,
+          -0.016664404422044754,
+          0.9998611211776733,
+          5.9230122566223145
+        ],
+        [
+          8.741063339812172e-08,
+          0.9998611211776733,
+          0.016664404422044754,
+          1.7163513898849487
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.6156681776046753,
+      "camera_matrix_max_error": 1.210719347000122e-07,
+      "projection_max_error_px": 0.0009938311330393197,
+      "projected_all_guide_vertices_bounds_px": [
+        501.66500210762024,
+        708.3256661891937,
+        1357.6598703861237,
+        2748.5211074352264
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-body-front": {
+      "scope": "body",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.3415656089782715
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -6.064765453338623
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          3.5861122608184814
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.5061566829681396,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0011718261194197663,
+      "projected_all_guide_vertices_bounds_px": [
+        511.8230253458023,
+        595.9185779094696,
+        1371.1798548698425,
+        2775.47088265419
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-body-bottom": {
+      "scope": "body",
+      "view": "bottom",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.8574929237365723,
+          0.44445663690567017,
+          0.2591605484485626,
+          1.2480101585388184
+        ],
+        [
+          0.5144957900047302,
+          -0.7407610416412354,
+          -0.4319342374801636,
+          -2.0878994464874268
+        ],
+        [
+          9.243808385406282e-09,
+          0.5037175416946411,
+          -0.8638684153556824,
+          -2.3578622341156006
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.6021239757537842,
+      "camera_matrix_max_error": 5.960464477539063e-08,
+      "projection_max_error_px": 0.00022256198076494557,
+      "projected_all_guide_vertices_bounds_px": [
+        594.8827713727951,
+        717.9421901702881,
+        1347.57279753685,
+        2001.8640860915184
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-full-rear": {
+      "scope": "full",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.7810264825820923
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          6.0642547607421875
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          3.0176146030426025
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 3.5784778594970703,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.000433902014076487,
+      "projected_all_guide_vertices_bounds_px": [
+        780.9037625789642,
+        562.4835133552551,
+        1151.0826885700226,
+        1462.339599430561
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-full-front": {
+      "scope": "full",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.3383700847625732
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -5.976409435272217
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          3.163360357284546
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 3.632523536682129,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0005827032095502618,
+      "projected_all_guide_vertices_bounds_px": [
+        753.3370733261108,
+        546.5212285518646,
+        1109.6529841423035,
+        1450.2310931682587
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-full-bottom": {
+      "scope": "full",
+      "view": "bottom",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.8574929237365723,
+          0.44445663690567017,
+          0.2591605484485626,
+          1.0822398662567139
+        ],
+        [
+          0.5144957900047302,
+          -0.7407610416412354,
+          -0.4319342374801636,
+          -1.685009479522705
+        ],
+        [
+          9.243808385406282e-09,
+          0.5037175416946411,
+          -0.8638684153556824,
+          -2.903522491455078
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 3.6797306537628174,
+      "camera_matrix_max_error": 5.960464477539063e-08,
+      "projection_max_error_px": 0.00016876947537338194,
+      "projected_all_guide_vertices_bounds_px": [
+        761.7512345314026,
+        458.43932032585144,
+        1089.466154575348,
+        1017.4481987953186
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-tentacles-rear": {
+      "scope": "tentacles",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.7810264825820923
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          6.0642547607421875
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          3.0176146030426025
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 3.5784778594970703,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.000433902014076487,
+      "projected_all_guide_vertices_bounds_px": [
+        780.9037625789642,
+        562.4835133552551,
+        1151.0826885700226,
+        1462.339599430561
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-tentacles-front": {
+      "scope": "tentacles",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.3383700847625732
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -5.976409435272217
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          3.163360357284546
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 3.632523536682129,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0005827032095502618,
+      "projected_all_guide_vertices_bounds_px": [
+        753.3370733261108,
+        546.5212285518646,
+        1109.6529841423035,
+        1450.2310931682587
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-long-rear": {
+      "scope": "long",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.779785394668579
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          6.060117721557617
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          2.500262498855591
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 3.5784778594970703,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.0004488285688630542,
+      "projected_all_guide_vertices_bounds_px": [
+        780.9037059545517,
+        299.1109311580658,
+        1151.0826885700226,
+        1198.9669412374496
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-long-front": {
+      "scope": "long",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.3341753482818604
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -5.965466022491455
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          2.668631076812744
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 3.632523536682129,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.00053201163787067,
+      "projected_all_guide_vertices_bounds_px": [
+        753.3369034528732,
+        301.2649595737457,
+        1109.6528708934784,
+        1204.9748748540878
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-long-bottom": {
+      "scope": "long",
+      "view": "bottom",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.8574929237365723,
+          0.44445663690567017,
+          0.2591605484485626,
+          1.1012905836105347
+        ],
+        [
+          0.5144957900047302,
+          -0.7407610416412354,
+          -0.4319342374801636,
+          -1.7167606353759766
+        ],
+        [
+          9.243808385406282e-09,
+          0.5037175416946411,
+          -0.8638684153556824,
+          -3.4143145084381104
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 3.6797306537628174,
+      "camera_matrix_max_error": 5.960464477539063e-08,
+      "projection_max_error_px": 0.0001843473943132188,
+      "projected_all_guide_vertices_bounds_px": [
+        761.75117790699,
+        342.10344552993774,
+        1089.466154575348,
+        901.1123239994049
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-medium-rear": {
+      "scope": "medium",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.7738631963729858
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          5.523793697357178
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          3.0699985027313232
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.53744375705719,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.0009610842435839775,
+      "projected_all_guide_vertices_bounds_px": [
+        372.97605872154236,
+        420.39180994033813,
+        1234.5862567424774,
+        2514.8521900177
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-medium-front": {
+      "scope": "medium",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.3285951614379883
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -6.457569599151611
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          3.259943723678589
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.5048786401748657,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0017879346601136245,
+      "projected_all_guide_vertices_bounds_px": [
+        704.2562782764435,
+        66.62197709083557,
+        1564.3429398536682,
+        2248.0252385139465
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-small-rear": {
+      "scope": "small",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.7994332313537598
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          5.629360198974609
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          3.012481451034546
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 0.9262462258338928,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.0019671530099816844,
+      "projected_all_guide_vertices_bounds_px": [
+        4.203214216977358,
+        -37.93189525604248,
+        1434.3597888946533,
+        3438.5895133018494
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-small-front": {
+      "scope": "small",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.297894239425659
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -6.367254257202148
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          3.19870662689209
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 0.9091255068778992,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0028264205371511877,
+      "projected_all_guide_vertices_bounds_px": [
+        535.5697184801102,
+        -509.723699092865,
+        1959.2742085456848,
+        3101.1609315872192
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-rear": {
+      "scope": "head",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.7908669710159302
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          5.9982218742370605
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          3.6288464069366455
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 2.351370334625244,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.0007938394697688421,
+      "projected_all_guide_vertices_bounds_px": [
+        669.7093278169632,
+        900.6115108728409,
+        1233.073252439499,
+        2270.0746953487396
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-front": {
+      "scope": "head",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.3127732276916504
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -6.0086493492126465
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          3.8978137969970703
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 2.301433563232422,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0010733928390707051,
+      "projected_all_guide_vertices_bounds_px": [
+        668.8509583473206,
+        944.8085099458694,
+        1231.2509655952454,
+        2371.2008476257324
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-01-rear": {
+      "scope": "head-01",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.7203700542449951
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          5.982027053833008
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          3.892516613006592
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.7376585006713867,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.0012288985071400467,
+      "projected_all_guide_vertices_bounds_px": [
+        639.4593775272369,
+        1206.3789248466492,
+        1401.7939567565918,
+        3059.5133423805237
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-01-front": {
+      "scope": "head-01",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.3794403076171875
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -6.014250755310059
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          4.092838287353516
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.706121563911438,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0012647638530469468,
+      "projected_all_guide_vertices_bounds_px": [
+        503.65948379039764,
+        1175.634977221489,
+        1262.2959792613983,
+        3099.7343361377716
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-02-rear": {
+      "scope": "head-02",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.8452115058898926
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          6.23534631729126
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          3.7294883728027344
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 2.0244200229644775,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.0010208758264512075,
+      "projected_all_guide_vertices_bounds_px": [
+        639.5374625921249,
+        936.6506010293961,
+        1293.886399269104,
+        2527.2863388061523
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-02-front": {
+      "scope": "head-02",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.2585952281951904
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -5.7743425369262695
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          4.01267671585083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 2.02345609664917,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0011371003989461702,
+      "projected_all_guide_vertices_bounds_px": [
+        598.9794909954071,
+        1127.27872133255,
+        1238.6405646800995,
+        2749.6254801750183
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-03-rear": {
+      "scope": "head-03",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.8339341878890991
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          6.14177942276001
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          3.3334717750549316
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 2.351370334625244,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.0008325470798811902,
+      "projected_all_guide_vertices_bounds_px": [
+        669.7093844413757,
+        637.7729773521423,
+        1233.073252439499,
+        2007.236187160015
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-03-front": {
+      "scope": "head-03",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.2526965141296387
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -5.851927757263184
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          3.512075662612915
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 2.301433563232422,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0011169085389694242,
+      "projected_all_guide_vertices_bounds_px": [
+        668.8512414693832,
+        681.9215416908264,
+        1231.2511920928955,
+        2108.3138793706894
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-04-rear": {
+      "scope": "head-04",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.853434443473816
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          6.193990230560303
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          3.690723180770874
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.601312518119812,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.0013332100036169935,
+      "projected_all_guide_vertices_bounds_px": [
+        534.0599983930588,
+        927.5447696447372,
+        1361.3045573234558,
+        2938.466936349869
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-04-front": {
+      "scope": "head-04",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.253392457962036
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -5.810497760772705
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          3.737255573272705
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.5703240633010864,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0012113805414876906,
+      "projected_all_guide_vertices_bounds_px": [
+        519.2254215478897,
+        877.6330292224884,
+        1343.4667348861694,
+        2968.1232810020447
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-05-rear": {
+      "scope": "head-05",
+      "view": "rear",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          -0.9578262567520142,
+          0.0793575569987297,
+          -0.2761724293231964,
+          -1.759177803993225
+        ],
+        [
+          -0.2873479425907135,
+          -0.2645249366760254,
+          0.9205746650695801,
+          5.7211012840271
+        ],
+        [
+          6.076621872352916e-08,
+          0.9611082077026367,
+          0.2761721611022949,
+          3.7713623046875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.3747813701629639,
+      "camera_matrix_max_error": 1.1920928955078125e-07,
+      "projection_max_error_px": 0.0014647403532379584,
+      "projected_all_guide_vertices_bounds_px": [
+        402.4990648031235,
+        1230.6523263454437,
+        1366.0538733005524,
+        3572.9265928268433
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    },
+    "person-head-05-front": {
+      "scope": "head-05",
+      "view": "front",
+      "frame": 40,
+      "width": 1900,
+      "height": 1700,
+      "camera_manifest": "work/v17-pipeline/model-renders/manifest.json",
+      "camera_matrix": [
+        [
+          0.9337460994720459,
+          -0.10637369751930237,
+          0.341764360666275,
+          2.3485913276672363
+        ],
+        [
+          0.3579360842704773,
+          0.2774966359138489,
+          -0.8915589451789856,
+          -6.272141933441162
+        ],
+        [
+          -3.201043341505283e-08,
+          0.9548195004463196,
+          0.29718637466430664,
+          3.9629690647125244
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "ortho_scale": 1.3427695035934448,
+      "camera_matrix_max_error": 1.4901161193847656e-07,
+      "projection_max_error_px": 0.0017936721986851194,
+      "projected_all_guide_vertices_bounds_px": [
+        554.2541891336441,
+        991.6725099086761,
+        1518.176943063736,
+        3436.4310264587402
+      ],
+      "guide_objects": [
+        "Guide_Head",
+        "Guide_Torso",
+        "Guide_Pelvis",
+        "Guide_Leg_-1",
+        "Guide_RaisedArm_-1",
+        "Guide_Foot_-1",
+        "Guide_Leg_1",
+        "Guide_RaisedArm_1",
+        "Guide_Foot_1"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "file": "person-body-rear.webp",
+      "nonzero_pixels": 333037,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        501,
+        708,
+        1357,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-body-front.webp",
+      "nonzero_pixels": 377275,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        511,
+        595,
+        1371,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-body-bottom.webp",
+      "nonzero_pixels": 292612,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        594,
+        717,
+        1347,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-full-rear.webp",
+      "nonzero_pixels": 117754,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        780,
+        562,
+        1151,
+        1462
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-full-front.webp",
+      "nonzero_pixels": 114113,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        752,
+        546,
+        1109,
+        1450
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-full-bottom.webp",
+      "nonzero_pixels": 70234,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        761,
+        458,
+        1089,
+        1017
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-tentacles-rear.webp",
+      "nonzero_pixels": 117754,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        780,
+        562,
+        1151,
+        1462
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-tentacles-front.webp",
+      "nonzero_pixels": 114113,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        752,
+        546,
+        1109,
+        1450
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-long-rear.webp",
+      "nonzero_pixels": 117760,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        780,
+        298,
+        1151,
+        1199
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-long-front.webp",
+      "nonzero_pixels": 114113,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        752,
+        300,
+        1110,
+        1205
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-long-bottom.webp",
+      "nonzero_pixels": 70262,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        761,
+        341,
+        1089,
+        901
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-medium-rear.webp",
+      "nonzero_pixels": 429811,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        372,
+        420,
+        1234,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-medium-front.webp",
+      "nonzero_pixels": 534186,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        703,
+        66,
+        1564,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-small-rear.webp",
+      "nonzero_pixels": 950715,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        3,
+        0,
+        1434,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-small-front.webp",
+      "nonzero_pixels": 1028624,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        535,
+        0,
+        1899,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-rear.webp",
+      "nonzero_pixels": 177110,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        669,
+        900,
+        1233,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-front.webp",
+      "nonzero_pixels": 170623,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        668,
+        944,
+        1231,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-01-rear.webp",
+      "nonzero_pixels": 130726,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        639,
+        1206,
+        1402,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-01-front.webp",
+      "nonzero_pixels": 147321,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        503,
+        1175,
+        1262,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-02-rear.webp",
+      "nonzero_pixels": 193481,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        639,
+        936,
+        1294,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-02-front.webp",
+      "nonzero_pixels": 143651,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        598,
+        1127,
+        1238,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-03-rear.webp",
+      "nonzero_pixels": 225131,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        669,
+        637,
+        1233,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-03-front.webp",
+      "nonzero_pixels": 221835,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        668,
+        681,
+        1231,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-04-rear.webp",
+      "nonzero_pixels": 243927,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        533,
+        927,
+        1361,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-04-front.webp",
+      "nonzero_pixels": 269351,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        518,
+        877,
+        1343,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-05-rear.webp",
+      "nonzero_pixels": 142600,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        402,
+        1230,
+        1364,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    },
+    {
+      "file": "person-head-05-front.webp",
+      "nonzero_pixels": 256623,
+      "alpha_max": 232,
+      "raster_bounds_px": [
+        553,
+        991,
+        1518,
+        1699
+      ],
+      "offcanvas_projection_preserved": true
+    }
+  ],
+  "native_provenance": {
+    "delivered_native": "morbol-v17-bottom-connection-uv.blend",
+    "delivered_native_sha256": "bec2be48ca83a93d910fbfd9d4eb420936d74f5f38b7d1d9c257e10257b59208",
+    "render_source_native_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+    "change_after_render": "Blender text README corrected to state that B01 is a static frame-40 reference.",
+    "render_content_unchanged": true,
+    "render_signature_before_and_after": "7e5c7f89b1203c361619365158297150bf28008dd9b96e4067fa6a2903796379",
+    "equivalence_proof": "native-readme-only-patch.json"
+  },
+  "reuse_in_version": 22,
+  "delivered_native_sha256": "616e162d2a9c14cab2f8e13168acf3cd9fe3232afbb305854373d1045fb9beeb",
+  "reuse_source_directory": "outputs/morbol-v20-person-display-overlays",
+  "reuse_proof": "reuse-native-proof.json",
+  "all_27_cameras_exactly_equal": true
+}

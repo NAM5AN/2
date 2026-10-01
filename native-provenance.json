@@ -1,0 +1,232 @@
+{
+  "version": 23,
+  "native": "morbol-v23-softened-lips-uv.blend",
+  "native_sha256": "e515e4d59e3c4a0c3dfe1d84dedabf927fa9d515b04508c6e86bc5aa61933d2b",
+  "new_model_views": 6,
+  "reused_model_views": 21,
+  "changed_parts": [
+    "M01",
+    "M02"
+  ],
+  "model_views": {
+    "model-body-rear": {
+      "reused": false,
+      "render_source_sha256": "e515e4d59e3c4a0c3dfe1d84dedabf927fa9d515b04508c6e86bc5aa61933d2b",
+      "reference_camera_exact": true
+    },
+    "model-body-front": {
+      "reused": false,
+      "render_source_sha256": "e515e4d59e3c4a0c3dfe1d84dedabf927fa9d515b04508c6e86bc5aa61933d2b",
+      "reference_camera_exact": true
+    },
+    "model-body-bottom": {
+      "reused": false,
+      "render_source_sha256": "e515e4d59e3c4a0c3dfe1d84dedabf927fa9d515b04508c6e86bc5aa61933d2b",
+      "reference_camera_exact": true
+    },
+    "model-full-rear": {
+      "reused": false,
+      "render_source_sha256": "e515e4d59e3c4a0c3dfe1d84dedabf927fa9d515b04508c6e86bc5aa61933d2b",
+      "reference_camera_exact": true
+    },
+    "model-full-front": {
+      "reused": false,
+      "render_source_sha256": "e515e4d59e3c4a0c3dfe1d84dedabf927fa9d515b04508c6e86bc5aa61933d2b",
+      "reference_camera_exact": true
+    },
+    "model-full-bottom": {
+      "reused": false,
+      "render_source_sha256": "e515e4d59e3c4a0c3dfe1d84dedabf927fa9d515b04508c6e86bc5aa61933d2b",
+      "reference_camera_exact": true
+    },
+    "model-tentacles-rear": {
+      "reused": true,
+      "render_source_sha256": "7a4504b9d2d19147e764adf1751684fb1f22ca5e436f8a4219efb07cff582486",
+      "reference_camera_exact": true
+    },
+    "model-tentacles-front": {
+      "reused": true,
+      "render_source_sha256": "7a4504b9d2d19147e764adf1751684fb1f22ca5e436f8a4219efb07cff582486",
+      "reference_camera_exact": true
+    },
+    "model-long-rear": {
+      "reused": true,
+      "render_source_sha256": "7a4504b9d2d19147e764adf1751684fb1f22ca5e436f8a4219efb07cff582486",
+      "reference_camera_exact": true
+    },
+    "model-long-front": {
+      "reused": true,
+      "render_source_sha256": "7a4504b9d2d19147e764adf1751684fb1f22ca5e436f8a4219efb07cff582486",
+      "reference_camera_exact": true
+    },
+    "model-long-bottom": {
+      "reused": true,
+      "render_source_sha256": "7a4504b9d2d19147e764adf1751684fb1f22ca5e436f8a4219efb07cff582486",
+      "reference_camera_exact": true
+    },
+    "model-medium-rear": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-medium-front": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-small-rear": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-small-front": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-rear": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-front": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-01-rear": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-01-front": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-02-rear": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-02-front": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-03-rear": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-03-front": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-04-rear": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-04-front": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-05-rear": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    },
+    "model-head-05-front": {
+      "reused": true,
+      "render_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+      "reference_camera_exact": true
+    }
+  },
+  "reused_person_overlay_source_sha256": "0594192bd7b69282d43ef9a565e69bdfd38413b813f16f7028b684e106acff81",
+  "reused_uv_assets_from": "outputs/morbol-uv-unified",
+  "new_mouth_atlas_source_sha256": "e515e4d59e3c4a0c3dfe1d84dedabf927fa9d515b04508c6e86bc5aa61933d2b",
+  "supplemental_geometry_uv_and_cards_unchanged_from": "morbol-v22-clean-lips-uv.blend",
+  "reuse_proof": "reuse-native-proof.json",
+  "existing_62_geometry_uv_preserved": true,
+  "updated_geometry_objects": [
+    "M01_UpperLipGum_Closed",
+    "M02_LowerLipGum_Closed"
+  ],
+  "mouth_objects": [
+    "M01_UpperLipGum_Closed",
+    "M02_LowerLipGum_Closed"
+  ],
+  "mouth_design": "upper_and_lower_integrated_lip_gum_softened_small_bumps",
+  "source_mouth_geometry_modified": true,
+  "hidden_reference_objects": [
+    "03_UpperLip_volume",
+    "04_LowerLip_volume",
+    "UpperGum_continuous",
+    "LowerGum_continuous",
+    "UpperTooth_01",
+    "UpperInnerTooth_01",
+    "UpperTooth_02",
+    "UpperTooth_03",
+    "UpperInnerTooth_03",
+    "UpperTooth_04",
+    "UpperTooth_05",
+    "UpperInnerTooth_05",
+    "UpperTooth_06",
+    "UpperTooth_07",
+    "UpperInnerTooth_07",
+    "UpperTooth_08",
+    "UpperTooth_09",
+    "UpperInnerTooth_09",
+    "UpperTooth_10",
+    "UpperTooth_11",
+    "UpperInnerTooth_11",
+    "UpperTooth_12",
+    "UpperTooth_13",
+    "UpperInnerTooth_13",
+    "UpperTooth_14",
+    "UpperTooth_15",
+    "UpperInnerTooth_15",
+    "UpperTooth_16",
+    "UpperTooth_17",
+    "UpperInnerTooth_17",
+    "UpperTooth_18",
+    "UpperTooth_19",
+    "UpperInnerTooth_19",
+    "UpperTooth_20",
+    "UpperTooth_21",
+    "UpperInnerTooth_21",
+    "UpperTooth_22",
+    "UpperTooth_23",
+    "UpperInnerTooth_23",
+    "UpperTooth_24",
+    "UpperTooth_25",
+    "UpperInnerTooth_25",
+    "LowerTooth_01",
+    "LowerTooth_02",
+    "LowerTooth_03",
+    "LowerTooth_04",
+    "LowerTooth_05",
+    "LowerTooth_06",
+    "LowerTooth_07",
+    "LowerTooth_08",
+    "LowerTooth_09",
+    "LowerTooth_10",
+    "LowerTooth_11",
+    "LowerTooth_12",
+    "LowerTooth_13",
+    "LowerTooth_14",
+    "LowerTooth_15",
+    "LowerTooth_16",
+    "LowerTooth_17",
+    "LowerTooth_18",
+    "LowerTooth_19",
+    "LowerTooth_20",
+    "LowerTooth_21",
+    "LowerTooth_22",
+    "LowerTooth_23",
+    "LowerTooth_24"
+  ]
+}

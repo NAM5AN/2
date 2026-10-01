@@ -1,0 +1,24 @@
+{
+  "version": 23,
+  "native_sha256": "e515e4d59e3c4a0c3dfe1d84dedabf927fa9d515b04508c6e86bc5aa61933d2b",
+  "cards": [
+    "card-M01-uv-labels.webp",
+    "card-M02-uv-labels.webp",
+    "card-M01-uv-plain.webp",
+    "card-M02-uv-plain.webp",
+    "card-M01-actual-labels.webp",
+    "card-M02-actual-labels.webp",
+    "card-M01-actual-plain.webp",
+    "card-M02-actual-plain.webp",
+    "card-M01-uv-labels-no-grid.webp",
+    "card-M02-uv-labels-no-grid.webp",
+    "card-M01-uv-plain-no-grid.webp",
+    "card-M02-uv-plain-no-grid.webp",
+    "card-M01-actual-labels-no-grid.webp",
+    "card-M02-actual-labels-no-grid.webp",
+    "card-M01-actual-plain-no-grid.webp",
+    "card-M02-actual-plain-no-grid.webp"
+  ],
+  "atlas_variants": 8,
+  "independent_right_controls": true
+}

@@ -1,0 +1,9 @@
+﻿모듈 번호,이름,Blender 오브젝트,조각 번호,조각 설명,UV 묶음,연결선
+M01,상부 일체형 입술 · 잇몸,M01_UpperLipGum_Closed,M01-A,입술·잇몸 연속 겉면,lips,M01-S01; M01-S02; M01-S03; M01-S04
+M01,상부 일체형 입술 · 잇몸,M01_UpperLipGum_Closed,M01-B,막힌 뒤판 · 몸통 접촉 및 안쪽 마감,lips,M01-S01; M01-S02; M01-S05; M01-S06
+M01,상부 일체형 입술 · 잇몸,M01_UpperLipGum_Closed,M01-C,-X 입꼬리 끝막음,lips,M01-S03; M01-S05
+M01,상부 일체형 입술 · 잇몸,M01_UpperLipGum_Closed,M01-D,+X 입꼬리 끝막음,lips,M01-S04; M01-S06
+M02,하부 일체형 입술 · 잇몸,M02_LowerLipGum_Closed,M02-A,연속 겉면·촉수 접촉부,lips,M02-S01; M02-S02; M02-S03; M02-S04
+M02,하부 일체형 입술 · 잇몸,M02_LowerLipGum_Closed,M02-B,막힌 뒤판 · 몸통 접촉 및 안쪽 마감,lips,M02-S01; M02-S02; M02-S05; M02-S06
+M02,하부 일체형 입술 · 잇몸,M02_LowerLipGum_Closed,M02-C,-X 입꼬리 끝막음,lips,M02-S03; M02-S05
+M02,하부 일체형 입술 · 잇몸,M02_LowerLipGum_Closed,M02-D,+X 입꼬리 끝막음,lips,M02-S04; M02-S06
