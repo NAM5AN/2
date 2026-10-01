@@ -213,10 +213,10 @@ function sync(){
  live.hidden=!on;
  const legacy=[".selection-heading",".tent-card-link",".tent-atlas-link",".tent-note"];
  for(const sel of legacy){const el=$(tent,sel);if(el)el.style.display=on?"none":"";}
+ const dl=$(tent,".downloads");if(dl){const lab=$(dl,".download-label"),card=$(dl,".tent-download-card");if(on){if(lab)lab.textContent="입술·잇몸 UV";if(card)card.style.display="none";}else{if(lab)lab.textContent="현재 파츠 UV";if(card)card.style.display="";}}
  if(!on)return;
  const p=selectedModuleFromButtons()||currentPart;
  if(p!==currentPart){currentPart=p;selectedPiece=null;selectedSeam=null;}
- const dl=$(tent,".downloads");if(dl){const lab=$(dl,".download-label"),card=$(dl,".tent-download-card");if(on){if(lab)lab.textContent="입술·잇몸 UV";if(card)card.style.display="none";}else{if(lab)lab.textContent="현재 파츠 UV";if(card)card.style.display="";}}
  render();
 }
 for(const f of faces)f.addEventListener("click",()=>{if(f.dataset.part===currentPart)selectPiece(f.dataset.piece);});
