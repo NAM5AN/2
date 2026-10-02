@@ -1,65 +1,32 @@
-name: J01 shell repair inspection
+name: J01 independent shell repair
 on:
   push:
     branches: [repair/j01-independent-shells]
-  pull_request:
-    branches: [main]
-    paths:
-      - '.github/workflows/j01-shell-repair.yml'
-      - 'tools/j01-shell-repair.py'
+    paths: ['tools/j01-shell-repair.py']
 permissions:
   contents: read
 jobs:
-  inspect:
+  repair:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install Blender Python
+      - name: Install native geometry runtime
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y libxrender1 libxi6 libxxf86vm1 libxfixes3 libxkbcommon0 libsm6 libgl1
-          python -m pip install bpy numpy scipy
-      - name: Inspect exact source without modifying it
-        run: |
-          mkdir -p repair-output
-          python - <<'PY'
-          import bpy, json, pathlib, hashlib
-          root=pathlib.Path('.')
-          report={'blender_runtime':bpy.app.version_string,'files':[]}
-          for path in sorted(root.glob('*.blend')):
-              print('BLEND',str(path),path.stat().st_size,flush=True)
-              bpy.ops.wm.open_mainfile(filepath=str(path.resolve()))
-              objects=[]
-              for o in bpy.data.objects:
-                  item={'name':o.name,'type':o.type,'hide_render':o.hide_render,'dimensions':list(o.dimensions),'matrix_world':[list(r) for r in o.matrix_world]}
-                  if o.type=='MESH':
-                      item.update(vertices=len(o.data.vertices),polygons=len(o.data.polygons),uv_layers=[u.name for u in o.data.uv_layers],materials=[m.name if m else None for m in o.data.materials])
-                  objects.append(item)
-              report['files'].append({'name':path.name,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'objects':objects})
-          pathlib.Path('repair-output/source-inspection.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8')
-          print(json.dumps(report,ensure_ascii=False),flush=True)
-          PY
-      - name: Run repair when present
-        run: |
-          if test -f tools/j01-shell-repair.py; then python tools/j01-shell-repair.py; fi
-      - name: Export source and inspection artifact
+          python -m pip install bpy numpy scipy tetgenpy==0.1.0
+      - name: Reconstruct, validate and save independent shells
+        run: python tools/j01-shell-repair.py
+      - uses: actions/upload-artifact@v4
         if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: j01-repair-workspace
-          path: |
-            *.blend
-            *.js
-            *.json
-            *.csv
-            *.html
-            *.css
-            *.md
-            tools/
-            vendor/
-            repair-output/
-          retention-days: 7
+          name: morbol-independent-shells-v24
+          path: repair-output/final/
+          retention-days: 14
