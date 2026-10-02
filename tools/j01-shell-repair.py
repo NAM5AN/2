@@ -1,15 +1,17 @@
-"""Prepare geometry tooling in the isolated repair branch; do not alter the model."""
-import pathlib, subprocess, shutil, glob, json
-out=pathlib.Path('repair-output/geometry-runtime');out.mkdir(parents=True,exist_ok=True)
-result={}
-cmd=['python','-m','pip','download','--only-binary=:all:','--no-deps','--python-version','313','--abi','cp313','--platform','manylinux_2_17_x86_64','--dest',str(out),'tetgenpy']
-r=subprocess.run(cmd,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT);print(r.stdout,flush=True);result['wheel_download_returncode']=r.returncode
-r=subprocess.run(['sudo','apt-get','install','-y','tetgen'],text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT);print(r.stdout,flush=True);result['tetgen_install_returncode']=r.returncode
-exe=shutil.which('tetgen')
-if exe:
-    shutil.copy2(exe,out/'tetgen')
-    for p in glob.glob('/usr/lib/x86_64-linux-gnu/libtet*'):
-        if pathlib.Path(p).is_file():shutil.copy2(p,out/pathlib.Path(p).name)
-    result['ldd']=subprocess.run(['ldd',exe],text=True,stdout=subprocess.PIPE).stdout
-(out/'runtime-report.json').write_text(json.dumps(result,indent=2),encoding='utf8')
-print(json.dumps(result),flush=True)
+"""Build an isolated v24 review revision; never overwrite or push main."""
+import pathlib,subprocess,sys,json,traceback,hashlib
+R=pathlib.Path(__file__).resolve().parents[1];F=R/'repair-output/final';F.mkdir(parents=True,exist_ok=True)
+steps=['repair-envelope.py','repair-partition.py','repair-validate.py','repair-native.py'];state={'completed':[],'baseline':'894874e81657178910a523b292144a1423297d66'}
+try:
+ for name in steps:
+  print('START',name,flush=True)
+  with (F/(name+'.log')).open('w') as log:
+   p=subprocess.run([sys.executable,str(R/'tools'/name)],cwd=R,stdout=log,stderr=subprocess.STDOUT)
+  print((F/(name+'.log')).read_text(),flush=True)
+  if p.returncode:raise RuntimeError(name+' failed: '+str(p.returncode))
+  state['completed'].append(name)
+ state['status']='completed'
+except Exception as e:
+ state['status']='failed';state['error']=str(e);state['traceback']=traceback.format_exc();raise
+finally:
+ (F/'build-status.json').write_text(json.dumps(state,ensure_ascii=False,indent=2))
