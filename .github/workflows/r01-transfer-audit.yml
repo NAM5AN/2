@@ -1,0 +1,19 @@
+name: R01 transfer audit
+on:
+  push:
+    branches: [publish/r01-package]
+    paths: ['.github/workflows/r01-transfer-audit.yml']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r01-transfer-audit
+          path: .r01-transfer/
+          include-hidden-files: true
+          retention-days: 7
