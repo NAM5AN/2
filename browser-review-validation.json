@@ -1,0 +1,12 @@
+{
+  "software_review_browser_tested": true,
+  "javascript_errors": [],
+  "tested": [
+    "part isolation",
+    "before after",
+    "view cameras",
+    "mesh render"
+  ],
+  "main_webgl_tested": false,
+  "native_blender_open_tested": false
+}

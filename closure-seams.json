@@ -1,0 +1,162 @@
+{
+  "revision": "J01-CLOSURE-R01",
+  "interfaces": [
+    {
+      "tag": "S-T05-T21-01",
+      "triangle_count_per_owner": 23,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T05",
+        "T21"
+      ]
+    },
+    {
+      "tag": "S-T05-T21-02",
+      "triangle_count_per_owner": 22,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T05",
+        "T21"
+      ]
+    },
+    {
+      "tag": "S-T06-T22-01",
+      "triangle_count_per_owner": 21,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T06",
+        "T22"
+      ]
+    },
+    {
+      "tag": "S-T06-T22-02",
+      "triangle_count_per_owner": 22,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T06",
+        "T22"
+      ]
+    },
+    {
+      "tag": "S-T21-T22-01",
+      "triangle_count_per_owner": 39,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T21",
+        "T22"
+      ]
+    },
+    {
+      "tag": "ROOT-T03",
+      "triangle_count_per_owner": 79,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T03",
+        "J01"
+      ]
+    },
+    {
+      "tag": "ROOT-T04",
+      "triangle_count_per_owner": 95,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T04",
+        "J01"
+      ]
+    },
+    {
+      "tag": "ROOT-T05",
+      "triangle_count_per_owner": 54,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T05",
+        "J01"
+      ]
+    },
+    {
+      "tag": "ROOT-T06",
+      "triangle_count_per_owner": 58,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T06",
+        "J01"
+      ]
+    },
+    {
+      "tag": "ROOT-T21",
+      "triangle_count_per_owner": 34,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T21",
+        "J01"
+      ]
+    },
+    {
+      "tag": "ROOT-T22",
+      "triangle_count_per_owner": 36,
+      "uv": {
+        "method": "LSCM",
+        "flipped_triangles": 0,
+        "near_zero_triangles": 0,
+        "reference_only": true
+      },
+      "owners": [
+        "T22",
+        "J01"
+      ]
+    }
+  ],
+  "original_assembly_seams_file": "assembly-seams.json",
+  "original_seam_semantics_note": "S02-S12 are historical open-boundary correspondences. R01 restores paired owner-specific contact surfaces; do not interpret these as shared-cavity sewing openings. Root closures extend to the retained upper rim to avoid leaving openings at L01.",
+  "preserved_opening": "J01 upper torso connection / L01 central Z01"
+}

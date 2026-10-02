@@ -1,0 +1,112 @@
+{
+  "objects": {
+    "J01": {
+      "triangles": 3053,
+      "added_triangles": 356,
+      "boundary_edges": 103,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "watertight": false,
+      "winding_consistent": true,
+      "new_face_self_crossings_at_0_005mm_tolerance": [],
+      "signed_volume_m3": 0.3109207767052525
+    },
+    "T03": {
+      "triangles": 890,
+      "added_triangles": 79,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "new_face_self_crossings_at_0_005mm_tolerance": [],
+      "signed_volume_m3": 0.06410183123096815
+    },
+    "T04": {
+      "triangles": 1026,
+      "added_triangles": 95,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "new_face_self_crossings_at_0_005mm_tolerance": [],
+      "signed_volume_m3": 0.06212976307118787
+    },
+    "T05": {
+      "triangles": 740,
+      "added_triangles": 99,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "new_face_self_crossings_at_0_005mm_tolerance": [],
+      "signed_volume_m3": 0.0640341714035363
+    },
+    "T06": {
+      "triangles": 812,
+      "added_triangles": 101,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "new_face_self_crossings_at_0_005mm_tolerance": [],
+      "signed_volume_m3": 0.06339731496233315
+    },
+    "T21": {
+      "triangles": 788,
+      "added_triangles": 118,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "new_face_self_crossings_at_0_005mm_tolerance": [],
+      "signed_volume_m3": 0.06081053935910785
+    },
+    "T22": {
+      "triangles": 794,
+      "added_triangles": 118,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "new_face_self_crossings_at_0_005mm_tolerance": [],
+      "signed_volume_m3": 0.061125992473688114
+    }
+  },
+  "other_objects_exact_unchanged": true,
+  "all_cap_checks": {
+    "crossings_with_other_original_surfaces": {
+      "T04": [],
+      "J01": [],
+      "T06": [],
+      "T05": [],
+      "T03": [],
+      "T21": [],
+      "T22": []
+    }
+  },
+  "opening": {
+    "J01_upper_rim_z_range_m": [
+      1.1759033,
+      1.4098911
+    ],
+    "L01_exact_unchanged": true,
+    "B01_exact_unchanged": true
+  },
+  "native_changed_existing_datablocks": [
+    "MEV15_Clean_J01",
+    "MEV15_Clean_T03",
+    "MEV15_Clean_T04",
+    "MEV15_Clean_T05",
+    "MEV15_Clean_T06",
+    "MEV15_Clean_T21",
+    "MEV15_Clean_T22"
+  ],
+  "native_pointer_ownership_checked": true,
+  "all_passed": true
+}

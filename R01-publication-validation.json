@@ -1,0 +1,44 @@
+{
+  "revision": "J01-CLOSURE-R01",
+  "base_commit": "894874e81657178910a523b292144a1423297d66",
+  "exact_changed_files_verified": 38,
+  "unchanged_objects": 57,
+  "objects_total": 64,
+  "geometry": {
+    "J01": {
+      "boundary_edges": 103,
+      "nonmanifold_edges": 0
+    },
+    "T03": {
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    },
+    "T04": {
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    },
+    "T05": {
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    },
+    "T06": {
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    },
+    "T21": {
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    },
+    "T22": {
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    }
+  },
+  "baseline_blend_preserved": true,
+  "javascript_syntax_passed": true,
+  "native_blender_reopen_tested": false,
+  "integrated_webgl_tested": false,
+  "standalone_review_test": "Previously tested; see browser-review-validation.json",
+  "source_delivery_zip_sha256": "302cf18569379f2968f4d238f74d5d71eea0c93e137f4e9811e72d14fcad2deb",
+  "note": "Working files, not a byte-identical upload of the original ZIP. Four PNG review screenshots remain in the delivered ZIP."
+}

@@ -1,0 +1,37 @@
+{
+  "objects": 64,
+  "coordinates": "Blender world, meters, Z up",
+  "position_count": 14291,
+  "uv_count": 83385,
+  "normals_count": 83385,
+  "parts": {
+    "J01": {
+      "watertight": false,
+      "winding_consistent": true
+    },
+    "T03": {
+      "watertight": true,
+      "winding_consistent": true
+    },
+    "T04": {
+      "watertight": true,
+      "winding_consistent": true
+    },
+    "T05": {
+      "watertight": true,
+      "winding_consistent": true
+    },
+    "T06": {
+      "watertight": true,
+      "winding_consistent": true
+    },
+    "T21": {
+      "watertight": true,
+      "winding_consistent": true
+    },
+    "T22": {
+      "watertight": true,
+      "winding_consistent": true
+    }
+  }
+}

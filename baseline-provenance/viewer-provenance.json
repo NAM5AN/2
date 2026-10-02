@@ -1,0 +1,17 @@
+{
+  "version": 24,
+  "native_version": 23,
+  "native_filename": "morbol-v23-softened-lips-uv.blend",
+  "native_sha256": "e515e4d59e3c4a0c3dfe1d84dedabf927fa9d515b04508c6e86bc5aa61933d2b",
+  "source_ui_version": 23,
+  "single_screen_ui_retained": true,
+  "geometry_changes": [],
+  "unchanged_geometry_parts": 64,
+  "model_data_unchanged": true,
+  "textures_unchanged": true,
+  "uv_assets_unchanged": true,
+  "right_panel_unchanged": true,
+  "individual_model_part_visibility": true,
+  "native_provenance": "native-provenance.json",
+  "sparse_outputs": true
+}
