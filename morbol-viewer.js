@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  const GROUPS = ['lips', 'body', 'long', 'medium', 'small', 'head', 'bottom'];
+  const GROUPS = ['lips', 'body', 'long', 'medium', 'small', 'head'];
   const VIEWS = {front:[2.3,-6,2],rear:[-1.8,6,1.8],bottom:[1.2,-2,-4],left:[-6,0,.3],right:[6,0,.3],top:[0,-.001,6]};
   const add=(a,b)=>a.map((x,i)=>x+b[i]), sub=(a,b)=>a.map((x,i)=>x-b[i]);
   const mul=(a,s)=>a.map(x=>x*s), dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0);
@@ -31,8 +31,9 @@
   const FS=`precision mediump float;varying vec3 vNormal;varying vec2 vUV;varying vec3 vColor;uniform sampler2D uTexture;uniform bool uActual;uniform bool uLine;uniform bool uPerson;uniform float uAlpha;void main(){if(uLine){gl_FragColor=vec4(.12,.20,.23,.46);return;}vec3 n=normalize(vNormal);if(!gl_FrontFacing)n=-n;vec3 base=uActual?texture2D(uTexture,vUV).rgb:vColor;vec3 linear=pow(max(base,vec3(.001)),vec3(2.2));float light=.51+.37*max(dot(n,normalize(vec3(-.6,-.9,1.5))),0.)+.16*max(dot(n,normalize(vec3(1.,.4,.6))),0.);if(uPerson)light=.95;vec3 lit=linear*light;if(uActual)lit=lit*1.3+vec3(.017);gl_FragColor=vec4(pow(lit,vec3(1./2.2)),uAlpha);}`;
 
   class MorbolViewer {
+    static groupFor(part){return part.id==='B01'?'body':part.id==='L01'?'long':part.group;}
     constructor(host,data,textures,options={}) {
-      this.host=host;this.data=data;this.options=options;this.visible=Object.fromEntries(GROUPS.map(g=>[g,true]));this.partVisible=Object.fromEntries(data.objects.map(o=>[o.id,true]));
+      this.host=host;this.data={...data,objects:data.objects.map(o=>({...o,group:MorbolViewer.groupFor(o)}))};this.options=options;this.visible=Object.fromEntries(GROUPS.map(g=>[g,true]));this.partVisible=Object.fromEntries(data.objects.map(o=>[o.id,true]));
       this.palette='uv';this.labels=true;this.wire=false;this.person=false;this.view='front';this.direction=norm(VIEWS.front);this.target=[0,0,1];this.halfHeight=1.3;this.disposed=false;this.moving=false;this._ready=false;
       host.style.position='relative';host.style.overflow='hidden';host.style.background='#fff';host.dataset.ready='loading';
       this.canvas=document.createElement('canvas');this.canvas.className='morbol-webgl';this.canvas.setAttribute('aria-label','몰볼 3D 모델. 왼쪽 드래그로 회전, 휠로 확대, 오른쪽 드래그로 이동합니다.');this.canvas.tabIndex=0;this.canvas.setAttribute('role','img');
@@ -129,3 +130,4 @@
   }
   window.MorbolViewer=MorbolViewer;
 })();
+

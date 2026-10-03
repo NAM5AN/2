@@ -6,11 +6,11 @@
   const groups = [
     ['lips', '입술·잇몸'], ['body', '몸통'], ['long', '큰 촉수'],
     ['medium', '중간 턱 촉수'], ['small', '짧은 턱 촉수'],
-    ['head', '머리 위 가시'], ['bottom', '하단 마감']
+    ['head', '머리 위 가시']
   ];
-  const parts = window.MORBOL_MODEL?.objects || [];
+  const parts = (window.MORBOL_MODEL?.objects || []).map(p=>({...p,group:window.MorbolViewer.groupFor(p)}));
   const groupParts = Object.fromEntries(groups.map(([id]) => [id, parts.filter(p => p.group === id)]));
-  const shortNames = {BODY:'몸통', JAW:'아래턱', M01:'윗입술', M02:'아랫입술'};
+  const shortNames = {BODY:'몸통', JAW:'아래턱', M01:'윗입술', M02:'아랫입술', B01:'하단 마감', L01:'상단 마감'};
   const details = query('.model-part-filter'), groupSelect = query('#detail-group');
   const grid = query('.part-item-grid'), empty = query('.part-empty');
   let renderer, detailGroup = 'lips', renderedGroup = null;
@@ -35,7 +35,7 @@
       grid.replaceChildren();
       const label = groups.find(([id]) => id === detailGroup)?.[1];
       grid.setAttribute('aria-label', label ? `${label} 세부 파츠 켜기와 끄기` : '세부 파츠');
-      grid.classList.toggle('wide-items', ['lips', 'body'].includes(detailGroup));
+      grid.classList.toggle('wide-items', ['lips', 'body', 'long'].includes(detailGroup));
       for (const part of groupParts[detailGroup] || []) {
         const choice = document.createElement('label'); choice.className = 'part-choice';
         choice.title = `${part.id} · ${part.name}`;
@@ -138,3 +138,4 @@
     window.morbolViewer=renderer;renderer.ready.then(()=>sync(renderer.getState())).catch(failed);
   }catch(error){failed(error);}
 })();
+
