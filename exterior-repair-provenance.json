@@ -1,0 +1,354 @@
+{
+  "version": 28,
+  "variants": {
+    "complete": {
+      "name": "버전 1 · 마감 포함",
+      "page": "model-complete.html",
+      "native": "morbol-v1-closed-exterior.blend",
+      "native_sha256": "d9e7c8886da802fe537c56f57e345b8fe5f33de906445988e5ec82d94980cb66",
+      "selectable_parts": 64,
+      "base_native_sha256": "57ffe3241ac2e263939e2f97ede93e98548ba1543bec9c24972e8bf2b336d08f",
+      "exterior_repair": true
+    },
+    "shell": {
+      "name": "버전 2 · 외피만",
+      "page": "model-shell.html",
+      "native": "morbol-v2-closed-exterior-shell.blend",
+      "native_sha256": "58c1cc52fee06aeee777e7a566038e3f92643ace95c9ae4cebab9fd44efe97c5",
+      "selectable_parts": 62,
+      "base_native_sha256": "740f72253ebc795fa66d2141b3c749e61a60390c61da9ef6e7f10d84d46e9fd3",
+      "exterior_repair": true
+    }
+  },
+  "added_meshes": {
+    "complete": [
+      {
+        "id": "BODY_Z01_bridge",
+        "selection_id": "BODY",
+        "group": "body",
+        "atlas": "exterior-zip"
+      },
+      {
+        "id": "T05_E02",
+        "selection_id": "T05",
+        "group": "long",
+        "atlas": "exterior-cuff"
+      },
+      {
+        "id": "T06_E02",
+        "selection_id": "T06",
+        "group": "long",
+        "atlas": "exterior-cuff"
+      }
+    ],
+    "shell": [
+      {
+        "id": "J01_E01",
+        "selection_id": "J01",
+        "group": "long",
+        "atlas": "long-joined"
+      },
+      {
+        "id": "T03_E01",
+        "selection_id": "T03",
+        "group": "long",
+        "atlas": "long"
+      },
+      {
+        "id": "T04_E01",
+        "selection_id": "T04",
+        "group": "long",
+        "atlas": "long"
+      },
+      {
+        "id": "T06_E01",
+        "selection_id": "T06",
+        "group": "long",
+        "atlas": "long"
+      },
+      {
+        "id": "T07_E01",
+        "selection_id": "T07",
+        "group": "medium",
+        "atlas": "medium"
+      },
+      {
+        "id": "T08_E01",
+        "selection_id": "T08",
+        "group": "medium",
+        "atlas": "medium"
+      },
+      {
+        "id": "T09_E01",
+        "selection_id": "T09",
+        "group": "medium",
+        "atlas": "medium"
+      },
+      {
+        "id": "T11_E01",
+        "selection_id": "T11",
+        "group": "medium",
+        "atlas": "medium"
+      },
+      {
+        "id": "T12_E01",
+        "selection_id": "T12",
+        "group": "medium",
+        "atlas": "medium"
+      },
+      {
+        "id": "T13_E01",
+        "selection_id": "T13",
+        "group": "small",
+        "atlas": "small"
+      },
+      {
+        "id": "T14_E01",
+        "selection_id": "T14",
+        "group": "small",
+        "atlas": "small"
+      },
+      {
+        "id": "T15_E01",
+        "selection_id": "T15",
+        "group": "small",
+        "atlas": "small"
+      },
+      {
+        "id": "T17_E01",
+        "selection_id": "T17",
+        "group": "small",
+        "atlas": "small"
+      },
+      {
+        "id": "T18_E01",
+        "selection_id": "T18",
+        "group": "small",
+        "atlas": "small"
+      },
+      {
+        "id": "T19_E01",
+        "selection_id": "T19",
+        "group": "small",
+        "atlas": "small"
+      },
+      {
+        "id": "T21_E01",
+        "selection_id": "T21",
+        "group": "long",
+        "atlas": "long"
+      },
+      {
+        "id": "T22_E01",
+        "selection_id": "T22",
+        "group": "long",
+        "atlas": "long"
+      },
+      {
+        "id": "H02_E01",
+        "selection_id": "H02",
+        "group": "head",
+        "atlas": "head-01"
+      },
+      {
+        "id": "H03_E01",
+        "selection_id": "H03",
+        "group": "head",
+        "atlas": "head-01"
+      },
+      {
+        "id": "H04_E01",
+        "selection_id": "H04",
+        "group": "head",
+        "atlas": "head-01"
+      },
+      {
+        "id": "H05_E01",
+        "selection_id": "H05",
+        "group": "head",
+        "atlas": "head-01"
+      },
+      {
+        "id": "H08_E01",
+        "selection_id": "H08",
+        "group": "head",
+        "atlas": "head-01"
+      },
+      {
+        "id": "H09_E01",
+        "selection_id": "H09",
+        "group": "head",
+        "atlas": "head-02"
+      },
+      {
+        "id": "H10_E01",
+        "selection_id": "H10",
+        "group": "head",
+        "atlas": "head-02"
+      },
+      {
+        "id": "H13_E01",
+        "selection_id": "H13",
+        "group": "head",
+        "atlas": "head-02"
+      },
+      {
+        "id": "H14_E01",
+        "selection_id": "H14",
+        "group": "head",
+        "atlas": "head-02"
+      },
+      {
+        "id": "H15_E01",
+        "selection_id": "H15",
+        "group": "head",
+        "atlas": "head-02"
+      },
+      {
+        "id": "H16_E01",
+        "selection_id": "H16",
+        "group": "head",
+        "atlas": "head-02"
+      },
+      {
+        "id": "H17_E01",
+        "selection_id": "H17",
+        "group": "head",
+        "atlas": "head-03"
+      },
+      {
+        "id": "H18_E01",
+        "selection_id": "H18",
+        "group": "head",
+        "atlas": "head-03"
+      },
+      {
+        "id": "H20_E01",
+        "selection_id": "H20",
+        "group": "head",
+        "atlas": "head-03"
+      },
+      {
+        "id": "H21_E01",
+        "selection_id": "H21",
+        "group": "head",
+        "atlas": "head-03"
+      },
+      {
+        "id": "H23_E01",
+        "selection_id": "H23",
+        "group": "head",
+        "atlas": "head-03"
+      },
+      {
+        "id": "H24_E01",
+        "selection_id": "H24",
+        "group": "head",
+        "atlas": "head-03"
+      },
+      {
+        "id": "H26_E01",
+        "selection_id": "H26",
+        "group": "head",
+        "atlas": "head-04"
+      },
+      {
+        "id": "H27_E01",
+        "selection_id": "H27",
+        "group": "head",
+        "atlas": "head-04"
+      },
+      {
+        "id": "H28_E01",
+        "selection_id": "H28",
+        "group": "head",
+        "atlas": "head-04"
+      },
+      {
+        "id": "H30_E01",
+        "selection_id": "H30",
+        "group": "head",
+        "atlas": "head-04"
+      },
+      {
+        "id": "H31_E01",
+        "selection_id": "H31",
+        "group": "head",
+        "atlas": "head-05"
+      },
+      {
+        "id": "H33_E01",
+        "selection_id": "H33",
+        "group": "head",
+        "atlas": "head-05"
+      },
+      {
+        "id": "H34_E01",
+        "selection_id": "H34",
+        "group": "head",
+        "atlas": "head-05"
+      },
+      {
+        "id": "H35_E01",
+        "selection_id": "H35",
+        "group": "head",
+        "atlas": "head-05"
+      },
+      {
+        "id": "H36_E01",
+        "selection_id": "H36",
+        "group": "head",
+        "atlas": "head-05"
+      },
+      {
+        "id": "H37_E01",
+        "selection_id": "H37",
+        "group": "head",
+        "atlas": "head-05"
+      },
+      {
+        "id": "BODY_E01",
+        "selection_id": "BODY",
+        "group": "body",
+        "atlas": "lower-connection"
+      },
+      {
+        "id": "BODY_E02",
+        "selection_id": "BODY",
+        "group": "body",
+        "atlas": "lower-connection"
+      },
+      {
+        "id": "M01_E01",
+        "selection_id": "M01",
+        "group": "lips",
+        "atlas": "lips"
+      },
+      {
+        "id": "M02_E01",
+        "selection_id": "M02",
+        "group": "lips",
+        "atlas": "lips"
+      },
+      {
+        "id": "BODY_Z01_bridge",
+        "selection_id": "BODY",
+        "group": "body",
+        "atlas": "exterior-zip"
+      },
+      {
+        "id": "T05_E02",
+        "selection_id": "T05",
+        "group": "long",
+        "atlas": "exterior-cuff"
+      },
+      {
+        "id": "T06_E02",
+        "selection_id": "T06",
+        "group": "long",
+        "atlas": "exterior-cuff"
+      }
+    ]
+  },
+  "original_models_preserved": true
+}

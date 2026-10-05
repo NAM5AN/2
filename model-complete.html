@@ -39,8 +39,8 @@ button:disabled,select:disabled{opacity:.45;cursor:wait}.model-host [role="statu
 @media(min-width:1500px){.model-host{height:620px}}
 @media(max-width:950px){.comparison{grid-template-columns:minmax(300px,1fr) minmax(0,1.1fr)}.visibility-controls{padding-left:13px;padding-right:13px}.model-host{height:480px}.model-version{display:none}}
 @media(max-width:740px){.comparison{grid-template-columns:1fr}.model-host{height:420px}.visibility-groups button{font-size:11px;padding:8px}.model-part-filter{margin-top:8px}.model-navigation{padding-left:13px;padding-right:13px}.model-caption{padding:10px 13px}.model-appearance{padding-left:13px;padding-right:13px}}
-</style></head><body><main>
-<header><div><p class="eyebrow">MORBOL · MODEL / UV · VIEWER 26 · 촉수 상단 마감 개선</p><h1>원하는 파츠를 켜고, UV와 대조하기</h1><p>왼쪽에서 보일 파츠를 고르세요. 오른쪽 UV는 따로 선택할 수 있습니다.</p></div><a class="native-link" href="morbol-v24-simplified-lower-closure.blend" download>Blender 모델 받기 ↗</a></header>
+</style><link rel="stylesheet" href="repair-uv-panel.css?rev=repair28-20261006"></head><body><main>
+<header><div><p class="eyebrow">MORBOL · VERSION 1 · VIEWER 28 · 외피 틈 연결</p><h1>원하는 파츠를 켜고, UV와 대조하기</h1><p>왼쪽에서 보일 파츠를 고르세요. 오른쪽 UV는 따로 선택할 수 있습니다.</p></div><a class="native-link" href="morbol-v1-closed-exterior.blend" download>Blender 모델 받기 ↗</a></header>
 <div class="comparison" id="comparison"><section class="card model-card" aria-labelledby="model-title">
  <div class="card-head"><h2 id="model-title">모델 파츠 표시</h2><span class="model-version">같은 모델 · 자유롭게 보기</span></div>
  <div class="visibility-controls" aria-label="왼쪽 모델 표시 파츠">
@@ -62,7 +62,7 @@ button:disabled,select:disabled{opacity:.45;cursor:wait}.model-host [role="statu
  <div id="model-host" class="model-host" role="img" aria-label="몰볼 3D 모델. 왼쪽 드래그로 회전하고 휠로 확대하며 오른쪽 드래그로 이동할 수 있습니다."></div>
  <div class="model-caption"><p class="model-state-status" role="status" aria-live="polite">모델을 불러오고 있습니다.</p><p class="model-help">왼쪽 드래그 회전 · 휠 확대 · 오른쪽 드래그 이동 · 보이는 파츠 맞춤</p><p class="model-help">가려지거나 겹치는 번호는 일부 생략됩니다. 파츠만 표시하면 더 쉽게 볼 수 있습니다.</p><p class="appearance-hint" hidden>기존 모델의 색·무늬를 표시합니다. 조명 표현은 Blender와 다를 수 있습니다.</p><p class="person-hint" hidden>파란 인체는 키 164cm의 임시 참고 체형입니다. 사용자 실측 모델은 아닙니다.</p><button type="button" class="model-download" data-model-action="save" disabled>현재 모델 화면 PNG 저장</button></div>
 </section>
-</div><footer class="footer"><b>색과 번호는 구역을 찾기 위한 표시입니다. L01 촉수 상단의 연결선을 정리하고 네 조각으로 펼친 v24 모델입니다. B01과 중앙 입구 Z01은 유지했습니다.</b> 몸통 분류에 B01 하단 마감, 큰 촉수 분류에 L01 상단 마감이 포함됩니다. 입술·잇몸 M01–M02와 나머지 촉수·가시도 번호별로 대조합니다. 치아는 표시하지 않습니다.<br>현재 UV는 무늬 작업용입니다. 시접·원단 두께·늘어남을 반영한 실물 재단도안은 아닙니다. 좌우는 착용자 기준입니다.<a href="사용설명.md">사용설명</a><a href="촉수-번호표.csv" download>촉수 번호표</a><a href="머리-가시-번호표.csv" download>머리 가시 번호표</a><a href="S-연결표.csv" download>몸통 연결표</a><a href="입술-잇몸-제작설명.md">입술·잇몸 설명</a><a href="입술-잇몸-완성모습.png">입술·잇몸 실제색 보기</a><a href="입술-잇몸-번호표.csv" download>입술·잇몸 번호표</a><a href="하단-연결-설명.md">하단 연결 설명</a><a href="하단-마감-번호표.csv" download>하단 마감 번호표</a><a href="재봉경계-대조표.md">촉수 재봉 경계표</a><a href="하단-연결-마감.png?rev=l01-20261005">하단 연결 구조 보기</a><a href="턱-경계-개선-전후.png">턱 경계 수정 전후 보기</a><a href="입술-요철-개선-전후.png">입술 요철 수정 전후</a></footer></main><template id="body-svg-template"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4096 4096" width="4096" height="4096"><rect width="4096" height="4096" fill="white"/>
+</div><footer class="footer"><b>색과 번호는 구역을 찾기 위한 표시입니다. L01 촉수 상단의 네 조각 구조를 유지하고, 몸통과 큰 촉수 사이 외피 틈을 연결한 수정 모델입니다. B01과 중앙 입구 Z01은 유지했습니다.</b> 몸통 분류에 B01 하단 마감, 큰 촉수 분류에 L01 상단 마감이 포함됩니다. 입술·잇몸 M01–M02와 나머지 촉수·가시도 번호별로 대조합니다. 치아는 표시하지 않습니다.<br>현재 UV는 무늬 작업용입니다. 시접·원단 두께·늘어남을 반영한 실물 재단도안은 아닙니다. 좌우는 착용자 기준입니다.<a href="사용설명.md">사용설명</a><a href="촉수-번호표.csv" download>촉수 번호표</a><a href="머리-가시-번호표.csv" download>머리 가시 번호표</a><a href="S-연결표.csv" download>몸통 연결표</a><a href="입술-잇몸-제작설명.md">입술·잇몸 설명</a><a href="입술-잇몸-완성모습.png">입술·잇몸 실제색 보기</a><a href="입술-잇몸-번호표.csv" download>입술·잇몸 번호표</a><a href="하단-연결-설명.md">하단 연결 설명</a><a href="하단-마감-번호표.csv" download>하단 마감 번호표</a><a href="재봉경계-대조표.md">촉수 재봉 경계표</a><a href="하단-연결-마감.png?rev=l01-20261005">하단 연결 구조 보기</a><a href="턱-경계-개선-전후.png">턱 경계 수정 전후 보기</a><a href="입술-요철-개선-전후.png">입술 요철 수정 전후</a></footer></main><template id="body-svg-template"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4096 4096" width="4096" height="4096"><rect width="4096" height="4096" fill="white"/>
 <polygon class="uv-face" data-part="U01" points="3115.813,2244.368 3098.842,2094.563 3009.343,2194.080 2995.406,2320.049" fill="#E85D3F" stroke="#6b7775" stroke-width="2"/>
 <polygon class="uv-face" data-part="U01" points="2995.406,2320.049 3009.343,2194.080 2955.782,2290.300 2934.225,2398.086" fill="#E85D3F" stroke="#6b7775" stroke-width="2"/>
 <polygon class="uv-face" data-part="U01" points="2934.225,2398.086 2955.782,2290.300 2917.826,2382.908 2903.028,2482.414" fill="#E85D3F" stroke="#6b7775" stroke-width="2"/>
@@ -776,7 +776,12 @@ button:disabled,select:disabled{opacity:.45;cursor:wait}.model-host [role="statu
 <script src="lips-live-ui.js"></script>
 <script src="morbol-model.js?rev=l01-20261005"></script>
 <script src="morbol-textures.js?rev=l01-20261005"></script>
+<script src="repair-web-data.js?rev=repair28-20261006"></script>
+<script src="repair-model.js?rev=repair28-20261006"></script>
 <script src="morbol-viewer.js?rev=l01-20261005"></script>
-<script src="viewer-ui.js?rev=l01-20261005"></script>
+<script src="repair-renderer.js?rev=repair28-20261006"></script>
+<script src="repair-viewer-ui.js?rev=repair28-20261006"></script>
+<script src="repair-uv-data.js?rev=repair28-20261006"></script>
+<script src="repair-uv-panel.js?rev=repair28-20261006"></script>
 </body></html>
 

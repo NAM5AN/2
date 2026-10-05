@@ -26,23 +26,23 @@ noscript{padding:20px}noscript a{margin:10px;color:#3d5843}
    <button id="tab-complete" role="tab" aria-controls="panel-complete" aria-selected="true" tabindex="0" data-version="complete">버전 1 · 마감 포함</button>
    <button id="tab-shell" role="tab" aria-controls="panel-shell" aria-selected="false" tabindex="-1" data-version="shell">버전 2 · 외피만</button>
   </div>
-  <span class="version-note" id="version-note" aria-live="polite">기존 모델과 UV · 내부 마감면 포함</span>
+  <span class="version-note" id="version-note" aria-live="polite">외피 틈 연결 · 내부 마감면 포함</span>
  </div>
 </div>
 <div class="version-stage">
 <section class="version-panel" id="panel-complete" role="tabpanel" aria-labelledby="tab-complete">
  <div class="version-loading" role="status" hidden>기존 모델과 UV를 불러오는 중입니다.</div>
- <iframe title="버전 1 · 마감 포함 모델과 UV 대조" data-src="model-complete.html?rev=shell-20261006" allow="fullscreen"></iframe>
+ <iframe title="버전 1 · 마감 포함 모델과 UV 대조" data-src="model-complete.html?rev=repair28-20261006" allow="fullscreen"></iframe>
 </section>
 <section class="version-panel" id="panel-shell" role="tabpanel" aria-labelledby="tab-shell" hidden>
  <div class="version-loading" role="status" hidden>외피 모델과 UV를 불러오는 중입니다.</div>
- <iframe title="버전 2 · 외피만 있는 모델과 UV 대조" data-src="model-shell.html?rev=shell-20261006" allow="fullscreen"></iframe>
+ <iframe title="버전 2 · 외피만 있는 모델과 UV 대조" data-src="model-shell.html?rev=repair28-20261006" allow="fullscreen"></iframe>
 </section>
 </div>
 <noscript>자바스크립트를 켜거나 직접 열어 주세요. <a href="model-complete.html">버전 1</a><a href="model-shell.html">버전 2</a></noscript>
 <script>
 (()=>{'use strict';
- const tabs=[...document.querySelectorAll('[role=tab]')], notes={complete:'기존 모델과 UV · 내부 마감면 포함',shell:'겉면만 남긴 별도 모델과 UV · 버전별 표시 설정 유지'};
+ const tabs=[...document.querySelectorAll('[role=tab]')], notes={complete:'외피 틈 연결 · 내부 마감면 포함',shell:'외피 틈 연결 · 내부 마감판 없는 버전'};
  function show(version,updateURL=true){
   if(!Object.hasOwn(notes,version))version='complete';
   for(const tab of tabs){const active=tab.dataset.version===version;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;

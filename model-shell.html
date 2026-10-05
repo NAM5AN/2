@@ -39,10 +39,10 @@ button:disabled,select:disabled{opacity:.45;cursor:wait}.model-host [role="statu
 @media(min-width:1500px){.model-host{height:620px}}
 @media(max-width:950px){.comparison{grid-template-columns:minmax(300px,1fr) minmax(0,1.1fr)}.visibility-controls{padding-left:13px;padding-right:13px}.model-host{height:480px}.model-version{display:none}}
 @media(max-width:740px){.comparison{grid-template-columns:1fr}.model-host{height:420px}.visibility-groups button{font-size:11px;padding:8px}.model-part-filter{margin-top:8px}.model-navigation{padding-left:13px;padding-right:13px}.model-caption{padding:10px 13px}.model-appearance{padding-left:13px;padding-right:13px}}
-</style><link rel="stylesheet" href="shell-uv-panel.css?rev=shell-20261006"></head><body><main>
-<header><div><p class="eyebrow">MORBOL · VERSION 2 · 외피만 보기</p><h1>외피만 남긴 모델과 UV 대조하기</h1><p>내부 마감면을 뺀 별도 버전입니다. 왼쪽 모델과 오른쪽 UV는 각각 선택할 수 있습니다.</p></div><a class="native-link" href="morbol-v2-exterior-shell.blend" download>외피 Blender 모델 받기 ↗</a></header>
+</style><link rel="stylesheet" href="shell-uv-panel.css?rev=shell-20261006"><link rel="stylesheet" href="repair-uv-panel.css?rev=repair28-20261006"></head><body><main>
+<header><div><p class="eyebrow">MORBOL · VERSION 2 · 외피만 보기</p><h1>외피만 남긴 모델과 UV 대조하기</h1><p>내부 마감면을 뺀 별도 버전입니다. 왼쪽 모델과 오른쪽 UV는 각각 선택할 수 있습니다.</p></div><a class="native-link" href="morbol-v2-closed-exterior-shell.blend" download>외피 Blender 모델 받기 ↗</a></header>
 <div class="comparison" id="comparison"><section class="card model-card" aria-labelledby="model-title">
- <div class="card-head"><h2 id="model-title">모델 파츠 표시</h2><span class="model-version">버전 2 · 열린 외피</span></div>
+ <div class="card-head"><h2 id="model-title">모델 파츠 표시</h2><span class="model-version">버전 2 · 외피 연결</span></div>
  <div class="visibility-controls" aria-label="왼쪽 모델 표시 파츠">
   <div class="visibility-groups" role="group" aria-label="파츠 그룹 켜기와 끄기"></div>
   <div class="visibility-actions"><button type="button" data-model-action="all-on" disabled>전체 켜기</button><button type="button" data-model-action="all-off" disabled>전체 끄기</button><button type="button" data-model-action="lips-only" disabled>입술만</button><label for="only-group">이것만</label><select id="only-group" disabled><option value="">그룹 선택</option></select></div>
@@ -62,7 +62,7 @@ button:disabled,select:disabled{opacity:.45;cursor:wait}.model-host [role="statu
  <div id="model-host" class="model-host" role="img" aria-label="몰볼 3D 모델. 왼쪽 드래그로 회전하고 휠로 확대하며 오른쪽 드래그로 이동할 수 있습니다."></div>
  <div class="model-caption"><p class="model-state-status" role="status" aria-live="polite">모델을 불러오고 있습니다.</p><p class="model-help">왼쪽 드래그 회전 · 휠 확대 · 오른쪽 드래그 이동 · 보이는 파츠 맞춤</p><p class="model-help">가려지거나 겹치는 번호는 일부 생략됩니다. 파츠만 표시하면 더 쉽게 볼 수 있습니다.</p><p class="appearance-hint" hidden>기존 모델의 색·무늬를 표시합니다. 조명 표현은 Blender와 다를 수 있습니다.</p><p class="person-hint" hidden>파란 인체는 키 164cm의 임시 참고 체형입니다. 사용자 실측 모델은 아닙니다.</p><button type="button" class="model-download" data-model-action="save" disabled>현재 모델 화면 PNG 저장</button></div>
 </section>
-</div><footer class="footer"><b>버전 2는 내부 마감·접촉면을 뺀 열린 외피입니다.</b> 몸통과 아래턱, 촉수·가시의 겉면 및 입술·잇몸의 외형을 남겼습니다. 내부 마감이 있는 기존 모델과 UV는 상단의 버전 1에서 계속 볼 수 있습니다.<br>번호와 색은 원래 모델에 대응합니다. 열린 가장자리는 이 버전에서 마감면을 제외한 자리입니다. 현재 UV에는 실물 치수·시접·원단 늘어남이 반영되지 않았습니다.</footer></main><template id="body-svg-template"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4096 4096" width="4096" height="4096"><rect width="4096" height="4096" fill="white"/>
+</div><footer class="footer"><b>버전 2 · 외피만</b> 입을 남기고 외피 사이의 틈을 연결했습니다. 내부 마감판은 포함하지 않습니다. 연결 외피는 해당 파츠와 함께 표시되며 오른쪽 UV에서도 확인할 수 있습니다.<br>현재 UV에는 실물 치수·시접·원단 늘어남이 반영되지 않았습니다.</footer></main><template id="body-svg-template"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4096 4096" width="4096" height="4096"><rect width="4096" height="4096" fill="white"/>
 <polygon class="uv-face" data-part="U01" points="3115.813,2244.368 3098.842,2094.563 3009.343,2194.080 2995.406,2320.049" fill="#E85D3F" stroke="#6b7775" stroke-width="2"/>
 <polygon class="uv-face" data-part="U01" points="2995.406,2320.049 3009.343,2194.080 2955.782,2290.300 2934.225,2398.086" fill="#E85D3F" stroke="#6b7775" stroke-width="2"/>
 <polygon class="uv-face" data-part="U01" points="2934.225,2398.086 2955.782,2290.300 2917.826,2382.908 2903.028,2482.414" fill="#E85D3F" stroke="#6b7775" stroke-width="2"/>
@@ -776,9 +776,13 @@ button:disabled,select:disabled{opacity:.45;cursor:wait}.model-host [role="statu
 <script src="morbol-textures.js?rev=l01-20261005"></script>
 <script src="shell-face-mask.js?rev=shell-20261006"></script>
 <script src="shell-model.js?rev=shell-20261006"></script>
+<script src="repair-web-data.js?rev=repair28-20261006"></script>
+<script src="repair-model.js?rev=repair28-20261006"></script>
 <script src="morbol-viewer.js?rev=l01-20261005"></script>
-<script src="shell-renderer.js?rev=shell-20261006"></script>
-<script src="shell-viewer-ui.js?rev=shell-20261006"></script>
+<script src="repair-renderer.js?rev=repair28-20261006"></script>
+<script src="repair-viewer-ui.js?rev=repair28-20261006"></script>
 <script src="shell-uv-data.js?rev=shell-20261006"></script>
 <script src="shell-uv-panel.js?rev=shell-20261006"></script>
+<script src="repair-uv-data.js?rev=repair28-20261006"></script>
+<script src="repair-uv-panel.js?rev=repair28-20261006"></script>
 </body></html>
