@@ -1,5 +1,5 @@
 {
-  "version": 26,
+  "version": 27,
   "native_version": 24,
   "native_filename": "morbol-v24-simplified-lower-closure.blend",
   "native_sha256": "57ffe3241ac2e263939e2f97ede93e98548ba1543bec9c24972e8bf2b336d08f",
@@ -25,5 +25,24 @@
   ],
   "body_lip_live_svg_preserved": true,
   "individual_model_part_visibility": true,
-  "native_provenance": "native-provenance.json"
+  "native_provenance": "native-provenance.json",
+  "default_variant": "complete",
+  "version_tabs": true,
+  "variants": {
+    "complete": {
+      "name": "버전 1 · 마감 포함",
+      "page": "model-complete.html",
+      "native": "morbol-v24-simplified-lower-closure.blend",
+      "native_sha256": "57ffe3241ac2e263939e2f97ede93e98548ba1543bec9c24972e8bf2b336d08f",
+      "selectable_parts": 64
+    },
+    "shell": {
+      "name": "버전 2 · 외피만",
+      "page": "model-shell.html",
+      "native": "morbol-v2-exterior-shell.blend",
+      "native_sha256": "740f72253ebc795fa66d2141b3c749e61a60390c61da9ef6e7f10d84d46e9fd3",
+      "selectable_parts": 62,
+      "meshes": 66
+    }
+  }
 }

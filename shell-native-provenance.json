@@ -1,0 +1,30 @@
+{
+  "variant": "exterior-shell",
+  "native": "morbol-v2-exterior-shell.blend",
+  "source_native": "morbol-v24-simplified-lower-closure.blend",
+  "source_sha256": "57ffe3241ac2e263939e2f97ede93e98548ba1543bec9c24972e8bf2b336d08f",
+  "native_sha256": "740f72253ebc795fa66d2141b3c749e61a60390c61da9ef6e7f10d84d46e9fd3",
+  "summary": {
+    "source_parts": 64,
+    "shell_meshes": 66,
+    "selection_parts": 62,
+    "retained_faces": 14704,
+    "removed_faces": 11299,
+    "retained_triangles": 15855,
+    "restored_L01_external_faces": 54,
+    "person_meshes": 9
+  },
+  "retained_coordinates_uv_materials_unchanged": true,
+  "viewer_retained_split_normals_exact": true,
+  "selection_patches": {
+    "J01": 48,
+    "T03": 1,
+    "T04": 4,
+    "T06": 1
+  },
+  "notes": [
+    "Open rims intentionally replace inner closure faces.",
+    "Body/jaw and visible tentacle tips are retained.",
+    "No seam allowance or fabric compensation is included."
+  ]
+}
