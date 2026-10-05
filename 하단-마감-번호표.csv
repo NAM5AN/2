@@ -1,5 +1,8 @@
 ﻿번호,이름,Blender 오브젝트,UV 레이어,연결 상대
 B01-R,고정 몸통 바닥,B01_BodyBottom_Transition,BottomConnectionUV,BODY / B01-F / Z01
 B01-F,턱 아래 유연 연결천,B01_BodyBottom_Transition,BottomConnectionUV,JAW / B01-R / Z01
-L01-A,큰 촉수 상단 마감,L01_LowerEntry_Closure,BottomConnectionUV,S13–S21 / Z01
+L01-A,앞쪽 마감,L01_LowerEntry_Closure,BottomConnectionUV,같은 L01-U 번호 / S13–S21 / Z01
+L01-B,왼쪽 마감,L01_LowerEntry_Closure,BottomConnectionUV,같은 L01-U 번호 / S13–S21 / Z01
+L01-C,뒤쪽 마감,L01_LowerEntry_Closure,BottomConnectionUV,같은 L01-U 번호 / S13–S21 / Z01
+L01-D,오른쪽 마감,L01_LowerEntry_Closure,BottomConnectionUV,같은 L01-U 번호 / S13–S21 / Z01
 Z01,중앙 탈부착 입구,B01 / L01,BottomConnectionUV,B01 ↔ L01
