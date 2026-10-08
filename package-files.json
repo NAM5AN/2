@@ -1,8 +1,32 @@
 {
-  "version": 28,
-  "native_version": 24,
-  "native_filename": "morbol-v24-simplified-lower-closure.blend",
-  "native_sha256": "57ffe3241ac2e263939e2f97ede93e98548ba1543bec9c24972e8bf2b336d08f",
+  "version": 31,
+  "native_version": 31,
+  "native_filename": "morbol-v31-complete.blend",
+  "native_sha256": "3b768629d4532c93e44897fefe54667437d787fbc023488d68d3e0380d442d82",
+  "variants": {
+    "complete": {
+      "native": "morbol-v31-complete.blend",
+      "sha256": "3b768629d4532c93e44897fefe54667437d787fbc023488d68d3e0380d442d82",
+      "overrides": [
+        "BODY",
+        "T05",
+        "T06"
+      ],
+      "selectable_parts": 64,
+      "meshes": 67
+    },
+    "shell": {
+      "native": "morbol-v31-shell.blend",
+      "sha256": "3ae8fa7533fbe738e15eeb9f166e48cc32a9df527c323b5f656e7bcbbcc7ed1d",
+      "overrides": [
+        "BODY",
+        "T05",
+        "T06"
+      ],
+      "selectable_parts": 62,
+      "meshes": 116
+    }
+  },
   "files": [
     "J01-UV.png",
     "J01-model.png",
@@ -12,8 +36,10 @@
     "T03-model.png",
     "T04-UV.png",
     "T04-model.png",
+    "T05-R-v31-100pct-SA10mm.svg",
     "T05-UV.png",
     "T05-model.png",
+    "T06-R-v31-100pct-SA10mm.svg",
     "T06-UV.png",
     "T06-model.png",
     "T21-UV.png",
@@ -663,9 +689,11 @@
     "card-T22-uv-plain.webp",
     "connected-seam-labels.json",
     "connected-uv-layout.json",
-    "exterior-repair-provenance.json",
     "head-uv-layout.json",
     "index.html",
+    "j01-role-data.js",
+    "j01-role-panel.css",
+    "j01-role-panel.js",
     "lip-uv-layout.json",
     "lip-variant-manifest.json",
     "lips-live-svg.js",
@@ -674,13 +702,13 @@
     "model-shell.html",
     "morbol-model.js",
     "morbol-textures.js",
-    "morbol-v1-closed-exterior.blend",
-    "morbol-v2-closed-exterior-shell.blend",
-    "morbol-v2-exterior-shell.blend",
-    "morbol-v23-softened-lips-uv.blend",
-    "morbol-v24-simplified-lower-closure.blend",
+    "morbol-v30-before-after.png",
+    "morbol-v31-all-100pct-SA10mm.svg",
+    "morbol-v31-before-after.png",
+    "morbol-v31-complete.blend",
+    "morbol-v31-sewing-trial.pdf",
+    "morbol-v31-shell.blend",
     "morbol-viewer.js",
-    "native-provenance.json",
     "package-files.json",
     "person-overlay-manifest.json",
     "repair-model.js",
@@ -692,18 +720,25 @@
     "repair-web-data.js",
     "reuse-native-proof.json",
     "right-panel.js",
+    "sewing-pattern-data.js",
+    "sewing-pattern-ui.js",
+    "sewing-patterns.html",
+    "sewing-root-actual.png",
     "shell-face-mask.js",
     "shell-model.js",
-    "shell-native-provenance.json",
     "shell-renderer.js",
     "shell-uv-data.js",
     "shell-uv-layout.json",
     "shell-uv-panel.css",
     "shell-uv-panel.js",
     "shell-viewer-ui.js",
+    "smooth-base-uv-data.js",
+    "smooth-long-reference-data.js",
+    "smooth-uv-after.js",
+    "smooth-uv-before.js",
+    "smooth-uv.css",
     "supplemental-layout.json",
     "tentacle-uv-layout.json",
-    "viewer-provenance.json",
     "viewer-ui.js",
     "머리-가시-번호표.csv",
     "모델-크게보기.html",
@@ -723,25 +758,5 @@
     "하단-마감-번호표.csv",
     "하단-연결-마감.png",
     "하단-연결-설명.md"
-  ],
-  "native_variants": {
-    "complete": {
-      "name": "버전 1 · 마감 포함",
-      "page": "model-complete.html",
-      "native": "morbol-v1-closed-exterior.blend",
-      "native_sha256": "d9e7c8886da802fe537c56f57e345b8fe5f33de906445988e5ec82d94980cb66",
-      "selectable_parts": 64,
-      "base_native_sha256": "57ffe3241ac2e263939e2f97ede93e98548ba1543bec9c24972e8bf2b336d08f",
-      "exterior_repair": true
-    },
-    "shell": {
-      "name": "버전 2 · 외피만",
-      "page": "model-shell.html",
-      "native": "morbol-v2-closed-exterior-shell.blend",
-      "native_sha256": "58c1cc52fee06aeee777e7a566038e3f92643ace95c9ae4cebab9fd44efe97c5",
-      "selectable_parts": 62,
-      "base_native_sha256": "740f72253ebc795fa66d2141b3c749e61a60390c61da9ef6e7f10d84d46e9fd3",
-      "exterior_repair": true
-    }
-  }
+  ]
 }

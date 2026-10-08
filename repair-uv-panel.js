@@ -4,7 +4,7 @@
   if(!DATA||!panel)return;
   const NS='http://www.w3.org/2000/svg';
   const host=document.createElement('section');host.className='repair-uv-section';host.setAttribute('aria-label','추가 외피 연결 조각 UV');
-  host.innerHTML='<div class="repair-heading"><h3>추가 외피 연결 조각</h3><span>현재 선택 파츠에 포함</span></div><p class="repair-description">겉면 사이의 빈틈을 이어 주는 외피입니다. 기존 외피와 함께 대조하세요.</p><div class="repair-uv-pieces"></div><p class="repair-uv-footnote">기존 UV와 새 연결 조각을 함께 사용합니다. 실물 치수·시접·원단 늘어남은 반영 전입니다.</p>';
+  host.innerHTML='<div class="repair-heading"><h3>연결 외피와 뿌리 패널</h3><span>현재 선택 파츠에 포함</span></div><p class="repair-description">겉면 사이의 빈틈을 이어 주는 외피입니다. 기존 외피와 함께 대조하세요.</p><div class="repair-uv-pieces"></div><p class="repair-uv-footnote">메시의 삼각형 선은 재단선이 아닙니다. ROOT 두 장은 재단 도안 화면에서 치수와 시접을 설정하세요.</p>';
   panel.append(host);
   let signature='',last=null,activeSeam=null;
   const $=s=>panel.querySelector(s);
@@ -31,25 +31,26 @@
     const b=piece.bounds,span=Math.max(b[2]-b[0],b[3]-b[1],1),pad=span*.075,x=b[0]-pad,y=b[1]-pad,w=b[2]-b[0]+pad*2,h=b[3]-b[1]+pad*2;
     const svg=svgNode('svg',{xmlns:NS,viewBox:`${x} ${y} ${w} ${h}`,role:'img','aria-label':piece.id+' '+piece.name+' UV','data-part':piece.selection_id,'data-piece':piece.id,'data-face-count':piece.face_count,'data-triangle-count':piece.triangle_count,'data-source':piece.mesh_id});
     svg.append(svgNode('rect',{x,y,width:w,height:h,fill:'#fff'}));
-    const texture=window.MORBOL_TEXTURES?.[piece.atlas]||DATA.textures?.[piece.atlas];
+    const texture=window.MORBOL_TEXTURES?.[piece.atlas]||DATA.textures?.[piece.atlas],atlasSize=piece.atlas_size||DATA.atlas_size;
     if(s.palette==='actual'&&texture){
-      const defs=svgNode('defs'),pat=svgNode('pattern',{id:'repair-actual-'+index,patternUnits:'userSpaceOnUse',patternContentUnits:'userSpaceOnUse',width:DATA.atlas_size,height:DATA.atlas_size});pat.append(svgNode('image',{href:texture,width:DATA.atlas_size,height:DATA.atlas_size,preserveAspectRatio:'none'}));defs.append(pat);svg.append(defs);
+      const defs=svgNode('defs'),pat=svgNode('pattern',{id:'repair-actual-'+index,patternUnits:'userSpaceOnUse',patternContentUnits:'userSpaceOnUse',width:atlasSize,height:atlasSize});pat.append(svgNode('image',{href:texture,width:atlasSize,height:atlasSize,preserveAspectRatio:'none'}));defs.append(pat);svg.append(defs);
       svg.append(svgNode('path',{d:piece.path,fill:`url(#repair-actual-${index})`,'class':'repair-svg-surface'}));
     }else if(s.palette==='actual'&&piece.actual_paths?.length){
       for(const a of piece.actual_paths)svg.append(svgNode('path',{d:a.path,fill:a.color,'class':'repair-svg-surface'}));
     }else svg.append(svgNode('path',{d:piece.path,fill:s.palette==='actual'?(piece.actual_color||piece.color):piece.color,'class':'repair-svg-surface'}));
     if(s.wire)svg.append(svgNode('path',{d:piece.wire,fill:'none',stroke:'#2e473b','stroke-opacity':.48,'stroke-width':span*.001,'class':'repair-svg-wire'}));
     svg.append(svgNode('path',{d:piece.outline,fill:'none',stroke:'#365440','stroke-width':span*.0019,'stroke-linejoin':'round'}));
+    const seamLabels=new Set();
     for(const seam of piece.seams||[]){
       const active=activeSeam===seam.id,points=seam.points;if(points.length<2)continue;
       const line=svgNode('polyline',{points:points.map(p=>p.join(',')).join(' '),fill:'none',stroke:active?'#173d48':seam.color||'#52747b','stroke-width':span*(active?.006:.0025),'stroke-dasharray':active?'none':`${span*.01} ${span*.006}`,'stroke-linejoin':'round','class':'repair-svg-seam'});
       line.addEventListener('click',()=>{activeSeam=active?null:seam.id;render(true);});svg.append(line);
-      if(s.labels){const pos=mid(points);label(svg,seam.id,[pos[0],pos[1]-span*.025],span*.022,seam.color||'#52747b');}
+      if(s.labels&&!seamLabels.has(seam.id)){seamLabels.add(seam.id);const pos=mid(points);label(svg,seam.id,[pos[0],pos[1]-span*.025],span*.022,seam.color||'#52747b');}
     }
     if(s.labels)label(svg,piece.id,piece.label_point,span*.027,piece.color);
     return svg;
   }
-  function download(svg,piece,s){const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=piece.id+'-외피연결-UV-'+s.palette+'.svg';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+  function download(svg,piece,s){const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=piece.id+'-외피연결-UV-'+s.palette+'-v31.svg';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
   function render(force=false){
     const s=currentState(),pieces=relevant(s),key=JSON.stringify(s);last={...s,pieces:pieces.map(p=>p.id),activeSeam};
     if(!force&&key===signature)return;signature=key;host.hidden=!pieces.length;
@@ -76,6 +77,6 @@
   let queued=false;
   new MutationObserver(()=>{if(queued)return;queued=true;queueMicrotask(()=>{queued=false;render();});}).observe(panel,{subtree:true,childList:true,attributes:true,attributeFilter:['aria-pressed','class']});
   panel.addEventListener('click',()=>queueMicrotask(()=>render()));
-  window.morbolRepairUV={getState:()=>({...last}),render:()=>render(true)};
+  window.morbolRepairUV={getState:()=>({...last}),render:()=>render(true),drawPiece:(piece,state,index)=>svgFor(piece,state,index)};
   render();
 })();
