@@ -10,7 +10,7 @@
   const allLong=new Map((window.MORBOL_LONG_ORIGINAL_UV?.parts||[]).map(p=>[p.id,p]));
   for(const [id,p] of repl)if(allLong.has(id))allLong.set(id,p);
   const host=document.createElement('section');host.className='smooth-base-section';
-  host.innerHTML='<div class="repair-heading"><h3>수정된 외피 UV</h3><button type="button" class="smooth-reference-toggle">이전 참고 이미지 보기</button></div><p class="smooth-base-note">현재 모델과 같은 UV입니다. 뿌리 두 장의 치수·시접 도안은 재단 도안 화면에서 확인하세요.</p><div class="smooth-base-pieces"></div>';
+  host.innerHTML='<div class="repair-heading"><h3>수정된 외피 UV</h3><button type="button" class="smooth-reference-toggle">이전 참고 이미지 보기</button></div><p class="smooth-base-note">현재 모델과 같은 UV입니다. 연결 번호를 맞춰 확인하세요. 실물 재단 전 소재와 크기에 맞춘 시험이 필요합니다.</p><div class="smooth-base-pieces"></div>';
   const heading=panel.querySelector('.selection-heading');if(heading)heading.after(host);else panel.append(host);
   let reference=false,signature='',oldPart='';
   const pressed=e=>e?.getAttribute('aria-pressed')==='true';
@@ -32,7 +32,7 @@
     if(!s.labels)for(const e of svg.querySelectorAll('.uv-annotation'))e.remove();
     for(const e of svg.querySelectorAll('.connector,.jaw-map-start,.jaw-map-end,.jaw-body-map,.jaw-counterpart'))e.remove();
     for(const e of svg.querySelectorAll('pattern image'))if(window.MORBOL_TEXTURES?.body)e.setAttribute('href',window.MORBOL_TEXTURES.body);
-    download(svg,'몸통-현재-UV-v31');
+    download(svg,'몸통-현재-UV-v32');
   }
   function render(force=false){
     const s=state();if(oldPart!==s.part){reference=false;oldPart=s.part;}
@@ -47,7 +47,7 @@
     }
     if(!visible)return;
     host.querySelector('.smooth-reference-toggle').textContent=reference?'현재 UV로 돌아가기':'이전 참고 이미지 보기';
-    host.querySelector('.smooth-base-note').textContent=reference?'수정 전 모습입니다. 현재 제작 대조에는 수정된 외피 UV를 사용하세요.':'현재 모델과 같은 UV입니다. 뿌리 두 장의 치수·시접 도안은 재단 도안 화면에서 확인하세요.';
+    host.querySelector('.smooth-base-note').textContent=reference?'수정 전 모습입니다. 현재 제작 대조에는 수정된 외피 UV를 사용하세요.':'현재 모델과 같은 UV입니다. 연결 번호를 맞춰 확인하세요. 실물 재단 전 소재와 크기에 맞춘 시험이 필요합니다.';
     for(const a of panel.querySelectorAll('.tent-download-png,.tent-download-svg,.tent-download-fill,.tent-download-card'))a.textContent='이전 참고 · '+(a.classList.contains('tent-download-svg')?'SVG':a.classList.contains('tent-download-card')?'대조 이미지':'UV 이미지');
     const container=host.querySelector('.smooth-base-pieces');container.replaceChildren();
     if(reference)return;
@@ -57,7 +57,7 @@
       const top=document.createElement('div');top.className='repair-piece-heading';
       const title=document.createElement('h4');title.textContent=part.id+' · '+piece.id+' '+piece.name;top.append(title);
       const svg=window.morbolRepairUV.drawPiece(piece,s,'smooth-base-'+part.id+'-'+piece.id);
-      const save=document.createElement('button');save.type='button';save.textContent='현재 조각 SVG 저장';save.onclick=()=>download(svg,part.id+'-'+piece.id+'-UV-v31');top.append(save);card.append(top,svg);container.append(card);
+      const save=document.createElement('button');save.type='button';save.textContent='현재 조각 SVG 저장';save.onclick=()=>download(svg,part.id+'-'+piece.id+'-UV-v32');top.append(save);card.append(top,svg);container.append(card);
     }
   }
   host.querySelector('.smooth-reference-toggle').onclick=()=>{reference=!reference;render(true);};
