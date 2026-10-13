@@ -149,7 +149,15 @@
       }
     }
     for(const [label,pos,color] of labels)addLabel(svg,label,pos,span*(smallPreview?.050:.025),color);
-    for(const [label,pos,color] of seamLabels)addLabel(svg,label,[pos[0],pos[1]-span*(smallPreview?.070:.025)],span*(smallPreview?.042:.022),color,'shell-seam-label');
+    const occupied=[];
+    for(const [label,pos,color] of seamLabels){
+      const font=span*(smallPreview?.042:.022),labelWidth=Math.max(font*2.1,label.length*font*.59)+font*.6;
+      let center=[pos[0],pos[1]-span*(smallPreview?.070:.025)];
+      while(occupied.some(p=>Math.abs(center[0]-p.x)<(labelWidth+p.width)/2+font*.25&&Math.abs(center[1]-p.y)<font*1.55))center[1]-=font*1.8;
+      occupied.push({x:center[0],y:center[1],width:labelWidth});
+      svg.append(svgNode('line',{x1:pos[0],y1:pos[1],x2:center[0],y2:center[1]+font*.69,stroke:color,'stroke-width':span*.0009,'pointer-events':'none'}));
+      addLabel(svg,label,center,font,color,'shell-seam-label');
+    }
     return svg;
   }
   function downloadSVG(svg, atlas) {

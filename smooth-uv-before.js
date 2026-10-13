@@ -11,7 +11,11 @@
    const oldPieces=new Map(b.pieces.map(p=>[p.id,p]));
    b.pieces=replacement.pieces.map(p=>{const old=oldPieces.get(p.id)||{};return {...old,id:p.id,label:p.id,name:p.name||old.name,color:p.color,path:p.path,wire:p.wire,outline:p.outline,bounds:p.bounds,label_point:p.label_point,faces:p.face_count};});
    b.bounds=[Math.min(...b.pieces.map(p=>p.bounds[0])),Math.min(...b.pieces.map(p=>p.bounds[1])),Math.max(...b.pieces.map(p=>p.bounds[2])),Math.max(...b.pieces.map(p=>p.bounds[3]))];
-   b.atlas=replacement.atlas;for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id))part.atlas=replacement.atlas;b.face_count=replacement.face_count;b.seams=linesFor(replacement);b.smooth_revision='v34';
+   if(['J01','T03','T04','T05','T06','T21','T22'].includes(replacement.id)){
+     for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id)){part.bundles=[b.id];part.name=replacement.name;}
+     window.MORBOL_SHELL_UV.bundles=window.MORBOL_SHELL_UV.bundles.filter(other=>other.id===b.id||other.selection_id!==replacement.id);
+   }
+   b.atlas=replacement.atlas;for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id))part.atlas=replacement.atlas;b.face_count=replacement.face_count;b.seams=linesFor(replacement);b.smooth_revision='v35';
   }
  }
  const template=document.getElementById('body-svg-template'),body=data.parts.find(p=>p.id==='BODY'&&p.versions.includes(1));
@@ -41,7 +45,7 @@
    seams.push({id,parts:[...new Set(lines.map(s=>s.piece))],kind:id.startsWith('D')?'root-attachment':'body',target:id.startsWith('D')?'ROOT 탈부착 위치':undefined});
   }
   window.MORBOL_SEWING_BODY_METADATA={seams,labels};
-  template.dataset.smoothRevision='v34';
+  template.dataset.smoothRevision='v35';
  }
  window.MORBOL_SMOOTH_UV_APPLIED=true;
 })();

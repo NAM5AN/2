@@ -2,6 +2,7 @@
   'use strict';
   const data=window.MORBOL_J01_ROLE_UV,panel=document.querySelector('#comparison .uv-card');
   if(!data||!panel||!window.morbolRepairUV)return;
+  if(window.MORBOL_SMOOTH_BASE_UV?.parts.some(p=>p.id==='J01'&&p.atlas?.startsWith('simple-v35-')))return;
   const shell=!!window.morbolShellUV;
   const host=document.createElement('section');host.className='j01-role-section';
   host.innerHTML='<h3>J01 외피와 조립 참고면</h3><p>F·B는 앞뒤 외피입니다. D는 마감·접촉 위치를 대조하는 참고면으로, 그대로 잘라 쓸 재단 조각이 아닙니다. 외피 경계를 잇는 면은 모델에 유지되어 있습니다.</p>'+(shell?'':
@@ -20,7 +21,7 @@
   }
   function save(svg,piece){
     const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml;charset=utf-8'}));
-    const a=document.createElement('a');a.href=url;a.download='J01-'+piece.id+'-UV-v34.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    const a=document.createElement('a');a.href=url;a.download='J01-'+piece.id+'-UV-v35.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   function render(force=false){
     const s=state(),visible=s.part==='J01'&&s.group==='long'&&s.detail==='part',key=JSON.stringify([s,choice]);
