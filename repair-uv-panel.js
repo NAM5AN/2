@@ -4,7 +4,7 @@
   if(!DATA||!panel)return;
   const NS='http://www.w3.org/2000/svg';
   const host=document.createElement('section');host.className='repair-uv-section';host.setAttribute('aria-label','추가 외피 연결 조각 UV');
-  host.innerHTML='<div class="repair-heading"><h3>연결 외피와 뿌리 패널</h3><span>현재 선택 파츠에 포함</span></div><p class="repair-description">겉면 사이의 빈틈을 이어 주는 외피입니다. 기존 외피와 함께 대조하세요.</p><div class="repair-uv-pieces"></div><p class="repair-uv-footnote">메시의 삼각형 선은 재단선이 아닙니다. 조각의 바깥선과 연결 번호를 확인하고, 실물 재단 전 소재와 크기에 맞춰 시험하세요.</p>';
+  host.innerHTML='<div class="repair-heading"><h3>함께 제작하는 외피 조각</h3><span>현재 선택 파츠에 포함</span></div><p class="repair-description">현재 선택한 파츠에 포함되는 외피입니다. 조각의 바깥선과 같은 연결 번호를 맞춰 확인하세요.</p><div class="repair-uv-pieces"></div><p class="repair-uv-footnote">메시의 삼각형 선은 재단선이 아닙니다. 조각의 바깥선과 연결 번호를 확인하고, 시접을 넣기 전의 대조 UV입니다. 실물 재단 전 소재와 크기에 맞춰 시험하세요.</p>';
   panel.append(host);
   let signature='',last=null,activeSeam=null;
   const $=s=>panel.querySelector(s);
@@ -43,14 +43,14 @@
     const seamLabels=new Set();
     for(const seam of piece.seams||[]){
       const active=activeSeam===seam.id,points=seam.points;if(points.length<2)continue;
-      const line=svgNode('polyline',{points:points.map(p=>p.join(',')).join(' '),fill:'none',stroke:active?'#173d48':seam.color||'#52747b','stroke-width':span*(active?.006:.0025),'stroke-dasharray':active?'none':`${span*.01} ${span*.006}`,'stroke-linejoin':'round','class':'repair-svg-seam'});
+      const line=svgNode('polyline',{points:points.map(p=>p.join(',')).join(' '),fill:'none',stroke:active?'#173d48':seam.color||'#52747b','stroke-width':span*(active?.006:.0025),'stroke-dasharray':active?'none':`${span*.01} ${span*.006}`,'stroke-linejoin':'round','class':'repair-svg-seam','data-seam':seam.id});
       line.addEventListener('click',()=>{activeSeam=active?null:seam.id;render(true);});svg.append(line);
-      if(s.labels&&!seamLabels.has(seam.id)){seamLabels.add(seam.id);const pos=mid(points);label(svg,seam.id,[pos[0],pos[1]-span*.025],span*.022,seam.color||'#52747b');}
+      if(s.labels&&(active||!seamLabels.has(seam.id))){seamLabels.add(seam.id);const pos=mid(points);label(svg,seam.id,[pos[0],pos[1]-span*.025],span*.022,seam.color||'#52747b');}
     }
     if(s.labels)label(svg,piece.id,piece.label_point,span*.027,piece.color);
     return svg;
   }
-  function download(svg,piece,s){const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=piece.id+'-외피연결-UV-'+s.palette+'-v33.svg';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+  function download(svg,piece,s){const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=piece.id+'-외피연결-UV-'+s.palette+'-v34.svg';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
   function render(force=false){
     const s=currentState(),pieces=relevant(s),key=JSON.stringify(s);last={...s,pieces:pieces.map(p=>p.id),activeSeam};
     if(!force&&key===signature)return;signature=key;host.hidden=!pieces.length;
@@ -62,6 +62,7 @@
       microContainer=document.createElement('div');microContainer.className='repair-uv-pieces';details.append(microContainer);container.append(details);
     }
     pieces.forEach((piece,i)=>{
+      if(piece.edge_correction_only){const note=document.createElement('p');note.className='repair-edge-note';note.dataset.repairId=piece.id;note.textContent=piece.selection_id+' 외피 가장자리 보정 · 별도 재단 없음. '+piece.note;container.append(note);return;}
       const card=document.createElement('div');card.className='repair-piece-card';card.dataset.parent=piece.selection_id;card.dataset.repairId=piece.id;
       const top=document.createElement('div');top.className='repair-piece-heading';const title=document.createElement('h4');title.textContent=piece.id+' · '+piece.name;top.append(title);
       const svg=svgFor(piece,s,i),save=document.createElement('button');save.type='button';save.textContent='이 조각 SVG 저장';save.onclick=()=>download(svg,piece,s);top.append(save);card.append(top);

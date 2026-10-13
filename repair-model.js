@@ -17,7 +17,7 @@
     if(!source.has(o.id)||replacements.has(o.id))throw Error('변경된 외피 파츠를 확인할 수 없습니다: '+o.id);
     valid(o);replacements.set(o.id,{...source.get(o.id),...o});
   }
-  const originals=base.objects.map(o=>replacements.get(o.id)||o);
+  const removed=new Set(spec.removed_ids||[]);const originals=base.objects.filter(o=>!removed.has(o.id)).map(o=>replacements.get(o.id)||o);
   const parents=new Map(originals.filter(o=>!o.helper).map(o=>[o.id,o]));
   const seen=new Set(originals.map(o=>o.id));
   const additions=(spec.objects||repair.objects||[]).map(o=>{
