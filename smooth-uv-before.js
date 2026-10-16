@@ -15,7 +15,7 @@
      for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id)){part.bundles=[b.id];part.name=replacement.name;}
      window.MORBOL_SHELL_UV.bundles=window.MORBOL_SHELL_UV.bundles.filter(other=>other.id===b.id||other.selection_id!==replacement.id);
    }
-   b.atlas=replacement.atlas;for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id))part.atlas=replacement.atlas;b.face_count=replacement.face_count;b.seams=linesFor(replacement);b.smooth_revision='v38';
+   b.atlas=replacement.atlas;for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id))part.atlas=replacement.atlas;b.face_count=replacement.face_count;b.seams=linesFor(replacement);b.smooth_revision='v39';
   }
  }
  const template=document.getElementById('body-svg-template'),body=data.parts.find(p=>p.id==='BODY'&&p.versions.includes(1));
@@ -45,7 +45,7 @@
    seams.push({id,parts:[...new Set(lines.map(s=>s.piece))],kind:id.startsWith('D')?'root-attachment':'body',target:id.startsWith('D')?'ROOT 탈부착 위치':undefined});
   }
   window.MORBOL_SEWING_BODY_METADATA={seams,labels};
-  template.dataset.smoothRevision='v38';
+  template.dataset.smoothRevision='v39';
  }
  window.MORBOL_SMOOTH_UV_APPLIED=true;
 })();
