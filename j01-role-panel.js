@@ -21,7 +21,7 @@
   }
   function save(svg,piece){
     const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml;charset=utf-8'}));
-    const a=document.createElement('a');a.href=url;a.download='J01-'+piece.id+'-UV-v40.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    const a=document.createElement('a');a.href=url;a.download='J01-'+piece.id+'-UV-v41.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   function render(force=false){
     const s=state(),visible=s.part==='J01'&&s.group==='long'&&s.detail==='part',key=JSON.stringify([s,choice]);
