@@ -1,3 +1,9 @@
+/* Remove deleted branch parts before shell UV controllers build their maps. */
+(function(){const removed=new Set(['H26','H27','H28','H29','H30','H26_E01','H27_E01','H28_E01','H30_E01']);
+const d=window.MORBOL_SHELL_UV;if(!d)return;
+const gone=p=>removed.has(p.id)||removed.has(p.selection_id)||removed.has(p.part);
+d.parts=d.parts.filter(p=>!gone(p));d.bundles=d.bundles.filter(p=>!gone(p));
+})();
 /* Apply native-matching UV data before either existing controller initializes. */
 (function(){
  'use strict';
@@ -15,7 +21,7 @@
      for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id)){part.bundles=[b.id];part.name=replacement.name;}
      window.MORBOL_SHELL_UV.bundles=window.MORBOL_SHELL_UV.bundles.filter(other=>other.id===b.id||other.selection_id!==replacement.id);
    }
-   b.atlas=replacement.atlas;for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id))part.atlas=replacement.atlas;b.face_count=replacement.face_count;b.seams=linesFor(replacement);b.smooth_revision='v42';
+   b.atlas=replacement.atlas;for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id))part.atlas=replacement.atlas;b.face_count=replacement.face_count;b.seams=linesFor(replacement);b.smooth_revision='v43';
   }
  }
  const template=document.getElementById('body-svg-template'),body=data.parts.find(p=>p.id==='BODY'&&p.versions.includes(1));
@@ -45,7 +51,7 @@
    seams.push({id,parts:[...new Set(lines.map(s=>s.piece))],kind:id.startsWith('D')?'root-attachment':'body',target:id.startsWith('D')?'ROOT 탈부착 위치':undefined});
   }
   window.MORBOL_SEWING_BODY_METADATA={seams,labels};
-  template.dataset.smoothRevision='v42';
+  template.dataset.smoothRevision='v43';
  }
  window.MORBOL_SMOOTH_UV_APPLIED=true;
 })();

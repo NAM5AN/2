@@ -30,6 +30,8 @@
     base_source_sha256:base.source_sha256,source_sha256:spec.native_sha256,
     objects:[...originals,...additions],seams:spec.seams||base.seams,exterior_repair:true,
     limitations:[...(base.limitations||[]).filter(s=>s!=='외피 버전은 내부 마감면을 제외한 열린 표면입니다.'),'외피 연결부 개선 적용. 내부 마감판 포함 여부는 버전에 따라 다릅니다.']};
+  const groups_from_current_objects=window.MORBOL_MODEL;
+  groups_from_current_objects.groups=(groups_from_current_objects.groups||[]).map(g=>({...g,object_count:groups_from_current_objects.objects.filter(o=>!o.helper&&o.group===g.id).length}));
   if(repair.textures)Object.assign(window.MORBOL_TEXTURES,repair.textures);
   if(spec.textures)Object.assign(window.MORBOL_TEXTURES,spec.textures);
   window.MORBOL_REPAIR_READY=true;

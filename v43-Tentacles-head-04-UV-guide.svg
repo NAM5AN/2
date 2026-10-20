@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4096 4096" width="4096" height="4096"><rect width="4096" height="4096" fill="white" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="170.273,516.799 211.910,567.207 204.617,431.605 171.005,456.557 170.626,461.013" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="211.910,567.207 265.618,537.107 204.617,431.605" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="139.047,604.581 150.211,617.788 147.415,581.068 142.239,592.412" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="211.910,567.207 170.273,516.799 169.707,520.104 147.415,581.068 150.211,617.788" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="540.710,548.741 523.089,572.057 556.406,562.177" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="560.370,566.232 556.406,562.177 523.089,572.057 589.803,624.954 600.346,610.592" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="509.801,456.687 461.274,537.831 539.662,504.286 530.322,463.764 530.322,463.764" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="538.054,538.609 539.662,504.286 461.274,537.831 523.089,572.057 540.710,548.741" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="407.900,521.527 501.235,451.617 492.990,448.472 437.557,427.382" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="407.900,521.527 461.274,537.831 509.801,456.687 501.235,451.617" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="362.217,380.000 359.984,517.921 429.241,422.523 427.690,422.022 420.532,392.823" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="407.900,521.527 437.557,427.382 429.241,422.523 359.984,517.921" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="362.217,380.000 278.692,395.393 313.909,522.205" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="313.909,522.205 359.984,517.921 362.217,380.000" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="204.617,431.605 265.618,537.107 278.692,395.393" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="265.618,537.107 313.909,522.205 278.692,395.393" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="211.910,567.207 227.891,631.089 265.618,537.107" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="227.891,631.089 274.835,617.107 265.618,537.107" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="211.910,567.207 150.211,617.788 182.442,660.978" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="211.910,567.207 182.442,660.978 227.891,631.089" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="589.803,624.954 523.089,572.057 503.488,623.539" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="546.794,657.162 589.803,624.954 503.488,623.539" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="523.089,572.057 461.274,537.831 455.852,608.594" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="503.488,623.539 523.089,572.057 455.852,608.594" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="461.274,537.831 407.900,521.527 409.552,605.445" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="461.274,537.831 409.552,605.445 455.852,608.594" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="407.900,521.527 359.984,517.921 364.380,606.666" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="407.900,521.527 364.380,606.666 409.552,605.445" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="359.984,517.921 313.909,522.205 319.982,610.261" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="359.984,517.921 319.982,610.261 364.380,606.666" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="313.909,522.205 265.618,537.107 274.835,617.107" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="313.909,522.205 274.835,617.107 319.982,610.261" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="227.891,631.089 269.813,698.747 274.835,617.107" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="274.835,617.107 269.813,698.747 290.590,677.007" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="227.891,631.089 182.442,660.978 254.550,726.806" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="269.813,698.747 227.891,631.089 254.550,726.806" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="546.794,657.162 503.488,623.539 455.291,692.227" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="472.014,718.043 546.794,657.162 455.291,692.227" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="503.488,623.539 455.852,608.594 435.542,673.419" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="503.488,623.539 435.542,673.419 455.291,692.227" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="455.852,608.594 409.552,605.445 405.641,658.115" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="455.852,608.594 405.641,658.115 435.542,673.419" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="409.552,605.445 364.380,606.666 365.314,653.521" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="409.552,605.445 365.314,653.521 405.641,658.115" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="364.380,606.666 319.982,610.261 324.322,658.633" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="364.380,606.666 324.322,658.633 365.314,653.521" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="274.835,617.107 290.590,677.007 319.982,610.261" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="319.982,610.261 290.590,677.007 324.322,658.633" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="290.590,677.007 269.813,698.747 347.438,725.763" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="290.590,677.007 347.438,725.763 349.801,716.363" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="269.813,698.747 254.550,726.806 341.469,736.785" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="269.813,698.747 341.469,736.785 347.438,725.763" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="472.014,718.043 455.291,692.227 378.945,728.519" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="472.014,718.043 378.945,728.519 387.328,738.866" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="455.291,692.227 435.542,673.419 374.682,718.386" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="455.291,692.227 374.682,718.386 378.945,728.519" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="435.542,673.419 405.641,658.115 369.276,712.561" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="435.542,673.419 369.276,712.561 374.682,718.386" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="405.641,658.115 365.314,653.521 362.498,711.570" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="405.641,658.115 362.498,711.570 369.276,712.561" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="365.314,653.521 324.322,658.633 355.759,712.192" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="365.314,653.521 355.759,712.192 362.498,711.570" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="324.322,658.633 290.590,677.007 349.801,716.363" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="324.322,658.633 349.801,716.363 355.759,712.192" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="349.801,716.363 347.438,725.763 361.600,771.272" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="349.801,716.363 361.600,771.272 362.328,771.022" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="347.438,725.763 341.469,736.785 360.835,771.702" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="347.438,725.763 360.835,771.702 361.600,771.272" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="387.328,738.866 378.945,728.519 366.624,771.073" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="387.328,738.866 366.624,771.073 367.378,771.439" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="378.945,728.519 374.682,718.386 365.904,770.862" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="378.945,728.519 365.904,770.862 366.624,771.073" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="374.682,718.386 369.276,712.561 365.058,770.809" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="374.682,718.386 365.058,770.809 365.904,770.862" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="369.276,712.561 362.498,711.570 364.139,770.880" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="369.276,712.561 364.139,770.880 365.058,770.809" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="362.498,711.570 355.759,712.192 363.219,770.905" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="362.498,711.570 363.219,770.905 364.139,770.880" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="355.759,712.192 349.801,716.363 362.328,771.022" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="A" points="355.759,712.192 362.328,771.022 363.219,770.905" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="918.833,687.205 993.000,866.259 993.000,761.372" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="845.840,727.928 918.833,687.205 852.310,695.639" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="993.000,866.259 937.551,886.213 955.866,899.393" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="833.801,788.764 993.000,866.259 918.833,687.205 845.840,727.928" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="993.000,866.259 833.801,788.764 830.690,802.993 927.940,879.124 937.551,886.213" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="C" points="920.492,1361.754 920.500,1318.263 889.746,1287.506" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="C" points="889.746,1287.506 846.263,1287.500 815.506,1318.246" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="C" points="815.506,1318.246 815.500,1361.732 846.249,1392.500" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="C" points="846.249,1392.500 889.737,1392.500 920.492,1361.754" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="C" points="920.492,1361.754 889.746,1287.506 815.506,1318.246" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="C" points="815.506,1318.246 846.249,1392.500 920.492,1361.754" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="833.801,788.764 845.840,727.928 829.515,734.443" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="845.840,727.928 827.984,707.977 829.515,734.443" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="827.984,707.977 812.302,690.951 829.515,734.443" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="812.302,690.951 821.941,738.423 829.515,734.443" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="821.941,738.423 833.801,788.764 829.515,734.443" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="813.120,809.486 787.730,778.982 778.190,772.309" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="787.730,778.982 763.910,751.957 778.190,772.309" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="763.910,751.957 759.073,760.469 778.190,772.309" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="759.073,760.469 785.310,783.468 778.190,772.309" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="785.310,783.468 813.120,809.486 778.190,772.309" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="818.077,810.498 815.062,747.259 813.604,728.094" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="815.062,747.259 812.302,690.951 813.604,728.094" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="812.302,690.951 810.420,691.510 813.604,728.094" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="810.420,691.510 814.214,746.981 813.604,728.094" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="814.214,746.981 818.077,810.498 813.604,728.094" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="951.875,903.656 944.829,894.999 939.149,889.768" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="944.829,894.999 937.551,886.213 939.149,889.768" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="937.551,886.213 927.940,879.124 939.149,889.768" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="927.940,879.124 939.889,891.594 939.149,889.768" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="939.889,891.594 951.875,903.656 939.149,889.768" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="748.470,845.168 740.386,882.025 767.833,847.560" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="740.386,882.025 777.421,848.604 767.833,847.560" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="777.421,848.604 818.077,810.498 767.833,847.560" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="818.077,810.498 781.632,829.031 767.833,847.560" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="781.632,829.031 748.470,845.168 767.833,847.560" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="901.632,954.983 821.081,918.179 800.164,917.160" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="821.081,918.179 740.386,882.025 800.164,917.160" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="740.386,882.025 749.139,897.983 800.164,917.160" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="749.139,897.983 757.733,915.206 800.164,917.160" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="757.733,915.206 830.137,935.032 800.164,917.160" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="830.137,935.032 901.632,954.983 800.164,917.160" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="815.641,962.704 787.033,939.013 791.965,947.800" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="787.033,939.013 757.733,915.206 791.965,947.800" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="757.733,915.206 801.850,965.295 791.965,947.800" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="801.850,965.295 815.641,962.704 791.965,947.800" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="852.310,695.639 812.302,690.951 835.661,703.472" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="812.302,690.951 827.984,707.977 835.661,703.472" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="827.984,707.977 845.840,727.928 835.661,703.472" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="845.840,727.928 852.310,695.639 835.661,703.472" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="812.302,690.951 815.062,747.259 820.795,760.397" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="815.062,747.259 818.077,810.498 820.795,760.397" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="818.077,810.498 825.482,798.003 820.795,760.397" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="825.482,798.003 833.801,788.764 820.795,760.397" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="833.801,788.764 821.941,738.423 820.795,760.397" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="821.941,738.423 812.302,690.951 820.795,760.397" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="818.077,810.498 824.630,806.271 827.396,800.007" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="824.630,806.271 830.690,802.993 827.396,800.007" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="830.690,802.993 833.801,788.764 827.396,800.007" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="833.801,788.764 825.482,798.003 827.396,800.007" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="825.482,798.003 818.077,810.498 827.396,800.007" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="759.073,760.469 750.169,775.028 755.594,777.344" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="750.169,775.028 756.718,798.431 755.594,777.344" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="756.718,798.431 758.338,778.411 755.594,777.344" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="758.338,778.411 759.073,760.469 755.594,777.344" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="756.718,798.431 783.281,803.497 775.572,788.367" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="783.281,803.497 813.120,809.486 775.572,788.367" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="813.120,809.486 785.310,783.468 775.572,788.367" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="785.310,783.468 759.073,760.469 775.572,788.367" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="759.073,760.469 758.338,778.411 775.572,788.367" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="758.338,778.411 756.718,798.431 775.572,788.367" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="792.629,695.861 763.910,751.957 789.479,712.083" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="763.910,751.957 787.883,720.298 789.479,712.083" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="787.883,720.298 810.420,691.510 789.479,712.083" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="810.420,691.510 792.629,695.861 789.479,712.083" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="763.910,751.957 787.730,778.982 797.382,788.880" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="787.730,778.982 813.120,809.486 797.382,788.880" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="813.120,809.486 815.585,809.988 797.382,788.880" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="815.585,809.988 818.077,810.498 797.382,788.880" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="818.077,810.498 790.086,779.271 797.382,788.880" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="790.086,779.271 763.910,751.957 797.382,788.880" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="810.420,691.510 787.883,720.298 797.693,748.494" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="787.883,720.298 763.910,751.957 797.693,748.494" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="763.910,751.957 790.086,779.271 797.693,748.494" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="790.086,779.271 818.077,810.498 797.693,748.494" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="818.077,810.498 814.214,746.981 797.693,748.494" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="814.214,746.981 810.420,691.510 797.693,748.494" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="951.875,903.656 955.866,899.393 948.429,896.404" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="955.866,899.393 937.551,886.213 948.429,896.404" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="937.551,886.213 944.829,894.999 948.429,896.404" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="944.829,894.999 951.875,903.656 948.429,896.404" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="740.386,882.025 821.081,918.179 820.652,883.770" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="821.081,918.179 901.632,954.983 820.652,883.770" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="901.632,954.983 861.355,885.570 820.652,883.770" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="861.355,885.570 818.077,810.498 820.652,883.770" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="818.077,810.498 777.421,848.604 820.652,883.770" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="777.421,848.604 740.386,882.025 820.652,883.770" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="901.632,954.983 905.390,954.243 911.507,930.319" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="905.390,954.243 916.584,917.733 911.507,930.319" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="916.584,917.733 927.940,879.124 911.507,930.319" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="927.940,879.124 914.536,917.937 911.507,930.319" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="914.536,917.937 901.632,954.983 911.507,930.319" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="818.077,810.498 861.355,885.570 883.249,883.521" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="861.355,885.570 901.632,954.983 883.249,883.521" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="901.632,954.983 914.536,917.937 883.249,883.521" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="914.536,917.937 927.940,879.124 883.249,883.521" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="927.940,879.124 874.220,846.216 883.249,883.521" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="874.220,846.216 818.077,810.498 883.249,883.521" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="905.390,954.243 951.875,903.656 928.216,913.194" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="951.875,903.656 939.889,891.594 928.216,913.194" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="939.889,891.594 927.940,879.124 928.216,913.194" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="927.940,879.124 916.584,917.733 928.216,913.194" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="916.584,917.733 905.390,954.243 928.216,913.194" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="927.940,879.124 830.690,802.993 859.020,831.452" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="830.690,802.993 824.630,806.271 859.020,831.452" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="824.630,806.271 818.077,810.498 859.020,831.452" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="818.077,810.498 874.220,846.216 859.020,831.452" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="874.220,846.216 927.940,879.124 859.020,831.452" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="818.077,810.498 815.585,809.988 791.526,822.821" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="815.585,809.988 813.120,809.486 791.526,822.821" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="813.120,809.486 779.148,828.363 791.526,822.821" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="779.148,828.363 748.470,845.168 791.526,822.821" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="748.470,845.168 781.632,829.031 791.526,822.821" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="781.632,829.031 818.077,810.498 791.526,822.821" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="813.120,809.486 783.281,803.497 774.208,801.864" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="783.281,803.497 756.718,798.431 774.208,801.864" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="756.718,798.431 756.716,798.449 774.208,801.864" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="756.716,798.449 783.063,803.742 774.208,801.864" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="783.063,803.742 813.120,809.486 774.208,801.864" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="756.716,798.449 748.470,845.168 771.643,818.158" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="748.470,845.168 779.148,828.363 771.643,818.158" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="779.148,828.363 813.120,809.486 771.643,818.158" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="813.120,809.486 783.063,803.742 771.643,818.158" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="783.063,803.742 756.716,798.449 771.643,818.158" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="740.386,882.025 738.000,894.146 743.685,895.421" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="738.000,894.146 754.020,911.061 743.685,895.421" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="754.020,911.061 746.493,895.997 743.685,895.421" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="746.493,895.997 740.386,882.025 743.685,895.421" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="754.020,911.061 757.733,915.206 750.462,902.283" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="757.733,915.206 749.139,897.983 750.462,902.283" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="749.139,897.983 740.386,882.025 750.462,902.283" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="740.386,882.025 746.493,895.997 750.462,902.283" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="746.493,895.997 754.020,911.061 750.462,902.283" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="757.733,915.206 787.033,939.013 801.400,946.373" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="787.033,939.013 815.641,962.704 801.400,946.373" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="815.641,962.704 829.753,961.209 801.400,946.373" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="829.753,961.209 794.128,938.222 801.400,946.373" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="794.128,938.222 757.733,915.206 801.400,946.373" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="829.753,961.209 901.632,954.983 830.093,943.712" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="901.632,954.983 830.137,935.032 830.093,943.712" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="830.137,935.032 757.733,915.206 830.093,943.712" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="757.733,915.206 794.128,938.222 830.093,943.712" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polygon class="uv-face" data-part="H25" data-piece="D" points="794.128,938.222 829.753,961.209 830.093,943.712" fill="#B2C035" stroke="#627678" stroke-width="2" />
+<polyline class="uv-outline" points="171.005,456.557 204.616,431.605" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="170.626,461.013 171.005,456.557" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="170.273,516.799 170.626,461.013" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="139.047,604.581 150.211,617.788" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="142.239,592.412 147.415,581.068" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="139.047,604.581 142.239,592.412" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="169.707,520.104 170.273,516.799" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="147.415,581.068 169.707,520.104" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="540.710,548.741 556.406,562.177" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="556.406,562.177 560.370,566.232" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="589.803,624.954 600.345,610.592" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="560.370,566.232 600.345,610.592" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="530.322,463.764 539.662,504.286" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="530.322,463.764 530.322,463.764" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="509.801,456.686 530.322,463.764" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="538.054,538.609 539.662,504.286" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="538.054,538.609 540.710,548.741" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="492.990,448.472 501.235,451.618" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="437.557,427.382 492.990,448.472" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="501.235,451.618 509.801,456.686" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="427.690,422.022 429.241,422.523" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="420.532,392.823 427.690,422.022" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="362.217,380.000 420.532,392.823" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="429.241,422.523 437.557,427.382" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="278.692,395.393 362.217,380.000" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="204.616,431.605 278.692,395.393" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="150.211,617.788 182.442,660.978" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="546.794,657.162 589.803,624.954" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="182.442,660.978 254.550,726.806" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="472.014,718.044 546.794,657.162" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="254.550,726.806 341.469,736.785" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="387.328,738.866 472.014,718.044" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="361.600,771.272 362.328,771.022" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="341.469,736.785 360.835,771.702" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="360.835,771.702 361.600,771.272" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="366.624,771.073 367.378,771.439" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="367.378,771.439 387.328,738.866" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="365.904,770.862 366.624,771.073" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="365.058,770.809 365.904,770.862" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="364.139,770.880 365.058,770.809" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="363.219,770.905 364.139,770.880" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="362.328,771.022 363.219,770.905" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="993.000,866.259 993.000,761.372" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="918.833,687.205 993.000,761.372" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="852.310,695.638 918.833,687.205" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="955.865,899.393 993.000,866.259" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="920.492,1361.754 920.500,1318.263" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="889.745,1287.506 920.500,1318.263" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="846.263,1287.500 889.745,1287.506" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="815.505,1318.246 846.263,1287.500" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="815.500,1361.732 815.505,1318.246" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="815.500,1361.732 846.249,1392.500" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="846.249,1392.500 889.737,1392.500" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="889.737,1392.500 920.492,1361.754" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="759.073,760.469 763.909,751.957" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="810.420,691.510 812.302,690.951" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="740.386,882.025 748.470,845.168" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="757.733,915.206 801.851,965.295" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="801.851,965.295 815.641,962.704" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="812.302,690.951 852.310,695.638" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="750.169,775.028 759.073,760.469" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="750.169,775.028 756.718,798.430" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="763.909,751.957 792.629,695.861" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="792.629,695.861 810.420,691.510" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="951.875,903.656 955.865,899.393" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="901.632,954.983 905.390,954.243" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="905.390,954.243 951.875,903.656" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="756.716,798.449 756.718,798.430" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="748.470,845.168 756.716,798.449" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="738.000,894.146 740.386,882.025" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="738.000,894.146 754.020,911.061" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="754.020,911.061 757.733,915.206" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="815.641,962.704 829.753,961.209" fill="none" stroke="#233641" stroke-width="5" />
+<polyline class="uv-outline" points="829.753,961.209 901.632,954.983" fill="none" stroke="#233641" stroke-width="5" />
+<text class="guide-annotation" x="74" y="265" dominant-baseline="central" text-anchor="start" font-family="Malgun Gothic,Arial,sans-serif" font-weight="700" font-size="34" fill="#233641">H25 · 머리 둘레 가시 25</text>
+<polyline class="guide-annotation uv-seam" points="360.835,771.702 341.469,736.785 254.550,726.806 182.442,660.978 150.211,617.788 139.047,604.581" fill="none" stroke="white" stroke-width="12" />
+<polyline class="guide-annotation uv-seam" points="360.835,771.702 341.469,736.785 254.550,726.806 182.442,660.978 150.211,617.788 139.047,604.581" fill="none" stroke="#3B596C" stroke-width="6" stroke-dasharray="15 15" />
+<polyline class="guide-annotation uv-seam" points="367.378,771.439 387.328,738.866 472.014,718.043 546.794,657.162 589.803,624.954 600.346,610.592" fill="none" stroke="white" stroke-width="12" />
+<polyline class="guide-annotation uv-seam" points="367.378,771.439 387.328,738.866 472.014,718.043 546.794,657.162 589.803,624.954 600.346,610.592" fill="none" stroke="#3B596C" stroke-width="6" stroke-dasharray="15 15" />
+<polyline class="guide-annotation uv-attachment" points="139.047,604.581 142.239,592.412 147.415,581.068 169.707,520.104 170.273,516.799 170.626,461.013 171.005,456.557 204.617,431.605 278.692,395.393 362.217,380.000 420.532,392.823 427.690,422.022 429.241,422.523 437.557,427.382 492.990,448.472 501.235,451.617 509.801,456.687 530.322,463.764 530.322,463.764 539.662,504.286 538.054,538.609 540.710,548.741 556.406,562.177 560.370,566.232 600.346,610.592" fill="none" stroke="#876344" stroke-width="5" />
+<polyline class="guide-annotation uv-attachment" points="993.000,866.259 993.000,761.372 918.833,687.205 852.310,695.639 812.302,690.951 810.420,691.510 792.629,695.861 763.910,751.957 759.073,760.469 750.169,775.028 756.718,798.431 756.716,798.449 748.470,845.168 740.386,882.025 738.000,894.146 754.020,911.061 757.733,915.206 801.850,965.295 815.641,962.704 829.753,961.209 901.632,954.983 905.390,954.243 951.875,903.656 955.866,899.393 993.000,866.259" fill="none" stroke="#876344" stroke-width="5" />
+<text class="guide-annotation" x="369.6964416503906" y="355.0" dominant-baseline="central" text-anchor="middle" font-family="Malgun Gothic,Arial,sans-serif" font-weight="700" font-size="28" fill="#233641">A 외피</text>
+<text class="guide-annotation" x="868.0" y="1262.5" dominant-baseline="central" text-anchor="middle" font-family="Malgun Gothic,Arial,sans-serif" font-weight="700" font-size="28" fill="#233641">C 끝면</text>
+<text class="guide-annotation" x="865.5" y="662.2048885265149" dominant-baseline="central" text-anchor="middle" font-family="Malgun Gothic,Arial,sans-serif" font-weight="700" font-size="28" fill="#233641">D 닫힌 마감·접촉면</text>
+<text class="guide-annotation" x="72" y="1975" dominant-baseline="central" text-anchor="start" font-family="Malgun Gothic,Arial,sans-serif" font-weight="400" font-size="23" fill="#233641">갈색: 접촉면 테두리 · 시접 없는 무늬용 UV</text>
+<text class="guide-annotation" x="55" y="76" dominant-baseline="central" text-anchor="start" font-family="Malgun Gothic,Arial,sans-serif" font-weight="700" font-size="65" fill="#233641">머리 둘레 가시 · H25 · v43</text><text class="guide-annotation" x="55" y="151" dominant-baseline="central" text-anchor="start" font-family="Malgun Gothic,Arial,sans-serif" font-weight="400" font-size="37" fill="#233641">기존 H25 UV 위치 유지 · A 외피 / C 끝면 / D 마감·접촉면</text><text class="guide-annotation" x="55" y="4020" dominant-baseline="central" text-anchor="start" font-family="Malgun Gothic,Arial,sans-serif" font-weight="400" font-size="38" fill="#233641">무늬용 UV · 시접과 개인 치수는 별도로 확인하세요.</text></svg>
