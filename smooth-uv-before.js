@@ -21,7 +21,7 @@ d.parts=d.parts.filter(p=>!gone(p));d.bundles=d.bundles.filter(p=>!gone(p));
      for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id)){part.bundles=[b.id];part.name=replacement.name;}
      window.MORBOL_SHELL_UV.bundles=window.MORBOL_SHELL_UV.bundles.filter(other=>other.id===b.id||other.selection_id!==replacement.id);
    }
-   b.atlas=replacement.atlas;for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id)){part.current_atlas=replacement.atlas;if(part.group!=='head')part.atlas=replacement.atlas;}b.face_count=replacement.face_count;b.seams=linesFor(replacement);b.smooth_revision='v46';
+   b.atlas=replacement.atlas;for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id)){part.current_atlas=replacement.atlas;if(part.group!=='head')part.atlas=replacement.atlas;}b.face_count=replacement.face_count;b.seams=linesFor(replacement);b.smooth_revision='v47';
   }
  }
  const template=document.getElementById('body-svg-template'),body=data.parts.find(p=>p.id==='BODY'&&p.versions.includes(1));
@@ -51,9 +51,10 @@ d.parts=d.parts.filter(p=>!gone(p));d.bundles=d.bundles.filter(p=>!gone(p));
    seams.push({id,parts:[...new Set(lines.map(s=>s.piece))],kind:id.startsWith('D')?'root-attachment':'body',target:id.startsWith('D')?'ROOT 탈부착 위치':undefined});
   }
   window.MORBOL_SEWING_BODY_METADATA={seams,labels};
-  template.dataset.smoothRevision='v46';
+  template.dataset.smoothRevision='v47';
  }
  window.MORBOL_SMOOTH_UV_APPLIED=true;
 })();
 /* MORBOL_V45_ABSORPTION_RUNTIME_SUPPORT */
 /* MORBOL_V46_CURRENT_UV_RUNTIME_SUPPORT */
+/* MORBOL_V47_JUNCTION_RUNTIME_SUPPORT */

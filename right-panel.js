@@ -163,7 +163,7 @@ function refreshTent(mode,updateModel=true){
  q(root,'.tent-download-png').href=atlas;q(root,'.tent-download-png').textContent='현재 UV 크게 보기 ↗';q(root,'.tent-download-svg').href='Tentacles-'+atlasKey+'-UV-guide.svg'+rev;q(root,'.tent-download-svg').textContent='기본 구분색 SVG';q(root,'.tent-download-fill').href=s.uvPalette==='actual'?'UV-'+atlasKey+'-actual-fill-4096.png':'Tentacles-'+atlasKey+'-color-fill-4096.png';q(root,'.tent-download-fill').href+=rev;q(root,'.tent-download-fill').textContent=s.uvPalette==='actual'?'실제 색상 PNG 원본':'번호 없는 구분색 PNG';q(root,'.tent-download-card').href=card;
  if(atlasKey==='head-04')for(const el of root.querySelectorAll('.tent-content a[href],.tent-content img[src]')){
   const key=el.tagName==='IMG'?'src':'href',value=el.getAttribute(key)||'',name=value.split('?')[0];
-  if(V43_HEAD_ASSET_REPLACEMENTS[name])el.setAttribute(key,V43_HEAD_ASSET_REPLACEMENTS[name]+'?rev=parts46-20261021');
+  if(V43_HEAD_ASSET_REPLACEMENTS[name])el.setAttribute(key,V43_HEAD_ASSET_REPLACEMENTS[name]+'?rev=parts47-20261022');
  }
 
 
@@ -172,3 +172,4 @@ function refreshTent(mode,updateModel=true){
 createPanel();
 /* MORBOL_V45_ABSORPTION_RUNTIME_SUPPORT */
 /* MORBOL_V46_CURRENT_UV_RUNTIME_SUPPORT */
+/* MORBOL_V47_JUNCTION_RUNTIME_SUPPORT */

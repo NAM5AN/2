@@ -50,7 +50,7 @@
     if(s.labels)label(svg,piece.id,piece.label_point,span*.027,piece.color);
     return svg;
   }
-  function download(svg,piece,s){const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=piece.id+'-외피연결-UV-'+s.palette+'-v46.svg';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+  function download(svg,piece,s){const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=piece.id+'-외피연결-UV-'+s.palette+'-v47.svg';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
   function render(force=false){
     const s=currentState(),pieces=relevant(s),key=JSON.stringify(s);last={...s,pieces:pieces.map(p=>p.id),activeSeam};
     if(!force&&key===signature)return;signature=key;host.hidden=!pieces.length;
@@ -82,3 +82,4 @@
   render();
 })();
 /* MORBOL_V46_CURRENT_UV_RUNTIME_SUPPORT */
+/* MORBOL_V47_JUNCTION_RUNTIME_SUPPORT */
