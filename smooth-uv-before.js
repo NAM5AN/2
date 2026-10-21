@@ -1,5 +1,5 @@
 /* Remove deleted branch parts before shell UV controllers build their maps. */
-(function(){const removed=new Set(['H26','H27','H28','H29','H30','H26_E01','H27_E01','H28_E01','H30_E01']);
+(function(){const removed=new Set(['H26','H27','H28','H29','H30','H26_E01','H27_E01','H28_E01','H30_E01','L02']);
 const d=window.MORBOL_SHELL_UV;if(!d)return;
 const gone=p=>removed.has(p.id)||removed.has(p.selection_id)||removed.has(p.part);
 d.parts=d.parts.filter(p=>!gone(p));d.bundles=d.bundles.filter(p=>!gone(p));
@@ -13,25 +13,15 @@ d.parts=d.parts.filter(p=>!gone(p));d.bundles=d.bundles.filter(p=>!gone(p));
  const linesFor=p=>p.pieces.flatMap(piece=>piece.seams.map(s=>({...s,piece:piece.id})));
  if(window.MORBOL_SHELL_UV){
   for(const replacement of data.parts.filter(p=>p.versions.includes(2))){
-   let b=window.MORBOL_SHELL_UV.bundles.find(b=>b.id===replacement.id);
-   /* v44: create the new L02 primary bundle before shell controllers snapshot it. */
-   if(!b&&replacement.id==='L02'){
-     const atlas=replacement.atlas||'lower-exterior';
-     b={id:'L02',source_id:'L02',selection_id:'L02',atlas,patch:false,pieces:[],seams:[]};
-     window.MORBOL_SHELL_UV.bundles.push(b);
-     if(!window.MORBOL_SHELL_UV.parts.some(p=>p.id==='L02'))
-       window.MORBOL_SHELL_UV.parts.push({id:'L02',name:replacement.name||'큰 촉수 하부 외피',group:'long',atlas,
-         color:replacement.color||replacement.pieces[0]?.color||'#B18B62',bundles:['L02']});
-   }
-   if(!b)continue;
+   const b=window.MORBOL_SHELL_UV.bundles.find(b=>b.id===replacement.id);if(!b)continue;
    const oldPieces=new Map(b.pieces.map(p=>[p.id,p]));
-   b.pieces=replacement.pieces.map(p=>{const old=oldPieces.get(p.id)||{};return {...old,id:p.id,label:replacement.id==='L02'?'L02-'+p.id:p.id,name:p.name||old.name,color:p.color,path:p.path,wire:p.wire,outline:p.outline,bounds:p.bounds,label_point:p.label_point,faces:p.face_count};});
+   b.pieces=replacement.pieces.map(p=>{const old=oldPieces.get(p.id)||{};return {...old,id:p.id,label:p.id,name:p.name||old.name,color:p.color,path:p.path,wire:p.wire,outline:p.outline,bounds:p.bounds,label_point:p.label_point,faces:p.face_count};});
    b.bounds=[Math.min(...b.pieces.map(p=>p.bounds[0])),Math.min(...b.pieces.map(p=>p.bounds[1])),Math.max(...b.pieces.map(p=>p.bounds[2])),Math.max(...b.pieces.map(p=>p.bounds[3]))];
    if(['J01','T03','T04','T05','T06','T21','T22'].includes(replacement.id)){
      for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id)){part.bundles=[b.id];part.name=replacement.name;}
      window.MORBOL_SHELL_UV.bundles=window.MORBOL_SHELL_UV.bundles.filter(other=>other.id===b.id||other.selection_id!==replacement.id);
    }
-   b.atlas=replacement.atlas;for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id))part.atlas=replacement.atlas;b.face_count=replacement.face_count;b.seams=linesFor(replacement);b.smooth_revision='v44';
+   b.atlas=replacement.atlas;for(const part of window.MORBOL_SHELL_UV.parts.filter(p=>p.id===replacement.id))part.atlas=replacement.atlas;b.face_count=replacement.face_count;b.seams=linesFor(replacement);b.smooth_revision='v45';
   }
  }
  const template=document.getElementById('body-svg-template'),body=data.parts.find(p=>p.id==='BODY'&&p.versions.includes(1));
@@ -61,8 +51,8 @@ d.parts=d.parts.filter(p=>!gone(p));d.bundles=d.bundles.filter(p=>!gone(p));
    seams.push({id,parts:[...new Set(lines.map(s=>s.piece))],kind:id.startsWith('D')?'root-attachment':'body',target:id.startsWith('D')?'ROOT 탈부착 위치':undefined});
   }
   window.MORBOL_SEWING_BODY_METADATA={seams,labels};
-  template.dataset.smoothRevision='v44';
+  template.dataset.smoothRevision='v45';
  }
  window.MORBOL_SMOOTH_UV_APPLIED=true;
 })();
-/* MORBOL_V44_L02_RUNTIME_SUPPORT */
+/* MORBOL_V45_ABSORPTION_RUNTIME_SUPPORT */

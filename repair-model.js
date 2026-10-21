@@ -20,13 +20,7 @@
   const removed=new Set(spec.removed_ids||[]);const originals=base.objects.filter(o=>!removed.has(o.id)).map(o=>replacements.get(o.id)||o);
   const parents=new Map(originals.filter(o=>!o.helper).map(o=>[o.id,o]));
   const seen=new Set(originals.map(o=>o.id));
-  /* v44 L02 is a selectable primary exterior part, not a helper patch. */
   const additions=(spec.objects||repair.objects||[]).map(o=>{
-    if(o.id==='L02'&&o.helper===false){
-      if(o.group!=='long'||seen.has(o.id))throw Error('하부 외피 파츠가 일치하지 않습니다: '+o.id);
-      seen.add(o.id);valid(o);
-      return {...o,group:'long',helper:false,selection_id:'L02',labels:o.labels||[]};
-    }
     const parent=parents.get(o.selection_id);
     if(!parent||seen.has(o.id))throw Error('외피 연결부 파츠가 일치하지 않습니다: '+o.id);
     seen.add(o.id);valid(o);
@@ -42,4 +36,4 @@
   if(spec.textures)Object.assign(window.MORBOL_TEXTURES,spec.textures);
   window.MORBOL_REPAIR_READY=true;
 })();
-/* MORBOL_V44_L02_RUNTIME_SUPPORT */
+/* MORBOL_V45_ABSORPTION_RUNTIME_SUPPORT */
