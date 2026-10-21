@@ -9,6 +9,7 @@
   const repl=new Map(data.parts.filter(p=>p.versions.includes(1)&&p.id!=='BODY').map(p=>[p.id,p]));
   const allLong=new Map((window.MORBOL_LONG_ORIGINAL_UV?.parts||[]).map(p=>[p.id,p]));
   for(const [id,p] of repl)if(p.group==='long')allLong.set(id,p);
+  const allCurrent=new Map(allLong);for(const [id,p] of repl)allCurrent.set(id,p);
   const host=document.createElement('section');host.className='smooth-base-section';
   host.innerHTML='<div class="repair-heading"><h3>현재 파츠 UV</h3><button type="button" class="smooth-reference-toggle">이전 참고 이미지 보기</button></div><p class="smooth-base-note">현재 모델과 같은 파츠를 펼친 UV입니다. 같은 연결 번호를 맞춰 확인하세요. 시접·원단 두께·늘어남은 반영 전입니다.</p><div class="smooth-base-pieces"></div>';
   const heading=panel.querySelector('.selection-heading');if(heading)heading.after(host);else panel.append(host);
@@ -17,6 +18,7 @@
   function state(){return{group:panel.querySelector('.uv-groups [data-group].active')?.dataset.group,
     part:panel.querySelector('.tent-parts [data-id].active')?.dataset.id,
     detail:panel.querySelector('[data-detail].active')?.dataset.detail,
+    headAtlas:panel.querySelector('.atlas-page-buttons [data-atlas].active')?.dataset.atlas,
     palette:panel.querySelector('[data-uv-palette].active')?.dataset.uvPalette||'uv',
     labels:pressed(panel.querySelector('.uv-labels-toggle')),wire:pressed(panel.querySelector('.uv-wire-toggle'))};}
   function download(svg,name){
@@ -32,11 +34,11 @@
     if(!s.labels)for(const e of svg.querySelectorAll('.uv-annotation'))e.remove();
     for(const e of svg.querySelectorAll('.connector,.jaw-map-start,.jaw-map-end,.jaw-body-map,.jaw-counterpart'))e.remove();
     for(const e of svg.querySelectorAll('pattern image'))if(window.MORBOL_TEXTURES?.body)e.setAttribute('href',window.MORBOL_TEXTURES.body);
-    download(svg,'몸통-현재-UV-v45');
+    download(svg,'몸통-현재-UV-v46');
   }
   function render(force=false){
     const s=state();if(oldPart!==s.part){reference=false;oldPart=s.part;}
-    const current=repl.get(s.part),groupView=s.group==='long'&&s.detail==='atlas'&&allLong.has(s.part),visible=!!current||groupView;
+    const current=repl.get(s.part),groupView=s.detail==='atlas'&&allCurrent.has(s.part),visible=!!current||groupView;
     if(current&&!reference){
       const note=panel.querySelector('.tent-note'),title=panel.querySelector('.part-name');
       if(current.note&&note&&note.textContent!==current.note)note.textContent=current.note;
@@ -58,13 +60,14 @@
     for(const a of panel.querySelectorAll('.tent-download-png,.tent-download-svg,.tent-download-fill,.tent-download-card'))a.textContent='이전 참고 · '+(a.classList.contains('tent-download-svg')?'SVG':a.classList.contains('tent-download-card')?'대조 이미지':'UV 이미지');
     const container=host.querySelector('.smooth-base-pieces');container.replaceChildren();
     if(reference)return;
-    const parts=groupView?[...allLong.values()]:[current];
+    const selectedReference=window.MORBOL_UV_REFERENCES?.[s.part];
+    const parts=groupView?[...allCurrent.values()].filter(p=>p.group===s.group&&(s.group!=='head'||window.MORBOL_UV_REFERENCES?.[p.id]?.atlas===(s.headAtlas||selectedReference?.atlas))):[current];
     for(const part of parts)for(const piece of part.pieces){
       const card=document.createElement('div');card.className='repair-piece-card';
       const top=document.createElement('div');top.className='repair-piece-heading';
       const title=document.createElement('h4');title.textContent=part.id+' · '+piece.id+' '+piece.name;top.append(title);
       const svg=window.morbolRepairUV.drawPiece(piece,s,'smooth-base-'+part.id+'-'+piece.id);
-      const save=document.createElement('button');save.type='button';save.textContent='현재 조각 SVG 저장';save.onclick=()=>download(svg,part.id+'-'+piece.id+'-UV-v45');top.append(save);card.append(top,svg);container.append(card);
+      const save=document.createElement('button');save.type='button';save.textContent='현재 조각 SVG 저장';save.onclick=()=>download(svg,part.id+'-'+piece.id+'-UV-v46');top.append(save);card.append(top,svg);container.append(card);
     }
   }
   host.querySelector('.smooth-reference-toggle').onclick=()=>{reference=!reference;render(true);};
@@ -74,3 +77,4 @@
   window.morbolSmoothUV={render:()=>render(true),getState:()=>({...state(),reference})};render();
 })();
 /* MORBOL_V45_ABSORPTION_RUNTIME_SUPPORT */
+/* MORBOL_V46_CURRENT_UV_RUNTIME_SUPPORT */
