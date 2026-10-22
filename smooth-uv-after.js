@@ -61,8 +61,8 @@
     if(activeSeam){const names=[...new Set(entries.filter(e=>(e.piece.seams||[]).some(seam=>seam.id===activeSeam)).map(e=>e.part.id+'-'+e.piece.id))];status.textContent=activeSeam+' · '+names.join(' ↔ ')+' 경계를 함께 강조했습니다. ○는 시작점, 화살표는 진행 방향입니다.'+(banks>2?' 나뉜 경계 구간을 모두 표시합니다.':banks===1?' 상대 경계는 현재 버전에 표시되지 않습니다.':'');}
     else status.textContent=activePiece?'선택한 조각을 강조했습니다. 강조 해제를 누르면 전체를 볼 수 있습니다.':'조각이나 연결 번호를 누르세요. 같은 번호의 경계와 해당 조각을 함께 강조합니다.';
     const saves=document.createElement('div');saves.className='uv-piece-downloads';
-    const compareSave=control('현재 강조 도안 SVG 저장',()=>download(svg,'도안-강조-'+(activeSeam||s.part)+'-v49'));compareSave.removeAttribute('aria-pressed');saves.append(compareSave);
-    for(const {part,piece}of entries){const b=control(part.id+'-'+piece.id+' SVG 저장',()=>download(window.morbolRepairUV.drawPiece(piece,s,'export-'+part.id+'-'+piece.id,{seam:null}),part.id+'-'+piece.id+'-UV-v48'));b.removeAttribute('aria-pressed');saves.append(b);}container.append(saves);
+    const compareSave=control('현재 강조 도안 SVG 저장',()=>download(svg,'도안-강조-'+(activeSeam||s.part)+'-v50'));compareSave.removeAttribute('aria-pressed');saves.append(compareSave);
+    for(const {part,piece}of entries){const b=control(part.id+'-'+piece.id+' SVG 저장',()=>download(window.morbolRepairUV.drawPiece(piece,s,'export-'+part.id+'-'+piece.id,{seam:null}),part.id+'-'+piece.id+'-UV-v50'));b.removeAttribute('aria-pressed');saves.append(b);}container.append(saves);
   }
   const pressed=e=>e?.getAttribute('aria-pressed')==='true';
   function state(){return{group:panel.querySelector('.uv-groups [data-group].active')?.dataset.group,
@@ -84,7 +84,7 @@
     if(!s.labels)for(const e of svg.querySelectorAll('.uv-annotation'))e.remove();
     for(const e of svg.querySelectorAll('.connector,.jaw-map-start,.jaw-map-end,.jaw-body-map,.jaw-counterpart'))e.remove();
     for(const e of svg.querySelectorAll('pattern image'))if(window.MORBOL_TEXTURES?.body)e.setAttribute('href',window.MORBOL_TEXTURES.body);
-    download(svg,'몸통-현재-UV-v48');
+    download(svg,'몸통-현재-UV-v50');
   }
   function render(force=false){
     const s=state();if(oldPart!==s.part){reference=false;oldPart=s.part;}
@@ -128,3 +128,4 @@
 /* MORBOL_V46_CURRENT_UV_RUNTIME_SUPPORT */
 /* MORBOL_V47_JUNCTION_RUNTIME_SUPPORT */
 /* MORBOL_V48_JUNCTION_RUNTIME_SUPPORT */
+/* MORBOL_V50_FINISH_RUNTIME_SUPPORT */
