@@ -34,7 +34,7 @@
     if(!s.labels)for(const e of svg.querySelectorAll('.uv-annotation'))e.remove();
     for(const e of svg.querySelectorAll('.connector,.jaw-map-start,.jaw-map-end,.jaw-body-map,.jaw-counterpart'))e.remove();
     for(const e of svg.querySelectorAll('pattern image'))if(window.MORBOL_TEXTURES?.body)e.setAttribute('href',window.MORBOL_TEXTURES.body);
-    download(svg,'몸통-현재-UV-v47');
+    download(svg,'몸통-현재-UV-v48');
   }
   function render(force=false){
     const s=state();if(oldPart!==s.part){reference=false;oldPart=s.part;}
@@ -67,7 +67,7 @@
       const top=document.createElement('div');top.className='repair-piece-heading';
       const title=document.createElement('h4');title.textContent=part.id+' · '+piece.id+' '+piece.name;top.append(title);
       const svg=window.morbolRepairUV.drawPiece(piece,s,'smooth-base-'+part.id+'-'+piece.id);
-      const save=document.createElement('button');save.type='button';save.textContent='현재 조각 SVG 저장';save.onclick=()=>download(svg,part.id+'-'+piece.id+'-UV-v47');top.append(save);card.append(top,svg);container.append(card);
+      const save=document.createElement('button');save.type='button';save.textContent='현재 조각 SVG 저장';save.onclick=()=>download(svg,part.id+'-'+piece.id+'-UV-v48');top.append(save);card.append(top,svg);container.append(card);
     }
   }
   host.querySelector('.smooth-reference-toggle').onclick=()=>{reference=!reference;render(true);};
@@ -79,3 +79,4 @@
 /* MORBOL_V45_ABSORPTION_RUNTIME_SUPPORT */
 /* MORBOL_V46_CURRENT_UV_RUNTIME_SUPPORT */
 /* MORBOL_V47_JUNCTION_RUNTIME_SUPPORT */
+/* MORBOL_V48_JUNCTION_RUNTIME_SUPPORT */
