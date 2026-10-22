@@ -49,9 +49,38 @@
   function groupParts() {return DATA.parts.filter(p => p.group===state.group && (state.group!=='head'||p.atlas===state.headAtlas));}
   function visibleBundles() {
     const selected=state.mode==='part'?[parts.get(state.part)]:groupParts();
-    return selected.flatMap(p => p.bundles.map(id=>bundles.get(id)));
+    const visible=new Map(selected.flatMap(p=>p.bundles.map(id=>bundles.get(id))).filter(Boolean).map(bundle=>[bundle.id,bundle]));
+    for(const bundle of DATA.bundles) {
+      if(!parts.has(bundle.selection_id))continue;
+      const ownsSelectedSeam=!!state.seam&&bundle.seams.some(seam=>seam.id===state.seam);
+      const ownsSelectedPiece=!!state.piece&&bundle.pieces.some(piece=>pieceKey(bundle,piece)===state.piece);
+      if(ownsSelectedSeam||ownsSelectedPiece)visible.set(bundle.id,bundle);
+    }
+    return [...visible.values()];
   }
   function pieceKey(bundle,piece) {return bundle.id+'/'+piece.id;}
+  function seamSides(sheetBundles=visibleBundles()) {
+    return sheetBundles.flatMap(bundle=>bundle.seams.filter(seam=>seam.id===state.seam&&Array.isArray(seam.points)&&seam.points.length>1).map(seam=>({bundle,seam})));
+  }
+  function relatedPieces() {
+    const keys=new Set();
+    if(!state.seam)return keys;
+    for(const {bundle,seam} of seamSides()) {
+      const matches=bundle.pieces.filter(piece=>piece.id===seam.piece);
+      // Older bundles can omit a piece key. Keep their own visible pieces
+      // readable instead of guessing a different owner's counterpart.
+      for(const piece of matches.length?matches:bundle.pieces)keys.add(pieceKey(bundle,piece));
+    }
+    return keys;
+  }
+  function bindSeamControl(element,id) {
+    element.dataset.seam=id;element.setAttribute('role','button');element.setAttribute('tabindex','0');
+    element.setAttribute('aria-label',id+' 연결 경계 강조');element.setAttribute('aria-pressed',String(state.seam===id));
+    element.style.cursor='pointer';element.style.pointerEvents='all';
+    element.addEventListener('click',event=>{event.stopPropagation();selectSeam(id);});
+    element.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();selectSeam(id);}});
+    return element;
+  }
   function resetEmphasis() {state.piece=null;state.seam=null;}
   function chooseGroup(group) {
     state.group=group;state.part=groupParts()[0].id;resetEmphasis();render();
@@ -78,16 +107,18 @@
   function selectSeam(id) {state.seam=state.seam===id?null:id;state.piece=null;renderControls();renderSheets();}
   function renderControls() {
     const vb=visibleBundles(),ph=$('.shell-piece-buttons'),sh=$('.shell-seam-buttons');ph.replaceChildren();sh.replaceChildren();
+    const related=relatedPieces();
     ph.append(button('전체',()=>{resetEmphasis();renderControls();renderSheets();},!state.piece&&!state.seam));
     for(const b of vb)for(const p of b.pieces) {
-      const key=pieceKey(b,p),el=button(p.label,()=>selectPiece(key),state.piece===key,p.name);
+      const key=pieceKey(b,p),el=button(p.label,()=>selectPiece(key),state.piece===key||related.has(key),p.name);
       el.style.setProperty('--piece-color',p.color);el.dataset.piece=key;ph.append(el);
     }
     const seams=[...new Set(vb.flatMap(b=>b.seams.map(s=>s.id)))];
     $('.shell-seam-row').hidden=!seams.length;
     for(const id of seams)sh.append(button(id,()=>selectSeam(id),state.seam===id));
     const patch=vb.some(b=>b.patch);
-    $('.shell-uv-status').textContent=state.seam?`${state.seam} · 같은 번호의 경계를 강조했습니다. 두 경계의 시작점 ○와 진행 화살표를 확인하세요.`:state.piece?`${vb.flatMap(b=>b.pieces.map(p=>({b,p}))).find(({b,p})=>pieceKey(b,p)===state.piece)?.p.label||''} 구역을 강조했습니다. 전체를 누르면 강조를 해제합니다.`:patch?'같은 파츠의 상단 외피 조각도 함께 표시합니다. P 번호는 기존 외피 중 해당 촉수로 이어지는 조각입니다.':'구역이나 연결 번호를 누르면 위치를 강조합니다. 삭제된 내부 마감면과 그 면에 연결되던 번호는 표시하지 않습니다.';
+    const sideCount=seamSides().length;
+    $('.shell-uv-status').textContent=state.seam?`${state.seam} · 같은 번호의 경계와 해당 조각을 강조했습니다. 시작점 ○와 진행 화살표를 확인하세요.${sideCount>2?' 이 번호의 경계가 여러 곳에 있어 임의의 짝을 점선으로 연결하지 않습니다.':sideCount===1?' 반대쪽 파츠의 같은 연결 번호도 확인하세요.':''}`:state.piece?`${vb.flatMap(b=>b.pieces.map(p=>({b,p}))).find(({b,p})=>pieceKey(b,p)===state.piece)?.p.label||''} 구역을 강조했습니다. 전체를 누르면 강조를 해제합니다.`:patch?'같은 파츠의 상단 외피 조각도 함께 표시합니다. P 번호는 기존 외피 중 해당 촉수로 이어지는 조각입니다.':'구역이나 연결 번호를 누르면 위치를 강조합니다. 삭제된 내부 마감면과 그 면에 연결되던 번호는 표시하지 않습니다.';
   }
   function render() {
     $$('[data-group]').forEach(b=>pressed(b,b.dataset.group===state.group));
@@ -112,12 +143,12 @@
   function addLabel(svg, text, pos, font, color, extra='') {
     const g=svgNode('g',{'class':'shell-svg-label '+extra,'pointer-events':'none'}),width=Math.max(font*2.1,text.length*font*.59)+font*.6;
     g.append(svgNode('rect',{x:pos[0]-width/2,y:pos[1]-font*.69,width,height:font*1.38,rx:font*.18,fill:'white',stroke:color,'stroke-width':font*.07}));
-    const t=svgNode('text',{x:pos[0],y:pos[1],fill:'#24333e','font-family':'Malgun Gothic,Arial,sans-serif','font-size':font,'font-weight':700,'text-anchor':'middle','dominant-baseline':'central'});t.textContent=text;g.append(t);svg.append(g);
+    const t=svgNode('text',{x:pos[0],y:pos[1],fill:'#24333e','font-family':'Malgun Gothic,Arial,sans-serif','font-size':font,'font-weight':700,'text-anchor':'middle','dominant-baseline':'central'});t.textContent=text;g.append(t);svg.append(g);return g;
   }
   function createSVG(atlas, sheetBundles, ordinal) {
     const bounds=sheetBundles.map(b=>b.bounds),minX=Math.min(...bounds.map(b=>b[0])),minY=Math.min(...bounds.map(b=>b[1])),maxX=Math.max(...bounds.map(b=>b[2])),maxY=Math.max(...bounds.map(b=>b[3]));
     const span=Math.max(maxX-minX,maxY-minY,1),margin=span*.065,x=minX-margin,y=minY-margin,width=maxX-minX+margin*2,height=maxY-minY+margin*2;
-    const svg=svgNode('svg',{xmlns:NS,viewBox:`${x} ${y} ${width} ${height}`,role:'img','aria-label':`${ATLAS_NAMES[atlas]||GROUPS[state.group]} 외피 UV`,'data-atlas':atlas,'data-part':[...new Set(sheetBundles.map(b=>b.selection_id))].join(' '),'data-source':[...new Set(sheetBundles.map(b=>b.source_id))].join(' '),'data-face-count':sheetBundles.reduce((n,b)=>n+b.face_count,0)});
+    const svg=svgNode('svg',{xmlns:NS,viewBox:`${x} ${y} ${width} ${height}`,role:'group','aria-label':`${ATLAS_NAMES[atlas]||GROUPS[state.group]} 외피 UV`,'data-atlas':atlas,'data-part':[...new Set(sheetBundles.map(b=>b.selection_id))].join(' '),'data-source':[...new Set(sheetBundles.map(b=>b.source_id))].join(' '),'data-face-count':sheetBundles.reduce((n,b)=>n+b.face_count,0)});
     svg.append(svgNode('rect',{x,y,width,height,fill:'#ffffff'}));
     const defs=svgNode('defs'),patternId='shell-actual-'+ordinal;
     if(state.palette==='actual') {
@@ -126,25 +157,43 @@
       pattern.append(svgNode('image',{href,width:DATA.atlas_size,height:DATA.atlas_size,preserveAspectRatio:'none'}));defs.append(pattern);
     }
     svg.append(defs);
-    const labels=[],smallPreview=sheetBundles.every(b=>b.patch);
+    const labels=[],smallPreview=sheetBundles.every(b=>b.patch),related=relatedPieces();
     for(const b of sheetBundles)for(const p of b.pieces) {
-      const k=pieceKey(b,p),dimmed=state.piece&&state.piece!==k;
+      const k=pieceKey(b,p),emphasized=state.piece===k||related.has(k),dimmed=state.piece?state.piece!==k:!!state.seam&&!related.has(k);
       const group=svgNode('g',{'data-piece':k,'data-source':b.source_id,'data-part':b.selection_id,'data-face-count':p.faces,opacity:dimmed?.20:1});
       const fill=svgNode('path',{d:p.path,fill:state.palette==='actual'?`url(#${patternId})`:p.color,'class':'shell-svg-face'});fill.addEventListener('click',()=>selectPiece(k));
       const title=svgNode('title');title.textContent=`${p.label} · ${p.name}`;fill.append(title);group.append(fill);
       if(state.wire)group.append(svgNode('path',{d:p.wire,fill:'none',stroke:'#334b43','stroke-opacity':.44,'stroke-width':span*.00075,'pointer-events':'none','class':'shell-svg-wire'}));
-      group.append(svgNode('path',{d:p.outline,fill:'none',stroke:state.piece===k?'#20392a':'#425d50','stroke-width':span*(state.piece===k?.0035:.0014),'stroke-linejoin':'round','pointer-events':'none'}));
+      if(emphasized)group.append(svgNode('path',{d:p.outline,fill:'none',stroke:'white','stroke-width':span*.006,'stroke-linejoin':'round','pointer-events':'none'}));
+      group.append(svgNode('path',{d:p.outline,fill:'none',stroke:emphasized?'#173d48':'#425d50','stroke-width':span*(emphasized?.0035:.0014),'stroke-linejoin':'round','pointer-events':'none'}));
       svg.append(group);if(state.labels&&!dimmed)labels.push([p.label,p.label_point,p.color]);
+    }
+    // Connect directed start/start and end/end only when the complete visible
+    // selection contains exactly two sides and both are in this SVG's atlas.
+    // More than two fragments must not be paired by proximity or array order.
+    const paired=seamSides(sheetBundles);
+    if(state.seam&&seamSides().length===2&&paired.length===2) {
+      const a=paired[0].seam.points,b=paired[1].seam.points;
+      for(const [first,last,kind]of[[a[0],b[0],'start'],[a.at(-1),b.at(-1),'end']]) {
+        const bend=(first[1]+last[1])/2;
+        svg.append(svgNode('path',{d:`M ${first[0]} ${first[1]} C ${first[0]} ${bend} ${last[0]} ${bend} ${last[0]} ${last[1]}`,fill:'none',stroke:'#267da0','stroke-width':span*.0018,'stroke-dasharray':`${span*.006} ${span*.004}`,'pointer-events':'none','class':'shell-seam-connector '+kind,'data-seam':state.seam}));
+      }
     }
     const seamLabels=[];
     for(const b of sheetBundles)for(const seam of b.seams) {
       const active=seam.id===state.seam,pts=seam.points;if(pts.length<2)continue;
-      const poly=svgNode('polyline',{points:pts.map(p=>p.join(',')).join(' '),fill:'none',stroke:active?'#ffffff':seam.color,'stroke-width':span*(active?.009:.0023),'stroke-dasharray':active?'none':`${span*.007} ${span*.005}`,'stroke-linecap':'round','stroke-linejoin':'round',opacity:state.seam&&!active?.18:.8,'class':'shell-svg-seam'});poly.addEventListener('click',()=>selectSeam(seam.id));svg.append(poly);
+      const points=pts.map(p=>p.join(',')).join(' '),group=bindSeamControl(svgNode('g',{'class':'shell-svg-seam-side','data-piece':b.id+'/'+seam.piece}),seam.id);
+      group.append(svgNode('polyline',{points,fill:'none',stroke:'transparent','stroke-width':span*.015,'pointer-events':'stroke'}));
       if(active) {
-        const line=poly.cloneNode();line.setAttribute('stroke',seam.color);line.setAttribute('stroke-width',span*.0045);line.setAttribute('pointer-events','none');svg.append(line);
-        const start=pts[0],end=pts.at(-1),prev=pts.at(-2),len=Math.hypot(end[0]-prev[0],end[1]-prev[1])||1,ux=(end[0]-prev[0])/len,uy=(end[1]-prev[1])/len,r=span*.012;
+        group.append(svgNode('polyline',{points,fill:'none',stroke:'#173d48','stroke-width':span*.013,'stroke-linejoin':'round','stroke-linecap':'round','pointer-events':'none'}));
+        group.append(svgNode('polyline',{points,fill:'none',stroke:'white','stroke-width':span*.009,'stroke-linejoin':'round','stroke-linecap':'round','pointer-events':'none'}));
+      }
+      group.append(svgNode('polyline',{points,fill:'none',stroke:seam.color||'#486f77','stroke-width':span*(active?.0045:.0023),'stroke-dasharray':active?'none':`${span*.007} ${span*.005}`,'stroke-linecap':'round','stroke-linejoin':'round',opacity:state.seam&&!active?.18:.9,'class':'shell-svg-seam','pointer-events':'none'}));svg.append(group);
+      if(active) {
+        const start=pts[0],end=pts.at(-1),r=span*.012;
         svg.append(svgNode('circle',{cx:start[0],cy:start[1],r:r*.46,fill:'white',stroke:'#263d32','stroke-width':r*.18}));
-        svg.append(svgNode('polygon',{points:`${end} ${end[0]-ux*r-uy*r*.46},${end[1]-uy*r+ux*r*.46} ${end[0]-ux*r+uy*r*.46},${end[1]-uy*r-ux*r*.46}`,fill:'#263d32'}));
+        const prev=[...pts].reverse().find(point=>Math.hypot(end[0]-point[0],end[1]-point[1])>1e-9);
+        if(prev){const len=Math.hypot(end[0]-prev[0],end[1]-prev[1]),ux=(end[0]-prev[0])/len,uy=(end[1]-prev[1])/len;svg.append(svgNode('polygon',{points:`${end} ${end[0]-ux*r-uy*r*.46},${end[1]-uy*r+ux*r*.46} ${end[0]-ux*r+uy*r*.46},${end[1]-uy*r-ux*r*.46}`,fill:'#263d32',stroke:'white','stroke-width':r*.13,'stroke-linejoin':'round','pointer-events':'none'}));}
         if(state.labels)seamLabels.push([seam.id,midPoint(pts),seam.color]);
       }
     }
@@ -156,7 +205,7 @@
       while(occupied.some(p=>Math.abs(center[0]-p.x)<(labelWidth+p.width)/2+font*.25&&Math.abs(center[1]-p.y)<font*1.55))center[1]-=font*1.8;
       occupied.push({x:center[0],y:center[1],width:labelWidth});
       svg.append(svgNode('line',{x1:pos[0],y1:pos[1],x2:center[0],y2:center[1]+font*.69,stroke:color,'stroke-width':span*.0009,'pointer-events':'none'}));
-      addLabel(svg,label,center,font,color,'shell-seam-label');
+      bindSeamControl(addLabel(svg,label,center,font,color,'shell-seam-label'),label);
     }
     return svg;
   }

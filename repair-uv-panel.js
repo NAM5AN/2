@@ -21,15 +21,23 @@
     return p.selection_id===s.part;
   });}
   function svgNode(name,attrs={}){const n=document.createElementNS(NS,name);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,String(v));return n;}
-  function label(svg,text,pos,font,color){
-    const group=svgNode('g',{'class':'repair-svg-label','pointer-events':'none'}),w=Math.max(2.5,text.length*.63)*font+font*.6;
+  function interactive(el,action,name){
+    el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',name);
+    el.style.cursor='pointer';
+    el.addEventListener('click',e=>{e.stopPropagation();action();});
+    el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();action();}});
+  }
+  function label(svg,text,pos,font,color,action){
+    const group=svgNode('g',{'class':'repair-svg-label','pointer-events':action?'auto':'none'}),w=Math.max(2.5,text.length*.63)*font+font*.6;
     group.append(svgNode('rect',{x:pos[0]-w/2,y:pos[1]-font*.72,width:w,height:font*1.44,rx:font*.2,fill:'white',stroke:color,'stroke-width':font*.07}));
-    const t=svgNode('text',{x:pos[0],y:pos[1],fill:'#263b30','font-family':'Malgun Gothic,Arial,sans-serif','font-size':font,'font-weight':700,'text-anchor':'middle','dominant-baseline':'central'});t.textContent=text;group.append(t);svg.append(group);
+    const t=svgNode('text',{x:pos[0],y:pos[1],fill:'#263b30','font-family':'Malgun Gothic,Arial,sans-serif','font-size':font,'font-weight':700,'text-anchor':'middle','dominant-baseline':'central'});t.textContent=text;group.append(t);if(action)interactive(group,action,text+' 연결 번호 선택');svg.append(group);
   }
   function mid(points){if(!points.length)return[0,0];let total=0;const lens=points.slice(1).map((p,i)=>{const n=Math.hypot(p[0]-points[i][0],p[1]-points[i][1]);total+=n;return n;});let remain=total/2;for(let i=0;i<lens.length;i++){if(remain<=lens[i]){const t=lens[i]?remain/lens[i]:0;return points[i].map((v,j)=>v*(1-t)+points[i+1][j]*t);}remain-=lens[i];}return points[0];}
-  function svgFor(piece,s,index){
+  function svgFor(piece,s,index,interaction={}){
+    const selectedSeam=Object.hasOwn(interaction,'seam')?interaction.seam:activeSeam;
+    const selectSeam=id=>interaction.onSeam?interaction.onSeam(id):(()=>{activeSeam=activeSeam===id?null:id;render(true);})();
     const b=piece.bounds,span=Math.max(b[2]-b[0],b[3]-b[1],1),pad=span*.075,x=b[0]-pad,y=b[1]-pad,w=b[2]-b[0]+pad*2,h=b[3]-b[1]+pad*2;
-    const svg=svgNode('svg',{xmlns:NS,viewBox:`${x} ${y} ${w} ${h}`,role:'img','aria-label':piece.id+' '+piece.name+' UV','data-part':piece.selection_id,'data-piece':piece.id,'data-face-count':piece.face_count,'data-triangle-count':piece.triangle_count,'data-source':piece.mesh_id});
+    const svg=svgNode('svg',{xmlns:NS,viewBox:`${x} ${y} ${w} ${h}`,role:interaction.onPiece||interaction.onSeam?'group':'img','aria-label':piece.id+' '+piece.name+' UV','data-part':piece.selection_id,'data-piece':piece.id,'data-face-count':piece.face_count,'data-triangle-count':piece.triangle_count,'data-source':piece.mesh_id});
     svg.append(svgNode('rect',{x,y,width:w,height:h,fill:'#fff'}));
     const texture=window.MORBOL_TEXTURES?.[piece.atlas]||DATA.textures?.[piece.atlas],atlasSize=piece.atlas_size||DATA.atlas_size;
     if(s.palette==='actual'&&texture){
@@ -38,14 +46,21 @@
     }else if(s.palette==='actual'&&piece.actual_paths?.length){
       for(const a of piece.actual_paths)svg.append(svgNode('path',{d:a.path,fill:a.color,'class':'repair-svg-surface'}));
     }else svg.append(svgNode('path',{d:piece.path,fill:s.palette==='actual'?(piece.actual_color||piece.color):piece.color,'class':'repair-svg-surface'}));
-    if(s.wire)svg.append(svgNode('path',{d:piece.wire,fill:'none',stroke:'#2e473b','stroke-opacity':.48,'stroke-width':span*.001,'class':'repair-svg-wire'}));
-    svg.append(svgNode('path',{d:piece.outline,fill:'none',stroke:'#365440','stroke-width':span*.0019,'stroke-linejoin':'round'}));
+    if(interaction.onPiece)for(const surface of svg.querySelectorAll('.repair-svg-surface'))interactive(surface,interaction.onPiece,piece.id+' 조각 강조');
+    if(s.wire)svg.append(svgNode('path',{d:piece.wire,fill:'none',stroke:'#2e473b','stroke-opacity':.48,'stroke-width':span*.001,'class':'repair-svg-wire','pointer-events':'none'}));
+    svg.append(svgNode('path',{d:piece.outline,fill:'none',stroke:interaction.selected?'#173d48':'#365440','stroke-width':span*(interaction.selected?.005:.0019),'stroke-linejoin':'round','pointer-events':'none'}));
     const seamLabels=new Set();
     for(const seam of piece.seams||[]){
-      const active=activeSeam===seam.id,points=seam.points;if(points.length<2)continue;
-      const line=svgNode('polyline',{points:points.map(p=>p.join(',')).join(' '),fill:'none',stroke:active?'#173d48':seam.color||'#52747b','stroke-width':span*(active?.006:.0025),'stroke-dasharray':active?'none':`${span*.01} ${span*.006}`,'stroke-linejoin':'round','class':'repair-svg-seam','data-seam':seam.id});
-      line.addEventListener('click',()=>{activeSeam=active?null:seam.id;render(true);});svg.append(line);
-      if(s.labels&&(active||!seamLabels.has(seam.id))){seamLabels.add(seam.id);const pos=mid(points);label(svg,seam.id,[pos[0],pos[1]-span*.025],span*.022,seam.color||'#52747b');}
+      const active=selectedSeam===seam.id,points=seam.points;if(points.length<2)continue;
+      if(active)svg.append(svgNode('polyline',{points:points.map(p=>p.join(',')).join(' '),fill:'none',stroke:'white','stroke-width':span*.012,'stroke-linejoin':'round','pointer-events':'none'}));
+      const line=svgNode('polyline',{points:points.map(p=>p.join(',')).join(' '),fill:'none',stroke:active?'#173d48':seam.color||'#52747b','stroke-width':span*(active?.006:.0025),'stroke-dasharray':active?'none':`${span*.01} ${span*.006}`,'stroke-linejoin':'round','stroke-linecap':'round',opacity:selectedSeam&&!active?.2:1,'class':'repair-svg-seam','data-seam':seam.id,'data-active':String(active)});
+      interactive(line,()=>selectSeam(seam.id),seam.id+' 연결선 선택');svg.append(line);
+      if(active){
+        const start=points[0],end=points.at(-1),prev=points.at(-2),len=Math.hypot(end[0]-prev[0],end[1]-prev[1])||1,ux=(end[0]-prev[0])/len,uy=(end[1]-prev[1])/len,r=span*.014;
+        svg.append(svgNode('circle',{cx:start[0],cy:start[1],r:r*.45,fill:'white',stroke:'#173d48','stroke-width':r*.16,'pointer-events':'none','class':'uv-seam-start'}));
+        svg.append(svgNode('polygon',{points:`${end} ${end[0]-ux*r-uy*r*.45},${end[1]-uy*r+ux*r*.45} ${end[0]-ux*r+uy*r*.45},${end[1]-uy*r-ux*r*.45}`,fill:'#173d48','pointer-events':'none','class':'uv-seam-direction'}));
+      }
+      if(s.labels&&(active||!seamLabels.has(seam.id))){seamLabels.add(seam.id);const pos=mid(points);label(svg,seam.id,[pos[0],pos[1]-span*.025],span*.022,seam.color||'#52747b',()=>selectSeam(seam.id));}
     }
     if(s.labels)label(svg,piece.id,piece.label_point,span*.027,piece.color);
     return svg;
@@ -78,7 +93,7 @@
   let queued=false;
   new MutationObserver(()=>{if(queued)return;queued=true;queueMicrotask(()=>{queued=false;render();});}).observe(panel,{subtree:true,childList:true,attributes:true,attributeFilter:['aria-pressed','class']});
   panel.addEventListener('click',()=>queueMicrotask(()=>render()));
-  window.morbolRepairUV={getState:()=>({...last}),render:()=>render(true),drawPiece:(piece,state,index)=>svgFor(piece,state,index)};
+  window.morbolRepairUV={getState:()=>({...last}),render:()=>render(true),drawPiece:(piece,state,index,interaction)=>svgFor(piece,state,index,interaction)};
   render();
 })();
 /* MORBOL_V46_CURRENT_UV_RUNTIME_SUPPORT */
