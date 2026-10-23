@@ -9,7 +9,7 @@
   const parts = new Map(DATA.parts.map(p => [p.id,p]));
   const bundles = new Map(DATA.bundles.map(b => [b.id,b]));
   const headAtlases = [...new Set(DATA.parts.filter(p => p.group === 'head').map(p => p.atlas))];
-  const state = {group:'body',part:'BODY',headAtlas:headAtlases[0],mode:'part',palette:'uv',labels:true,wire:true,piece:null,seam:null};
+  const state = {group:'body',part:'BODY',headAtlas:headAtlases[0],mode:'part',palette:'uv',labels:false,wire:true,piece:null,seam:null};
   const panel = document.createElement('section');
   panel.className = 'card uv-card shell-uv-card';
   panel.innerHTML = `
@@ -18,7 +18,7 @@
         <div class="uv-palette-tabs" role="group" aria-label="오른쪽 UV 색상">
           <button type="button" data-palette="uv">UV 구분색</button><button type="button" data-palette="actual">실제 모델 색상</button>
         </div>
-        <button type="button" class="uv-labels-toggle" aria-label="오른쪽 UV 번호표 표시"></button>
+        <button type="button" class="uv-labels-toggle" aria-pressed="false" aria-label="오른쪽 UV 번호표 표시">번호표 꺼짐</button>
         <button type="button" class="uv-wire-toggle" aria-label="오른쪽 UV 메시 선 표시"></button>
         <span class="uv-appearance-note">오른쪽만 변경</span>
       </div>

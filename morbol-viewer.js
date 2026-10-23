@@ -34,7 +34,7 @@
     static groupFor(part){return part.id==='B01'?'body':part.id==='L01'?'long':part.group;}
     constructor(host,data,textures,options={}) {
       this.host=host;this.data={...data,objects:data.objects.map(o=>({...o,group:MorbolViewer.groupFor(o)}))};this.options=options;this.visible=Object.fromEntries(GROUPS.map(g=>[g,true]));this.partVisible=Object.fromEntries(data.objects.map(o=>[o.id,true]));
-      this.palette='uv';this.labels=true;this.wire=false;this.person=false;this.view='front';this.direction=norm(VIEWS.front);this.target=[0,0,1];this.halfHeight=1.3;this.disposed=false;this.moving=false;this._ready=false;
+      this.palette='uv';this.labels=false;this.wire=false;this.person=false;this.view='front';this.direction=norm(VIEWS.front);this.target=[0,0,1];this.halfHeight=1.3;this.disposed=false;this.moving=false;this._ready=false;
       host.style.position='relative';host.style.overflow='hidden';host.style.background='#fff';host.dataset.ready='loading';
       this.canvas=document.createElement('canvas');this.canvas.className='morbol-webgl';this.canvas.setAttribute('aria-label','몰볼 3D 모델. 왼쪽 드래그로 회전, 휠로 확대·축소, 오른쪽 드래그로 이동합니다. 모바일은 한 손가락 드래그로 회전, 두 손가락 핀치로 확대·축소, 두 번 터치 후 두 번째 누름을 유지하며 드래그하면 이동합니다.');this.canvas.tabIndex=0;this.canvas.setAttribute('role','img');
       this.overlay=document.createElement('canvas');this.overlay.className='morbol-labels';this.overlay.setAttribute('aria-hidden','true');

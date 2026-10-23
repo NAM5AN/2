@@ -27,23 +27,23 @@
    <button id="tab-shell" role="tab" aria-controls="panel-shell" aria-selected="false" tabindex="-1" data-version="shell">버전 2 · 외피만</button>
   </div>
   <a class="pattern-link" href="sewing-patterns.html" target="_blank">이전 도안 · v31</a>
-  <span class="version-note" id="version-note" aria-live="polite">v54 · 모델 모바일 조작 · 내부 마감 포함</span>
+  <span class="version-note" id="version-note" aria-live="polite">v55 · 번호표 기본 꺼짐·안쪽 경계 완화 · 내부 마감 포함</span>
  </div>
 </div>
 <div class="version-stage">
 <section class="version-panel" id="panel-complete" role="tabpanel" aria-labelledby="tab-complete">
  <div class="version-loading" role="status" hidden>현재 모델과 UV를 불러오는 중입니다.</div>
- <iframe title="버전 1 · 마감 포함 모델과 UV 대조" data-src="model-complete.html?rev=mobile54-20261023" allow="fullscreen"></iframe>
+ <iframe title="버전 1 · 마감 포함 모델과 UV 대조" data-src="model-complete.html?rev=inward55-20261023" allow="fullscreen"></iframe>
 </section>
 <section class="version-panel" id="panel-shell" role="tabpanel" aria-labelledby="tab-shell" hidden>
  <div class="version-loading" role="status" hidden>외피 모델과 UV를 불러오는 중입니다.</div>
- <iframe title="버전 2 · 외피만 있는 모델과 UV 대조" data-src="model-shell.html?rev=mobile54-20261023" allow="fullscreen"></iframe>
+ <iframe title="버전 2 · 외피만 있는 모델과 UV 대조" data-src="model-shell.html?rev=inward55-20261023" allow="fullscreen"></iframe>
 </section>
 </div>
 <noscript>자바스크립트를 켜거나 직접 열어 주세요. <a href="model-complete.html">버전 1</a><a href="model-shell.html">버전 2</a></noscript>
 <script>
 (()=>{'use strict';
- const tabs=[...document.querySelectorAll('[role=tab]')], notes={complete:'v54 · 모델 모바일 조작 · 내부 마감 포함',shell:'v54 · 모델 모바일 조작 · 외피만'};
+ const tabs=[...document.querySelectorAll('[role=tab]')], notes={complete:'v55 · 번호표 기본 꺼짐·안쪽 경계 완화 · 내부 마감 포함',shell:'v55 · 번호표 기본 꺼짐·안쪽 경계 완화 · 외피만'};
  function show(version,updateURL=true){
   if(!Object.hasOwn(notes,version))version='complete';
   for(const tab of tabs){const active=tab.dataset.version===version;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;
