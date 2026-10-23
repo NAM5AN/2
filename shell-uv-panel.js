@@ -111,7 +111,7 @@
     ph.append(button('전체',()=>{resetEmphasis();renderControls();renderSheets();},!state.piece&&!state.seam));
     for(const b of vb)for(const p of b.pieces) {
       const key=pieceKey(b,p),el=button(p.label,()=>selectPiece(key),state.piece===key||related.has(key),p.name);
-      el.style.setProperty('--piece-color',p.color);el.dataset.piece=key;ph.append(el);
+      el.style.setProperty('--piece-color',p.color);el.dataset.piece=key;el.dataset.assemblyPart=b.id;el.dataset.assemblyPiece=p.id;el.dataset.assemblySelection=b.selection_id;el.dataset.assemblyVersion='2';ph.append(el);
     }
     const seams=[...new Set(vb.flatMap(b=>b.seams.map(s=>s.id)))];
     $('.shell-seam-row').hidden=!seams.length;
@@ -160,7 +160,7 @@
     const labels=[],smallPreview=sheetBundles.every(b=>b.patch),related=relatedPieces();
     for(const b of sheetBundles)for(const p of b.pieces) {
       const k=pieceKey(b,p),emphasized=state.piece===k||related.has(k),dimmed=state.piece?state.piece!==k:!!state.seam&&!related.has(k);
-      const group=svgNode('g',{'data-piece':k,'data-source':b.source_id,'data-part':b.selection_id,'data-face-count':p.faces,opacity:dimmed?.20:1});
+      const group=svgNode('g',{'data-piece':k,'data-source':b.source_id,'data-part':b.selection_id,'data-face-count':p.faces,'data-assembly-part':b.id,'data-assembly-piece':p.id,'data-assembly-selection':b.selection_id,'data-assembly-version':2,opacity:dimmed?.20:1});
       const fill=svgNode('path',{d:p.path,fill:state.palette==='actual'?`url(#${patternId})`:p.color,'class':'shell-svg-face'});fill.addEventListener('click',()=>selectPiece(k));
       const title=svgNode('title');title.textContent=`${p.label} · ${p.name}`;fill.append(title);group.append(fill);
       if(state.wire)group.append(svgNode('path',{d:p.wire,fill:'none',stroke:'#334b43','stroke-opacity':.44,'stroke-width':span*.00075,'pointer-events':'none','class':'shell-svg-wire'}));
@@ -182,7 +182,7 @@
     const seamLabels=[];
     for(const b of sheetBundles)for(const seam of b.seams) {
       const active=seam.id===state.seam,pts=seam.points;if(pts.length<2)continue;
-      const points=pts.map(p=>p.join(',')).join(' '),group=bindSeamControl(svgNode('g',{'class':'shell-svg-seam-side','data-piece':b.id+'/'+seam.piece}),seam.id);
+      const points=pts.map(p=>p.join(',')).join(' '),group=bindSeamControl(svgNode('g',{'class':'shell-svg-seam-side','data-piece':b.id+'/'+seam.piece,'data-assembly-part':b.id,'data-assembly-piece':seam.piece,'data-assembly-selection':b.selection_id,'data-assembly-version':2}),seam.id);
       group.append(svgNode('polyline',{points,fill:'none',stroke:'transparent','stroke-width':span*.015,'pointer-events':'stroke'}));
       if(active) {
         group.append(svgNode('polyline',{points,fill:'none',stroke:'#173d48','stroke-width':span*.013,'stroke-linejoin':'round','stroke-linecap':'round','pointer-events':'none'}));

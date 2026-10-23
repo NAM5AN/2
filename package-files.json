@@ -1,5 +1,5 @@
 {
-  "version": 50,
+  "version": 51,
   "native_version": 50,
   "native_filename": "morbol-v50-complete.blend",
   "native_sha256": "da230e6ec2a293be3a901b3b48da6e60b246b3f61c26d876af245a3af264e37c",
@@ -283,6 +283,10 @@
     "UV-small-uv-labels.webp",
     "UV-small-uv-plain-no-grid.webp",
     "UV-small-uv-plain.webp",
+    "assembly-data.js",
+    "assembly-gestures.js",
+    "assembly-preview.css",
+    "assembly-preview.js",
     "assembly-seams.json",
     "card-B01-actual-labels-no-grid.webp",
     "card-B01-actual-labels.webp",
@@ -824,5 +828,6 @@
     "하단-마감-번호표.csv",
     "하단-연결-마감.png",
     "하단-연결-설명.md"
-  ]
+  ],
+  "viewer_revision": 51
 }

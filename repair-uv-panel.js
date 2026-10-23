@@ -37,7 +37,7 @@
     const selectedSeam=Object.hasOwn(interaction,'seam')?interaction.seam:activeSeam;
     const selectSeam=id=>interaction.onSeam?interaction.onSeam(id):(()=>{activeSeam=activeSeam===id?null:id;render(true);})();
     const b=piece.bounds,span=Math.max(b[2]-b[0],b[3]-b[1],1),pad=span*.075,x=b[0]-pad,y=b[1]-pad,w=b[2]-b[0]+pad*2,h=b[3]-b[1]+pad*2;
-    const svg=svgNode('svg',{xmlns:NS,viewBox:`${x} ${y} ${w} ${h}`,role:interaction.onPiece||interaction.onSeam?'group':'img','aria-label':piece.id+' '+piece.name+' UV','data-part':piece.selection_id,'data-piece':piece.id,'data-face-count':piece.face_count,'data-triangle-count':piece.triangle_count,'data-source':piece.mesh_id});
+    const svg=svgNode('svg',{xmlns:NS,viewBox:`${x} ${y} ${w} ${h}`,role:interaction.onPiece||interaction.onSeam?'group':'img','aria-label':piece.id+' '+piece.name+' UV','data-part':piece.selection_id,'data-piece':piece.id,'data-face-count':piece.face_count,'data-triangle-count':piece.triangle_count,'data-source':piece.mesh_id,'data-assembly-part':piece.mesh_id||piece.selection_id,'data-assembly-piece':piece.mesh_id&&piece.id.startsWith(piece.mesh_id+'-')?piece.id.slice(piece.mesh_id.length+1):piece.id,'data-assembly-selection':piece.selection_id,'data-assembly-version':s.version||(window.morbolShellUV?2:1)});
     svg.append(svgNode('rect',{x,y,width:w,height:h,fill:'#fff'}));
     const texture=window.MORBOL_TEXTURES?.[piece.atlas]||DATA.textures?.[piece.atlas],atlasSize=piece.atlas_size||DATA.atlas_size;
     if(s.palette==='actual'&&texture){
