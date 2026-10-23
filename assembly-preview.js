@@ -3,7 +3,7 @@
   if(window.MorbolAssembly)return;
   const script=document.currentScript;
   const baseURL=new URL('.',script&&script.src||document.baseURI);
-  const dataURL=new URL('assembly-data.js?rev=assembly51-20261022',baseURL).href;
+  const dataURL=new URL('assembly-data.js?rev=oval52-20261023',baseURL).href;
   let dataPromise=null,dialog=null,ui=null,session=null,serial=0,restoreFocus=null;
   const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
   const ease=v=>{v=clamp(v,0,1);return v*v*(3-2*v)};
