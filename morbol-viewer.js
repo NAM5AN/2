@@ -36,7 +36,7 @@
       this.host=host;this.data={...data,objects:data.objects.map(o=>({...o,group:MorbolViewer.groupFor(o)}))};this.options=options;this.visible=Object.fromEntries(GROUPS.map(g=>[g,true]));this.partVisible=Object.fromEntries(data.objects.map(o=>[o.id,true]));
       this.palette='uv';this.labels=true;this.wire=false;this.person=false;this.view='front';this.direction=norm(VIEWS.front);this.target=[0,0,1];this.halfHeight=1.3;this.disposed=false;this.moving=false;this._ready=false;
       host.style.position='relative';host.style.overflow='hidden';host.style.background='#fff';host.dataset.ready='loading';
-      this.canvas=document.createElement('canvas');this.canvas.className='morbol-webgl';this.canvas.setAttribute('aria-label','몰볼 3D 모델. 왼쪽 드래그로 회전, 휠로 확대, 오른쪽 드래그로 이동합니다.');this.canvas.tabIndex=0;this.canvas.setAttribute('role','img');
+      this.canvas=document.createElement('canvas');this.canvas.className='morbol-webgl';this.canvas.setAttribute('aria-label','몰볼 3D 모델. 왼쪽 드래그로 회전, 휠로 확대·축소, 오른쪽 드래그로 이동합니다. 모바일은 한 손가락 드래그로 회전, 두 손가락 핀치로 확대·축소, 두 번 터치 후 두 번째 누름을 유지하며 드래그하면 이동합니다.');this.canvas.tabIndex=0;this.canvas.setAttribute('role','img');
       this.overlay=document.createElement('canvas');this.overlay.className='morbol-labels';this.overlay.setAttribute('aria-hidden','true');
       for(const c of [this.canvas,this.overlay])Object.assign(c.style,{position:'absolute',inset:'0',width:'100%',height:'100%',display:'block'});
       this.canvas.style.touchAction='none';this.overlay.style.pointerEvents='none';
@@ -95,38 +95,52 @@
           for(const[dx,dy]of[[0,0],[20,-18],[-20,-18],[22,18],[-22,18],[0,-35],[0,35]]){const x=Math.max(4,Math.min(this.width-w-4,a[0]-w/2+dx)),y=Math.max(4,Math.min(this.height-h-4,a[1]-h/2+dy));if(boxes.some(b=>x<b[0]+b[2]+3&&x+w+3>b[0]&&y<b[1]+b[3]+3&&y+h+3>b[1]))continue;ctx.strokeStyle=label.color||'#60796b';ctx.lineWidth=1.1;if(dx||dy){ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(x+w/2,y+h/2);ctx.stroke();}ctx.fillStyle='#fffffff0';ctx.fillRect(x,y,w,h);ctx.strokeRect(x,y,w,h);ctx.fillStyle='#243a35';ctx.fillText(label.id,x+7,y+h/2);boxes.push([x,y,w,h]);placed=true;break;}if(placed)break;}
       }this.host.dataset.labelCount=String(boxes.length);
     }
-    bindInteraction(){let drag=null,timer;
-      const stop=()=>{drag=null;this.moving=false;this.canvas.style.cursor='grab';this.host.dataset.navigation='idle';this.render();};
-      this.canvas.addEventListener('contextmenu',e=>e.preventDefault());
-      this.canvas.addEventListener('pointerdown',e=>{
-        if(drag||![0,2].includes(e.button))return;
-        e.preventDefault();clearTimeout(timer);
-        drag={x:e.clientX,y:e.clientY,id:e.pointerId,mode:e.button===2?'pan':'orbit'};
-        this.canvas.setPointerCapture(e.pointerId);this.canvas.style.cursor=drag.mode==='pan'?'move':'grabbing';this.host.dataset.navigation=drag.mode;
+    bindInteraction(){
+      if(this._interactionCleanup)this._interactionCleanup();
+      const pointers=new Map(),listeners=[];let timer,lastTap=null,lastPair=null;
+      const listen=(type,fn,options)=>{this.canvas.addEventListener(type,fn,options);listeners.push(()=>this.canvas.removeEventListener(type,fn,options));};
+      const eventTime=e=>Number.isFinite(e.timeStamp)?e.timeStamp:performance.now();
+      const pair=()=>{const p=Array.from(pointers.values());return p.length===2?{distance:Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y),x:(p[0].x+p[1].x)/2,y:(p[0].y+p[1].y)/2}:null;};
+      const navigation=()=>{const p=Array.from(pointers.values()),mode=p.length===1?p[0].mode:p.length===2?'pinch':'idle';this.host.dataset.navigation=mode;this.canvas.style.cursor=mode==='pan'?'move':mode==='idle'?'grab':'grabbing';};
+      const clear=()=>{clearTimeout(timer);const ids=Array.from(pointers.keys());pointers.clear();lastTap=null;lastPair=null;this.moving=false;navigation();for(const id of ids)if(this.canvas.hasPointerCapture(id))this.canvas.releasePointerCapture(id);};
+      const panBy=(dx,dy)=>{const{right,up}=this.basis(),units=2*this.halfHeight/this.height;this.target=add(this.target,add(mul(right,-dx*units),mul(up,dy*units)));};
+      const zoomBy=ratio=>{this.halfHeight=Math.max(.035,Math.min(8,this.halfHeight*ratio));};
+      const orbitBy=(dx,dy)=>{const yaw=Math.atan2(this.direction[1],this.direction[0])-dx*.009,pitch=Math.max(-1.54,Math.min(1.54,Math.asin(this.direction[2])+dy*.009));this.direction=[Math.cos(pitch)*Math.cos(yaw),Math.cos(pitch)*Math.sin(yaw),Math.sin(pitch)];this.view='custom';};
+      listen('contextmenu',e=>e.preventDefault());
+      listen('pointerdown',e=>{
+        const touch=e.pointerType==='touch',active=Array.from(pointers.values());
+        if((!touch&&(![0,2].includes(e.button)||active.length))||active.some(p=>p.touch!==touch))return;
+        e.preventDefault();this.canvas.focus({preventScroll:true});clearTimeout(timer);const time=eventTime(e);
+        const doubleTap=touch&&!active.length&&lastTap&&time-lastTap.time>=0&&time-lastTap.time<=330&&Math.hypot(e.clientX-lastTap.x,e.clientY-lastTap.y)<=28;
+        pointers.set(e.pointerId,{x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,time,touch,mode:doubleTap||!touch&&e.button===2?'pan':'orbit',tap:touch&&!doubleTap&&!active.length});
+        lastTap=null;if(pointers.size>1){for(const p of pointers.values())p.tap=false;lastPair=pair();}
+        this.canvas.setPointerCapture(e.pointerId);navigation();
       });
-      this.canvas.addEventListener('pointermove',e=>{
-        if(!drag||e.pointerId!==drag.id)return;
-        if(!(e.buttons&(drag.mode==='pan'?2:1))){stop();return;}
-        const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.x=e.clientX;drag.y=e.clientY;
+      const pointerEnd=(e,cancelled=false)=>{
+        const p=pointers.get(e.pointerId);if(!p)return;
+        if(!cancelled&&p.tap&&eventTime(e)-p.time<=300&&Math.hypot(e.clientX-p.startX,e.clientY-p.startY)<=10)lastTap={time:eventTime(e),x:e.clientX,y:e.clientY};else lastTap=null;
+        pointers.delete(e.pointerId);lastPair=pair();for(const remaining of pointers.values()){remaining.tap=false;remaining.mode='orbit';}
+        if(!pointers.size)this.moving=false;navigation();this.render();
+      };
+      listen('pointermove',e=>{
+        const p=pointers.get(e.pointerId);if(!p)return;
+        if(!p.touch&&!(e.buttons&(p.mode==='pan'?2:1))){pointerEnd(e,true);return;}
+        e.preventDefault();const dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
+        if(Math.hypot(p.x-p.startX,p.y-p.startY)>10)p.tap=false;
         if(!dx&&!dy)return;
-        if(drag.mode==='pan'){
-          const{right,up}=this.basis(),units=2*this.halfHeight/this.height;
-          this.target=add(this.target,add(mul(right,-dx*units),mul(up,dy*units)));
-        }else{
-          const yaw=Math.atan2(this.direction[1],this.direction[0])-dx*.009;
-          const pitch=Math.max(-1.54,Math.min(1.54,Math.asin(this.direction[2])+dy*.009));
-          this.direction=[Math.cos(pitch)*Math.cos(yaw),Math.cos(pitch)*Math.sin(yaw),Math.sin(pitch)];this.view='custom';
-        }
+        if(pointers.size===2){const next=pair();if(lastPair){if(lastPair.distance>0)zoomBy(lastPair.distance/Math.max(next.distance,1));panBy(next.x-lastPair.x,next.y-lastPair.y);}lastPair=next;}
+        else if(pointers.size===1){if(p.mode==='pan')panBy(dx,dy);else orbitBy(dx,dy);}
+        else return;
         this.moving=true;this.render();this.emit();
       });
-      this.canvas.addEventListener('pointerup',e=>{if(drag&&e.pointerId===drag.id)stop();});
-      this.canvas.addEventListener('pointercancel',stop);this.canvas.addEventListener('lostpointercapture',stop);this.canvas.style.cursor='grab';
-      this.canvas.addEventListener('wheel',e=>{e.preventDefault();this.halfHeight=Math.max(.035,Math.min(8,this.halfHeight*Math.exp(e.deltaY*.001)));this.moving=true;this.render();clearTimeout(timer);timer=setTimeout(()=>{this.moving=false;this.render();},120);},{passive:false});
-      this.canvas.addEventListener('keydown',e=>{if(['+','=','-','0'].includes(e.key)){e.preventDefault();if(e.key==='0')this.fit();else{this.halfHeight*=e.key==='-'?1.15:1/1.15;this.render();}}});
-      this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.host.dataset.ready='error';this.status.hidden=false;this.status.textContent='3D 표시가 중단되었습니다. 화면을 새로고침해 주세요.';});
+      listen('pointerup',e=>pointerEnd(e));listen('pointercancel',e=>pointerEnd(e,true));listen('lostpointercapture',e=>pointerEnd(e,true));navigation();
+      listen('wheel',e=>{e.preventDefault();zoomBy(Math.exp(e.deltaY*.001));this.moving=true;this.render();clearTimeout(timer);timer=setTimeout(()=>{if(!pointers.size){this.moving=false;this.render();}},120);},{passive:false});
+      listen('keydown',e=>{if(['+','=','-','0'].includes(e.key)){e.preventDefault();if(e.key==='0')this.fit();else{this.halfHeight*=e.key==='-'?1.15:1/1.15;this.render();}}});
+      listen('webglcontextlost',e=>{e.preventDefault();clear();this.host.dataset.ready='error';this.status.hidden=false;this.status.textContent='3D 표시가 중단되었습니다. 화면을 새로고침해 주세요.';});
+      this._interactionCleanup=()=>{listeners.forEach(remove=>remove());clear();this._interactionCleanup=null;};
     }
     exportPNG(){if(!this._ready)return null;this.moving=false;this.render();const c=document.createElement('canvas');c.width=this.canvas.width;c.height=this.canvas.height;const x=c.getContext('2d');x.drawImage(this.canvas,0,0);x.drawImage(this.overlay,0,0);return c.toDataURL('image/png');}
-    destroy(){this.disposed=true;if(this.observer)this.observer.disconnect();this.host.replaceChildren();}
+    destroy(){this.disposed=true;if(this._interactionCleanup)this._interactionCleanup();if(this.observer)this.observer.disconnect();this.host.replaceChildren();}
   }
   window.MorbolViewer=MorbolViewer;
 })();
