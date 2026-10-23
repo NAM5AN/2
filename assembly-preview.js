@@ -37,7 +37,7 @@
   function makeUI(){
     if(dialog)return;
     dialog=document.createElement('dialog');dialog.className='ma-dialog';dialog.setAttribute('aria-labelledby','ma-title');dialog.setAttribute('aria-describedby','ma-description');
-    dialog.innerHTML='<div class="ma-head"><div><h2 class="ma-title" id="ma-title">입체 조립 보기</h2><p class="ma-subtitle" id="ma-description">평면 도안이 입체가 되고, 연결 경계가 닿는 과정을 살펴보세요.</p></div><button type="button" class="ma-close" aria-label="조립 보기 닫기">×</button></div><div class="ma-stagebar" aria-label="조립 단계"><span class="ma-step" data-step="0">1 평면 도안</span><span class="ma-step" data-step="1">2 입체 형태</span><span class="ma-step" data-step="2">3 경계 연결</span></div><div class="ma-view-wrap"><canvas class="ma-view" tabindex="0" aria-label="입체 조립 장면. 방향키로 회전, 더하기와 빼기로 확대와 축소"></canvas><canvas class="ma-overlay" aria-hidden="true"></canvas><div class="ma-count"></div><div class="ma-stage" aria-hidden="true"></div><p class="ma-viewhint">드래그: 회전 · 휠/두 손가락: 확대</p><div class="ma-loading"><span class="ma-loader" aria-hidden="true"></span><p>도안의 입체 연결을 불러오는 중이에요.</p><button type="button" class="ma-retry" hidden>다시 시도</button></div></div><div class="ma-controls"><div class="ma-transport"><button type="button" class="ma-play ma-primary">일시정지</button><button type="button" class="ma-replay">처음부터</button><input class="ma-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="조립 진행 위치"><output class="ma-time">0%</output></div><div class="ma-detail"><label for="ma-seams">맞닿는 경계</label><select id="ma-seams" class="ma-seams" aria-label="살펴볼 연결 경계"></select><button type="button" class="ma-reset">시점 초기화</button></div><p class="ma-seam-info"></p><div class="ma-legend"><span><i class="ma-dot ma-dot-selected"></i>선택한 도안</span><span><i class="ma-dot ma-dot-neighbor"></i>맞닿는 도안</span><span><i class="ma-dot ma-dot-edge"></i>선택한 경계 · 원과 화살표: 시작·방향</span></div><p class="ma-caveat">실제 모델의 형태·연결을 설명하는 애니메이션이에요. 평면 배치는 크기 측정용이 아니며, 원단 물성·충돌·시접을 계산하지 않아요.</p></div><p class="ma-status" role="status" aria-live="polite"></p>';
+    dialog.innerHTML='<div class="ma-head"><div><h2 class="ma-title" id="ma-title">입체 조립 보기</h2><p class="ma-subtitle" id="ma-description">평면 도안이 입체가 되고, 연결 경계가 닿는 과정을 살펴보세요.</p></div><button type="button" class="ma-close" aria-label="조립 보기 닫기">×</button></div><div class="ma-stagebar" aria-label="조립 단계"><span class="ma-step" data-step="0">1 평면 도안</span><span class="ma-step" data-step="1">2 입체 형태</span><span class="ma-step" data-step="2">3 경계 연결</span></div><div class="ma-view-wrap"><canvas class="ma-view" tabindex="0" aria-label="입체 조립 장면. 왼쪽 드래그로 자유 회전, 휠로 확대와 축소, 오른쪽 드래그로 이동. 방향키로 회전, 더하기와 빼기로 확대와 축소"></canvas><canvas class="ma-overlay" aria-hidden="true"></canvas><div class="ma-count"></div><div class="ma-stage" aria-hidden="true"></div><p class="ma-viewhint"><span class="ma-hint-desktop">왼쪽 드래그: 회전 · 휠: 확대·축소 · 오른쪽 드래그: 이동</span><span class="ma-hint-touch">한 손가락 드래그: 회전 · 두 손가락 핀치: 확대·축소<br>두 번 터치 후 드래그: 이동</span></p><div class="ma-loading"><span class="ma-loader" aria-hidden="true"></span><p>도안의 입체 연결을 불러오는 중이에요.</p><button type="button" class="ma-retry" hidden>다시 시도</button></div></div><div class="ma-controls"><div class="ma-transport"><button type="button" class="ma-play ma-primary">일시정지</button><button type="button" class="ma-replay">처음부터</button><input class="ma-progress" type="range" min="0" max="1000" step="1" value="0" aria-label="조립 진행 위치"><output class="ma-time">0%</output></div><div class="ma-detail"><label for="ma-seams">맞닿는 경계</label><select id="ma-seams" class="ma-seams" aria-label="살펴볼 연결 경계"></select><button type="button" class="ma-reset">시점 초기화</button></div><p class="ma-seam-info"></p><div class="ma-legend"><span><i class="ma-dot ma-dot-selected"></i>선택한 도안</span><span><i class="ma-dot ma-dot-neighbor"></i>맞닿는 도안</span><span><i class="ma-dot ma-dot-edge"></i>선택한 경계 · 원과 화살표: 시작·방향</span></div><p class="ma-caveat">실제 모델의 형태·연결을 설명하는 애니메이션이에요. 평면 배치는 크기 측정용이 아니며, 원단 물성·충돌·시접을 계산하지 않아요.</p></div><p class="ma-status" role="status" aria-live="polite"></p>';
     document.body.appendChild(dialog);
     ui={};for(const key of['close','view','overlay','loading','loader','retry','title','count','stage','play','replay','progress','time','seams','reset','seam-info','status'])ui[key]=dialog.querySelector('.ma-'+key);
     ui.title=dialog.querySelector('#ma-title');ui.loadingText=ui.loading.querySelector('p');ui.steps=Array.from(dialog.querySelectorAll('.ma-step'));
@@ -56,10 +56,10 @@
     ui.replay.addEventListener('click',()=>{if(!session)return;session.progress=0;session.playing=true;session.last=0;updateControls();schedule()});
     ui.progress.addEventListener('input',()=>{if(!session)return;session.progress=Number(ui.progress.value)/1000;session.playing=false;session.last=0;updateControls();schedule()});
     ui.seams.addEventListener('change',()=>{if(!session)return;session.activeSeam=ui.seams.value;updateSeamInfo();schedule()});
-    ui.reset.addEventListener('click',()=>{if(!session)return;session.yaw=0;session.pitch=0;session.zoom=1;schedule()});
+    ui.reset.addEventListener('click',()=>{if(!session)return;session.yaw=0;session.pitch=0;session.zoom=1;session.pan=[0,0];schedule()});
     ui.steps.forEach((step,index)=>{step.setAttribute('tabindex','0');step.setAttribute('role','button');step.setAttribute('aria-label',['평면 도안 단계 보기','입체 형태 단계 보기','경계 연결 완료 보기'][index]);const jump=()=>{if(!session)return;session.progress=[0,.62,1][index];session.playing=false;session.last=0;updateControls();schedule()};step.addEventListener('click',jump);step.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();jump()}})});
     const fit=document.createElement('button');fit.type='button';fit.className='ma-fit';fit.textContent='연결 전체 보기';ui.reset.before(fit);ui.fit=fit;
-    fit.addEventListener('click',()=>{if(!session)return;session.focusSelection=!session.focusSelection;session.zoom=1;fit.textContent=session.focusSelection?'연결 전체 보기':'선택 도안 보기';schedule()});
+    fit.addEventListener('click',()=>{if(!session)return;session.focusSelection=!session.focusSelection;session.zoom=1;session.pan=[0,0];fit.textContent=session.focusSelection?'연결 전체 보기':'선택 도안 보기';schedule()});
     ui.retry.addEventListener('click',()=>{const request=dialog._maRequest;if(request)open(request)});
   }
   function loading(message,error){
@@ -131,11 +131,11 @@
     const averageNormal=[0,0,0];let normalArea=0;
     for(const entry of pieces.values())if(entry.selected)for(let i=0;i<entry.world.length;i+=9){const a=Array.from(entry.world.subarray(i,i+3)),b=Array.from(entry.world.subarray(i+3,i+6)),c=Array.from(entry.world.subarray(i+6,i+9)),n=cross(sub(b,a),sub(c,a));normalArea+=Math.hypot(...n);for(let j=0;j<3;j++)averageNormal[j]+=n[j]}
     let autoYaw=.38,autoPitch=.28;
-    if(Math.hypot(...averageNormal)/Math.max(normalArea,1e-12)>.75){let n=norm(averageNormal);if(n[1]>0)n=mul(n,-1);autoYaw=Math.atan2(n[0],-n[1]);autoPitch=clamp(Math.asin(n[2]),-1.42,1.42)}
+    if(Math.hypot(...averageNormal)/Math.max(normalArea,1e-12)>.75){let n=norm(averageNormal);if(n[1]>0)n=mul(n,-1);autoYaw=Math.atan2(n[0],-n[1]);autoPitch=Math.asin(clamp(n[2],-1,1))}
     const areaOf=seam=>Math.max(...seam.banks.filter(b=>b.part!==loc.part.id||b.piece!==pieceID(loc.piece)).map(b=>{const found=getPiece(loc.variant,b.part,b.piece);if(!found)return Infinity;const a=bounds(sourceArray(found.piece.world,3),3);return Math.max(...a.size)}),0);
     const pairs=connected.filter(x=>x.pairable&&x.type!=='reference'),ownPairs=pairs.filter(x=>x.banks.some(b=>b.part===loc.part.id&&b.piece===pieceID(loc.piece)));
     const chosen=connected.find(s=>s.key===request.seam||s.id===request.seam)||ownPairs.sort((a,b)=>areaOf(a)-areaOf(b))[0]||pairs.sort((a,b)=>areaOf(a)-areaOf(b))[0]||connected.find(x=>x.type!=='reference')||connected[0];
-    const scene={...loc,selectedKey,selectedChart,pieces,connected,activeSeam:chosen&&chosen.key||'',progress:0,playing:!window.matchMedia('(prefers-reduced-motion: reduce)').matches,yaw:0,pitch:0,autoYaw,autoPitch,zoom:1,focusSelection:true,last:0,raf:0,disposed:false,stageIndex:-1,pointerMap:new Map(),listeners:[],gl:null,resources:[],size:{width:1,height:1},camera:null};
+    const scene={...loc,selectedKey,selectedChart,pieces,connected,activeSeam:chosen&&chosen.key||'',progress:0,playing:!window.matchMedia('(prefers-reduced-motion: reduce)').matches,yaw:0,pitch:0,autoYaw,autoPitch,zoom:1,pan:[0,0],focusSelection:true,last:0,raf:0,disposed:false,stageIndex:-1,pointerMap:new Map(),listeners:[],gl:null,resources:[],size:{width:1,height:1},camera:null};
     return scene;
   }
   function compile(gl,type,source){const sh=gl.createShader(type);gl.shaderSource(sh,source);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS)){const msg=gl.getShaderInfoLog(sh);gl.deleteShader(sh);throw new Error('입체 화면을 준비하지 못했어요. '+msg)}return sh}
@@ -160,28 +160,62 @@
     const resize=()=>{if(s.disposed)return;const rect=ui.view.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);s.size={width:Math.max(1,rect.width),height:Math.max(1,rect.height)};ui.view.width=Math.round(s.size.width*dpr);ui.view.height=Math.round(s.size.height*dpr);ui.overlay.width=ui.view.width;ui.overlay.height=ui.view.height;s.dpr=dpr;gl.viewport(0,0,ui.view.width,ui.view.height);schedule()};
     s.observer=new ResizeObserver(resize);s.observer.observe(ui.view);resize();
     const listen=(target,type,fn,opts)=>{target.addEventListener(type,fn,opts);s.listeners.push(()=>target.removeEventListener(type,fn,opts))};
-    let lastPoint=null,lastPinch=0;
-    listen(ui.view,'pointerdown',e=>{s.pointerMap.set(e.pointerId,[e.clientX,e.clientY]);ui.view.setPointerCapture(e.pointerId);lastPoint=[e.clientX,e.clientY];if(s.pointerMap.size===2){const p=Array.from(s.pointerMap.values());lastPinch=Math.hypot(p[0][0]-p[1][0],p[0][1]-p[1][1])}});
-    listen(ui.view,'pointermove',e=>{if(!s.pointerMap.has(e.pointerId))return;s.pointerMap.set(e.pointerId,[e.clientX,e.clientY]);if(s.pointerMap.size===2){const p=Array.from(s.pointerMap.values()),d=Math.hypot(p[0][0]-p[1][0],p[0][1]-p[1][1]);if(lastPinch>0)s.zoom=clamp(s.zoom*lastPinch/Math.max(d,1),.3,4);lastPinch=d}else if(lastPoint){s.yaw+=(e.clientX-lastPoint[0])*.009;s.pitch=clamp(s.pitch+(e.clientY-lastPoint[1])*.009,-1.4,1.4)}lastPoint=[e.clientX,e.clientY];schedule()});
-    const pointerEnd=e=>{s.pointerMap.delete(e.pointerId);lastPoint=s.pointerMap.size?Array.from(s.pointerMap.values())[0]:null;lastPinch=0};
-    listen(ui.view,'pointerup',pointerEnd);listen(ui.view,'pointercancel',pointerEnd);listen(ui.view,'lostpointercapture',pointerEnd);
+    let lastTap=null,lastPair=null;
+    const eventTime=e=>Number.isFinite(e.timeStamp)?e.timeStamp:performance.now();
+    const pair=()=>{const p=Array.from(s.pointerMap.values());return p.length===2?{distance:Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y),x:(p[0].x+p[1].x)/2,y:(p[0].y+p[1].y)/2}:null};
+    const navigation=()=>{const p=Array.from(s.pointerMap.values());ui.view.dataset.navigation=p.length===1?p[0].mode:p.length===2?'pinch':''};
+    const panBy=(dx,dy)=>{
+      const b=sceneBounds(s);cameraMatrix(b.center,b.half,s);
+      const scale=2*s.cameraPose.distance*Math.tan(Math.PI/8)/s.size.height;
+      s.pan[0]-=dx*scale;s.pan[1]+=dy*scale;
+    };
+    listen(ui.view,'contextmenu',e=>e.preventDefault());
+    listen(ui.view,'pointerdown',e=>{
+      const touch=e.pointerType==='touch',active=Array.from(s.pointerMap.values());
+      if((!touch&&e.button!==0&&e.button!==2)||active.some(p=>p.touch!==touch))return;
+      e.preventDefault();ui.view.focus({preventScroll:true});const time=eventTime(e);
+      const doubleTap=touch&&active.length===0&&lastTap&&time-lastTap.time>=0&&time-lastTap.time<=330&&Math.hypot(e.clientX-lastTap.x,e.clientY-lastTap.y)<=28;
+      s.pointerMap.set(e.pointerId,{x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,time,touch,mode:doubleTap||!touch&&e.button===2?'pan':'rotate',tap:touch&&!doubleTap&&active.length===0});
+      lastTap=null;
+      if(s.pointerMap.size>1){for(const p of s.pointerMap.values())p.tap=false;lastPair=pair()}
+      ui.view.setPointerCapture(e.pointerId);navigation();
+    });
+    const pointerEnd=(e,cancelled=false)=>{
+      const p=s.pointerMap.get(e.pointerId);if(!p)return;
+      if(!cancelled&&p.tap&&eventTime(e)-p.time<=300&&Math.hypot(e.clientX-p.startX,e.clientY-p.startY)<=10)lastTap={time:eventTime(e),x:e.clientX,y:e.clientY};else lastTap=null;
+      s.pointerMap.delete(e.pointerId);lastPair=pair();
+      for(const remaining of s.pointerMap.values()){remaining.tap=false;remaining.mode='rotate'}
+      navigation();
+    };
+    listen(ui.view,'pointermove',e=>{
+      const p=s.pointerMap.get(e.pointerId);if(!p)return;
+      if(!p.touch&&e.buttons===0){pointerEnd(e,true);return}
+      e.preventDefault();const dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
+      if(Math.hypot(p.x-p.startX,p.y-p.startY)>10)p.tap=false;
+      if(s.pointerMap.size===2){const next=pair();if(lastPair){if(lastPair.distance>0)s.zoom=clamp(s.zoom*lastPair.distance/Math.max(next.distance,1),.3,4);panBy(next.x-lastPair.x,next.y-lastPair.y)}lastPair=next}
+      else if(s.pointerMap.size===1){if(p.mode==='pan')panBy(dx,dy);else{s.yaw+=dx*.009;s.pitch+=dy*.009}}
+      schedule();
+    });
+    listen(ui.view,'pointerup',e=>pointerEnd(e));listen(ui.view,'pointercancel',e=>pointerEnd(e,true));listen(ui.view,'lostpointercapture',e=>pointerEnd(e,true));
     listen(ui.view,'wheel',e=>{e.preventDefault();s.zoom=clamp(s.zoom*Math.exp(e.deltaY*.001),.3,4);schedule()},{passive:false});
-    listen(ui.view,'keydown',e=>{let used=true;if(e.key==='ArrowLeft')s.yaw-=.15;else if(e.key==='ArrowRight')s.yaw+=.15;else if(e.key==='ArrowUp')s.pitch=clamp(s.pitch-.15,-1.4,1.4);else if(e.key==='ArrowDown')s.pitch=clamp(s.pitch+.15,-1.4,1.4);else if(e.key==='+'||e.key==='=')s.zoom=clamp(s.zoom*.85,.3,4);else if(e.key==='-'||e.key==='_')s.zoom=clamp(s.zoom/ .85,.3,4);else if(e.key===' '){if(s.progress>=1)s.progress=0;s.playing=!s.playing;s.last=0;updateControls()}else used=false;if(used){e.preventDefault();schedule()}});
+    listen(ui.view,'keydown',e=>{let used=true;if(e.key==='ArrowLeft')s.yaw-=.15;else if(e.key==='ArrowRight')s.yaw+=.15;else if(e.key==='ArrowUp')s.pitch-=.15;else if(e.key==='ArrowDown')s.pitch+=.15;else if(e.key==='+'||e.key==='=')s.zoom=clamp(s.zoom*.85,.3,4);else if(e.key==='-'||e.key==='_')s.zoom=clamp(s.zoom/ .85,.3,4);else if(e.key===' '){if(s.progress>=1)s.progress=0;s.playing=!s.playing;s.last=0;updateControls()}else used=false;if(used){e.preventDefault();schedule()}});
     listen(ui.view,'webglcontextlost',e=>{e.preventDefault();s.playing=false;cancelAnimationFrame(s.raf);s.raf=0;loading('입체 화면이 중단됐어요. 다시 시도해 주세요.',true)});
   }
   function dispose(){
     const s=session;session=null;if(!s)return;s.disposed=true;cancelAnimationFrame(s.raf);if(s.observer)s.observer.disconnect();s.listeners.forEach(fn=>fn());
     if(s.gl){for(const r of s.resources){if(r.kind==='buffer')s.gl.deleteBuffer(r.value);else if(r.kind==='program')s.gl.deleteProgram(r.value)}s.gl.clear(s.gl.COLOR_BUFFER_BIT|s.gl.DEPTH_BUFFER_BIT)}
-    s.resources=[];s.pieces.clear();
+    s.resources=[];s.pieces.clear();s.pointerMap.clear();ui.view.dataset.navigation='';
     if(ui){const ctx=ui.overlay.getContext('2d');if(ctx)ctx.clearRect(0,0,ui.overlay.width,ui.overlay.height)}
   }
   function matrixMultiply(a,b){const o=new Float32Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++)for(let k=0;k<4;k++)o[c*4+r]+=a[k*4+r]*b[c*4+k];return o}
   function cameraMatrix(center,half,s){
-    const auto=ease((s.progress-.18)/.44),yaw=s.yaw+s.autoYaw*auto,pitch=clamp(s.pitch+s.autoPitch*auto,-1.5,1.5);
-    const cp=Math.cos(pitch),z=[Math.sin(yaw)*cp,-Math.cos(yaw)*cp,Math.sin(pitch)],x=norm(cross([0,0,1],z)),y=cross(z,x),aspect=s.size.width/s.size.height,tanV=Math.tan(Math.PI/8),radius=Math.max(.0001,Math.hypot(...half));
+    const auto=ease((s.progress-.18)/.44),yaw=s.yaw+s.autoYaw*auto,pitch=s.pitch+s.autoPitch*auto;
+    // An analytic right vector stays continuous through both poles, without a world-up singularity.
+    const cp=Math.cos(pitch),z=[Math.sin(yaw)*cp,-Math.cos(yaw)*cp,Math.sin(pitch)],x=[Math.cos(yaw),Math.sin(yaw),0],y=cross(z,x),aspect=s.size.width/s.size.height,tanV=Math.tan(Math.PI/8),radius=Math.max(.0001,Math.hypot(...half));
     let required=0,maxDepth=0;
     for(const sx of[-1,1])for(const sy of[-1,1])for(const sz of[-1,1]){const corner=[sx*half[0],sy*half[1],sz*half[2]],depth=dot(z,corner);maxDepth=Math.max(maxDepth,depth);required=Math.max(required,depth+Math.max(Math.abs(dot(x,corner))/(tanV*aspect),Math.abs(dot(y,corner))/tanV))}
-    const distance=Math.max(required*1.15*s.zoom,maxDepth+radius*.025),eye=add(center,mul(z,distance));
+    const distance=Math.max(required*1.15*s.zoom,maxDepth+radius*.025),eye=add(add(center,add(mul(x,s.pan[0]),mul(y,s.pan[1]))),mul(z,distance));
+    s.cameraPose={effectiveYaw:yaw,effectivePitch:pitch,right:x,up:y,forward:z,distance};
     const view=new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-dot(x,eye),-dot(y,eye),-dot(z,eye),1]);
     const near=Math.max(.000001,Math.min(radius*.008,(distance-maxDepth)*.2)),far=Math.max(distance+radius*8,near+1),f=1/tanV;
     const projection=new Float32Array([f/aspect,0,0,0,0,f,0,0,0,0,(far+near)/(near-far),-1,0,0,2*far*near/(near-far),0]);
@@ -252,7 +286,7 @@
   }
   function render(s){
     if(s.disposed||session!==s)return;const gl=s.gl;if(!gl)return;
-    const b=sceneBounds(s),vp=cameraMatrix(b.center,b.half,s);s.camera={...b,vp};gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(s.program);gl.uniformMatrix4fv(s.u.uVP,false,vp);
+    const b=sceneBounds(s),vp=cameraMatrix(b.center,b.half,s);s.camera={...b,...s.cameraPose,vp};gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(s.program);gl.uniformMatrix4fv(s.u.uVP,false,vp);
     const active=s.connected.find(x=>x.key===s.activeSeam),activeKeys=new Set((active&&active.banks||[]).map(b=>b.part+':'+b.piece));
     const entries=visibleEntries(s).sort((a,b)=>Number(a.selected)-Number(b.selected));
     for(const entry of entries){const p=phases(s,entry);for(const[name,buffer]of Object.entries(entry.buffers)){gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.enableVertexAttribArray(s.a[name]);gl.vertexAttribPointer(s.a[name],3,gl.FLOAT,false,0,0)}
@@ -298,5 +332,5 @@
   window.addEventListener('message',e=>{if(e.origin===location.origin&&e.source===parent&&e.data&&e.data.type==='morbol-assembly-suspend')close({restoreFocus:false})});
   window.addEventListener('pagehide',()=>close({restoreFocus:false}));
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&session){session.playing=false;session.last=0;cancelAnimationFrame(session.raf);session.raf=0;updateControls()}});
-  window.MorbolAssembly={open,close,getState(){return session?{part:session.part.id,piece:pieceID(session.piece),version:session.version,progress:session.progress,playing:session.playing,seam:session.activeSeam,pieces:session.pieces.size,visiblePieces:visibleEntries(session).map(e=>e.key),selectedChart:session.selectedChart}:null}};
+  window.MorbolAssembly={open,close,getState(){if(!session)return null;const s=session,c=s.cameraPose;return{part:s.part.id,piece:pieceID(s.piece),version:s.version,progress:s.progress,playing:s.playing,seam:s.activeSeam,pieces:s.pieces.size,visiblePieces:visibleEntries(s).map(e=>e.key),selectedChart:s.selectedChart,camera:{yaw:s.yaw,pitch:s.pitch,zoom:s.zoom,pan:s.pan.slice(),effectiveYaw:c&&c.effectiveYaw,effectivePitch:c&&c.effectivePitch,right:c&&c.right.slice(),up:c&&c.up.slice(),forward:c&&c.forward.slice(),distance:c&&c.distance}}}};
 })();
