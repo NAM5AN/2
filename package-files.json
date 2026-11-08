@@ -1,12 +1,12 @@
 {
-  "version": 61,
-  "native_version": 61,
-  "native_filename": "morbol-v61-complete.blend",
-  "native_sha256": "89dc6b1a6eec490f8d16429cedd3902b9c1abe94b16ff5276e8f9c23c91c4b3c",
+  "version": 62,
+  "native_version": 62,
+  "native_filename": "morbol-v62-complete.blend",
+  "native_sha256": "57d7d8b519d23b3da186d7393d96927e393b55dbb6f76f02e6be46e54adab8f2",
   "variants": {
     "complete": {
-      "native": "morbol-v61-complete.blend",
-      "sha256": "89dc6b1a6eec490f8d16429cedd3902b9c1abe94b16ff5276e8f9c23c91c4b3c",
+      "native": "morbol-v62-complete.blend",
+      "sha256": "57d7d8b519d23b3da186d7393d96927e393b55dbb6f76f02e6be46e54adab8f2",
       "overrides": [
         "BODY",
         "J01",
@@ -71,8 +71,8 @@
       "meshes": 60
     },
     "shell": {
-      "native": "morbol-v61-shell.blend",
-      "sha256": "282bf0b891ad1606a4e894f94a7f53fa432c847100e045acf8fef040f554c626",
+      "native": "morbol-v62-shell.blend",
+      "sha256": "375b86c3d532084d3b450a10ffaef7dbd304ac7d5c38c0126add53022c0f0538",
       "overrides": [
         "BODY",
         "J01",
@@ -764,8 +764,8 @@
     "morbol-v31-all-100pct-SA10mm.svg",
     "morbol-v31-before-after.png",
     "morbol-v31-sewing-trial.pdf",
-    "morbol-v61-complete.blend",
-    "morbol-v61-shell.blend",
+    "morbol-v62-complete.blend",
+    "morbol-v62-shell.blend",
     "morbol-viewer.js",
     "package-files.json",
     "person-overlay-manifest.json",
@@ -830,5 +830,5 @@
     "하단-연결-마감.png",
     "하단-연결-설명.md"
   ],
-  "viewer_revision": 61
+  "viewer_revision": 62
 }

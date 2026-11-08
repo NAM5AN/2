@@ -126,7 +126,7 @@
     $('.head-atlas-pages').hidden=state.group!=='head';
     const nav=$('.tent-parts');nav.replaceChildren();
     for(const p of groupParts()) {
-      const label=p.id==='BODY'?'몸통 · U01–U09':p.id==='JAW'?'아래턱 · U10–U11':p.id;
+      const label=p.id==='BODY'?'몸통 · U01–U06·U09':p.id==='JAW'?'아래턱 · U10–U11':p.id;
       const b=button(label,()=>{state.part=p.id;state.mode='part';resetEmphasis();render();},p.id===state.part,p.name);
       b.dataset.part=p.id;b.dataset.id=p.id;b.style.setProperty('--part-color',p.color);nav.append(b);
     }
